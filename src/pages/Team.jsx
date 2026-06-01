@@ -137,7 +137,7 @@ function LeaderCard({ person }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-aether-card via-transparent to-transparent" />
         <a
-          href="#"
+          href={person.linkedin || '#'}
           aria-label={`${person.name} on LinkedIn`}
           className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur border border-aether-border flex items-center justify-center text-aether-muted opacity-0 group-hover:opacity-100 transition-all duration-300 hover:text-aether-accent hover:border-aether-accent/50"
         >
@@ -168,6 +168,13 @@ function MemberCard({ person }) {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+        <a
+          href={person.linkedin || '#'}
+          aria-label={`${person.name} on LinkedIn`}
+          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur border border-aether-border flex items-center justify-center text-aether-muted opacity-0 group-hover:opacity-100 transition-all duration-300 hover:text-aether-accent hover:border-aether-accent/50"
+        >
+          <LinkedInIcon />
+        </a>
         <div className="absolute bottom-0 inset-x-0 p-5">
           <h3 className="text-white text-base font-bold leading-tight">
             {person.name}
