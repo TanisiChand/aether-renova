@@ -1,16 +1,16 @@
 import SynergyBackground from './SynergyBackground'
 
 const entities = [
-  { logo: '/logos/aether.svg', name: 'AR Construction', tag: 'Civil & Heavy Infra' },
+  { logo: '/logos/terrasol.svg', name: 'Terra Sol', tag: 'Solar Farms' },
+  { logo: '/logos/solaeris.svg', name: 'Solaeris', tag: 'Microgrids' },
   { logo: '/logos/gridnepal.svg', name: 'Grid Nepal', tag: 'Transmission' },
   { logo: '/logos/weststar.svg', name: 'West Star', tag: 'Wind & Hydro' },
-  { logo: '/logos/terrasol.svg', name: 'Terra Sol', tag: 'Solar Farms' },
-  { logo: '/logos/solaeris.svg', name: 'Solaeris', tag: 'Microgrids', wide: true },
+  { logo: '/logos/aether.svg', name: 'Aether Construction', tag: 'Civil & Heavy Infra' },
 ]
 
-function EntityCard({ logo, name, tag, wide }) {
+function EntityCard({ logo, name, tag }) {
   return (
-    <div className={`group cursor-pointer${wide ? ' md:col-span-2 lg:col-span-1' : ''}`}>
+    <div className="group cursor-pointer">
       <div className="relative aspect-square bg-aether-card/60 backdrop-blur-md border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-700 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
         <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-aether-accent/10 to-transparent" />
 
@@ -26,10 +26,10 @@ function EntityCard({ logo, name, tag, wide }) {
               draggable="false"
             />
           </div>
-          <p className="text-white font-bold tracking-wider text-sm uppercase">
+          <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight">
             {name}
           </p>
-          <p className="text-aether-accent/60 text-[10px] uppercase tracking-[0.2em] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <p className="text-aether-accent/60 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             {tag}
           </p>
         </div>
