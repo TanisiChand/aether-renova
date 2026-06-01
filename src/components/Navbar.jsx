@@ -47,6 +47,7 @@ export default function Navbar() {
           <Link to="/#projects">Projects</Link>
           <NavDropdown label="Companies" to="/companies" items={companyItems} />
           <NavDropdown label="Who Are We" to="/about" items={aboutItems} />
+          <Link to="/blog">Blog</Link>
           <Link to="/careers">Careers</Link>
         </div>
         <div className="nav-right">

@@ -149,7 +149,9 @@ export default function FromTheGrid() {
         </div>
 
         <div className="flex justify-center mt-16">
-          <Button variant="secondary">View All Articles</Button>
+          <Button href="/blog" variant="secondary">
+            View All Articles
+          </Button>
         </div>
       </div>
     </section>

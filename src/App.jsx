@@ -10,6 +10,7 @@ import About from './pages/About'
 import Team from './pages/Team'
 import Careers from './pages/Careers'
 import Contact from './pages/Contact'
+import Blog from './pages/Blog'
 
 // Scroll to top on route change, or to a hash target if present.
 function ScrollManager() {
@@ -49,6 +50,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </BrowserRouter>
