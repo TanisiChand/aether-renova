@@ -5,10 +5,15 @@ const entities = [
   { logo: '/logos/solaeris.svg', name: 'Solaeris', tag: 'Microgrids' },
   { logo: '/logos/gridnepal.svg', name: 'Grid Nepal', tag: 'Transmission' },
   { logo: '/logos/weststar.svg', name: 'West Star', tag: 'Wind & Hydro' },
-  { logo: '/logos/aether.svg', name: 'Aether Construction', tag: 'Civil & Heavy Infra' },
+  {
+    logo: '/logos/aether.svg',
+    name: 'Aether Construction',
+    display: 'Aether\nConstruction',
+    tag: 'Civil & Heavy Infra',
+  },
 ]
 
-function EntityCard({ logo, name, tag }) {
+function EntityCard({ logo, name, display, tag }) {
   return (
     <div className="group cursor-pointer">
       <div className="relative aspect-square bg-aether-card/60 backdrop-blur-md border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-700 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
@@ -26,8 +31,8 @@ function EntityCard({ logo, name, tag }) {
               draggable="false"
             />
           </div>
-          <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight">
-            {name}
+          <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
+            {display || name}
           </p>
           <p className="text-aether-accent/60 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             {tag}

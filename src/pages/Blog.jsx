@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import SynergyBackground from '../components/SynergyBackground'
 import { articles } from '../data/articles'
 
@@ -55,7 +56,7 @@ function Author({ article }) {
 
 function FeaturedPost({ article }) {
   return (
-    <a href="#" className="group block">
+    <Link to={`/blog/${article.slug}`} className="group block">
       <article className="relative grid grid-cols-1 lg:grid-cols-2 bg-aether-card border border-aether-border rounded-3xl overflow-hidden transition-all duration-500 hover:border-aether-accent/40">
         <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-aether-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
         <div className="relative min-h-[280px] lg:min-h-[420px] overflow-hidden">
@@ -91,13 +92,13 @@ function FeaturedPost({ article }) {
           </div>
         </div>
       </article>
-    </a>
+    </Link>
   )
 }
 
 function PostCard({ article }) {
   return (
-    <a href="#" className="group block">
+    <Link to={`/blog/${article.slug}`} className="group block">
       <article className="relative h-full bg-aether-card border border-aether-border rounded-2xl overflow-hidden transition-all duration-700 hover:border-aether-accent/40 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,240,152,0.1)]">
         <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-aether-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="relative h-[200px] overflow-hidden">
@@ -129,7 +130,7 @@ function PostCard({ article }) {
           </div>
         </div>
       </article>
-    </a>
+    </Link>
   )
 }
 

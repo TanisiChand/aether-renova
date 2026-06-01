@@ -13,7 +13,50 @@ export const articles = [
       "Exploring how Nepal's unique topography presents unprecedented opportunities for wind energy generation in previously inaccessible regions.",
     initials: 'RS',
     author: 'Ravi Sharma',
+    authorRole: 'Head of Wind Development',
     featured: true,
+    body: [
+      {
+        type: 'p',
+        text: "Nepal is defined by its verticality. From the Terai plains to the 8,000-metre peaks of the Himalaya, the country rises faster than almost anywhere on Earth — and that dramatic relief does something remarkable to the wind.",
+      },
+      {
+        type: 'p',
+        text: 'As air is forced up and over mountain ridges and funneled through high valleys, it accelerates. These orographic and channeling effects create some of the most energetic, consistent wind resources in South Asia. The challenge has never been whether the wind is there. It is whether we can reach it, measure it, and build for it.',
+      },
+      { type: 'h2', text: 'The Opportunity Above the Clouds' },
+      {
+        type: 'p',
+        text: 'High-altitude corridors that were historically dismissed as too remote are exactly where the wind is strongest. Ridge lines above 3,000 metres routinely see mean wind speeds that make utility-scale generation viable — often complementing hydropower beautifully, with wind peaking in the dry season precisely when river flows drop.',
+      },
+      {
+        type: 'quote',
+        text: 'The wind doesn’t care that a site is hard to reach. Our job is to make the hard-to-reach buildable.',
+      },
+      { type: 'h2', text: 'Engineering for the Frontier' },
+      {
+        type: 'p',
+        text: 'Building in this terrain demands a different playbook. Turbine logistics over mountain roads, foundations engineered for seismic loads, cold-climate components, and proprietary wind-mapping calibrated for turbulent mountain corridors are all part of how we de-risk these sites before a single blade turns.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Micro-siting using high-resolution terrain and turbulence modelling',
+          'Modular turbine designs suited to constrained access roads',
+          'Hybrid wind-hydro planning to balance seasonal generation',
+          'Community-first land and benefit-sharing agreements',
+        ],
+      },
+      { type: 'h2', text: 'A Resilient, Diversified Grid' },
+      {
+        type: 'p',
+        text: 'Adding high-altitude wind to Nepal’s energy mix is not just about more megawatts — it is about resilience. A grid that draws on hydro, solar, and wind across different geographies and seasons is far harder to knock offline. That diversity is the foundation of a sustainable, electrified Nepal.',
+      },
+      {
+        type: 'p',
+        text: 'The mountains have always shaped life in Nepal. With the right engineering and the right partnerships, they can now help power it too.',
+      },
+    ],
   },
   {
     slug: 'kusaha-impact',
