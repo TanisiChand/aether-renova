@@ -16,7 +16,7 @@ const socials = [
 ]
 
 const companyLinks = [
-  'About Us',
+  'Who Are We',
   'Our Projects',
   'Leadership',
   'Careers',

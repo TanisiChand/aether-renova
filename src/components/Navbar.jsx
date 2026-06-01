@@ -19,7 +19,7 @@ const companyItems = [
 ]
 
 const aboutItems = [
-  { to: '/about', name: 'About Us', tag: 'Our Story & CSR' },
+  { to: '/about', name: 'Who Are We', tag: 'Our Story & CSR' },
   { to: '/team', name: 'Our Team', tag: 'The People' },
 ]
 
@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="nav-links">
           <Link to="/#projects">Projects</Link>
           <NavDropdown label="Companies" to="/companies" items={companyItems} />
-          <NavDropdown label="About Us" to="/about" items={aboutItems} />
+          <NavDropdown label="Who Are We" to="/about" items={aboutItems} />
           <Link to="/#careers">Careers</Link>
         </div>
         <div className="nav-right">

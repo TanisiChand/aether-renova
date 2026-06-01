@@ -142,9 +142,9 @@ export default function About() {
         <div className="absolute left-0 right-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[#020203] pointer-events-none z-[1]" />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <Eyebrow center>Who We Are</Eyebrow>
+          <Eyebrow center>About The Group</Eyebrow>
           <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight uppercase mb-6">
-            About Us
+            Who Are We
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed">
             Aether Renova Holdings is a Nepali clean-energy group building the
