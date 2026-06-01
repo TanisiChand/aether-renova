@@ -34,17 +34,18 @@ function ScrollManager() {
       tryScroll()
       return
     }
-    window.scrollTo(0, 0)
+    // New page: jump to the top instantly (the fade animation covers it),
+    // so the smooth-scroll setting doesn't cause a long visible scroll.
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [pathname, hash])
   return null
 }
 
-function App() {
+// Re-mounts (via key) on each path change so the fade-in animation replays.
+function AnimatedRoutes() {
+  const { pathname } = useLocation()
   return (
-    <BrowserRouter>
-      <ScrollManager />
-      <DnaTexture />
-      <Navbar />
+    <div key={pathname} className="page-fade">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/companies" element={<Companies />} />
@@ -58,6 +59,17 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollManager />
+      <DnaTexture />
+      <Navbar />
+      <AnimatedRoutes />
       <Footer />
     </BrowserRouter>
   )
