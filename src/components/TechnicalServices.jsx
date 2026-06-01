@@ -105,7 +105,7 @@ function ServiceCard({ icon, title, description, metric }) {
 
 export default function TechnicalServices() {
   return (
-    <section className="relative py-32 bg-[#020203] font-sans z-10">
+    <section className="relative py-20 bg-[#020203] font-sans z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-10">
           <div className="max-w-2xl">

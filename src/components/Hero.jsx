@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import SynergyBackground from './SynergyBackground'
 import { projects } from '../data/projects'
 
 export default function Hero() {
   return (
     <section className="hero">
+      <SynergyBackground />
       <div className="halo" />
       <div className="hero-fade" />
       <div className="hero-inner">

@@ -49,7 +49,7 @@ export default function Synergy() {
   return (
     <section
       id="companies"
-      className="relative py-32 bg-transparent font-sans z-0 overflow-visible"
+      className="relative py-20 bg-transparent font-sans z-0 overflow-visible"
     >
       {/* Animated synergy web (bleeds beyond the section bounds, but the whole
           section sits at z-0 so it stays BEHIND the neighbouring sections and

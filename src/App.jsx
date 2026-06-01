@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import DnaTexture from './components/DnaTexture'
-import HeroCanvas from './components/HeroCanvas'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -44,7 +43,6 @@ function App() {
     <BrowserRouter>
       <ScrollManager />
       <DnaTexture />
-      <HeroCanvas />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
