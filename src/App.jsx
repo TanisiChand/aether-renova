@@ -8,6 +8,7 @@ import Companies from './pages/Companies'
 import About from './pages/About'
 import Team from './pages/Team'
 import Careers from './pages/Careers'
+import JobDetail from './pages/JobDetail'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
@@ -52,6 +53,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/team" element={<Team />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:slug" element={<JobDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import { roles } from '../data/roles'
 
 const Eyebrow = ({ children, center }) => (
   <p
@@ -42,65 +44,6 @@ const perks = [
   },
 ]
 
-/* ---- open roles ---- */
-const roles = [
-  {
-    title: 'Senior Solar Design Engineer',
-    team: 'Engineering',
-    company: 'Terra Sol',
-    location: 'Kathmandu, Nepal',
-    type: 'Full-time',
-  },
-  {
-    title: 'Grid Integration Specialist',
-    team: 'Engineering',
-    company: 'Grid Nepal',
-    location: 'Dhanusha, Nepal',
-    type: 'Full-time',
-  },
-  {
-    title: 'Microgrid Field Technician',
-    team: 'Operations',
-    company: 'Solaeris',
-    location: 'Karnali Province, Nepal',
-    type: 'Full-time',
-  },
-  {
-    title: 'Hydropower Project Manager',
-    team: 'Operations',
-    company: 'West Star',
-    location: 'Gandaki Province, Nepal',
-    type: 'Full-time',
-  },
-  {
-    title: 'Civil Site Supervisor',
-    team: 'Construction',
-    company: 'Aether Construction',
-    location: 'Darchula, Nepal',
-    type: 'Full-time',
-  },
-  {
-    title: 'Community Relations Officer',
-    team: 'Community',
-    company: 'Aether Renova',
-    location: 'Sunsari, Nepal',
-    type: 'Full-time',
-  },
-  {
-    title: 'R&D Engineering Intern',
-    team: 'Engineering',
-    company: 'Aether Renova',
-    location: 'Kathmandu, Nepal',
-    type: 'Internship',
-  },
-  {
-    title: 'Sustainability Analyst',
-    team: 'Community',
-    company: 'Aether Renova',
-    location: 'Kathmandu, Nepal',
-    type: 'Full-time',
-  },
-]
 
 const filters = ['All', 'Engineering', 'Operations', 'Construction', 'Community']
 
@@ -134,11 +77,8 @@ const ArrowIcon = () => (
 )
 
 function RoleRow({ role }) {
-  return (
-    <a
-      href="#"
-      className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-6 bg-aether-card border border-aether-border rounded-2xl p-6 transition-all duration-300 hover:border-aether-accent/40 hover:bg-[#0c0c11]"
-    >
+  const inner = (
+    <>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-3 mb-2 flex-wrap">
           <span className="text-aether-accent text-[11px] font-semibold uppercase tracking-wider">
@@ -164,6 +104,20 @@ function RoleRow({ role }) {
         </span>
         <ArrowIcon />
       </div>
+    </>
+  )
+
+  const className =
+    'group flex flex-col md:flex-row md:items-center gap-4 md:gap-6 bg-aether-card border border-aether-border rounded-2xl p-6 transition-all duration-300 hover:border-aether-accent/40 hover:bg-[#0c0c11]'
+
+  // Roles with a detail page link through; others link to the application CTA.
+  return role.slug ? (
+    <Link to={`/careers/${role.slug}`} className={className}>
+      {inner}
+    </Link>
+  ) : (
+    <a href="#contact" className={className}>
+      {inner}
     </a>
   )
 }

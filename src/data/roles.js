@@ -1,0 +1,103 @@
+// Shared open-roles data used by the /careers list and the /careers/:slug
+// detail pages.
+export const roles = [
+  {
+    slug: 'construction-manager-dhalkebar',
+    title: 'Construction Manager',
+    subtitle: 'Site-Based',
+    team: 'Construction',
+    company: 'Terra Sol',
+    project: 'Dhalkebar Solar Power Project',
+    capacity: '20 MW',
+    location: 'Dhalkebar / Mahottari, Nepal',
+    type: 'Full-Time / Site-Based',
+    joining: 'Immediate',
+    salary: 'Negotiable based on qualification, experience, and project exposure.',
+    applyEmail: 'Engineering@aetherrenova.com',
+    applySubject:
+      'Application for Construction Manager - Dhalkebar Solar Power Project',
+    intro: [
+      'Aether Renova is a Nepali clean energy group developing hydropower and solar infrastructure. Headquartered in Kathmandu, the group operates through specialized subsidiaries spanning hydropower, solar, and construction — each built to deliver projects of enduring technical and operational quality.',
+      'We are seeking an experienced Construction Manager for the 20 MW Dhalkebar Solar Power Project in Dhalkebar/Mahottari, Nepal.',
+      'The Construction Manager will lead and coordinate day-to-day site construction activities, ensuring that civil, electrical, mechanical, mounting structure, module installation, inverter/transformer, control room, and grid interconnection works are completed safely, on schedule, and according to approved quality standards.',
+    ],
+    responsibilities: [
+      'Manage and supervise overall construction activities at site.',
+      'Coordinate with contractors, subcontractors, consultants, suppliers, project teams, local stakeholders, and relevant authorities.',
+      'Monitor daily, weekly, and monthly construction progress against the project schedule.',
+      'Ensure work is completed according to approved drawings, method statements, specifications, quality plans, and contractual requirements.',
+      'Supervise material receiving, storage, handling, and site utilization.',
+      'Ensure strict compliance with health, safety, and environment requirements.',
+      'Maintain daily progress reports, manpower reports, site records, inspection records, and photographic evidence.',
+      'Support testing, commissioning, grid interconnection, punch-list closure, documentation, and handover activities.',
+    ],
+    requirements: [
+      'Bachelor’s Degree in Electrical Engineering, Civil Engineering, Mechanical Engineering, or a related engineering discipline.',
+      'Minimum 5 years of construction/project execution experience.',
+      'Experience in solar power, transmission line, substation, hydropower, or similar power infrastructure projects will be preferred.',
+      'Strong knowledge of construction drawings, BOQ, quality control, site planning, material management, electrical safety, and commissioning support.',
+      'Good working knowledge of MS Excel, MS Word, AutoCAD drawing review, and project planning tools such as MS Project or Primavera will be preferred.',
+      'Strong leadership, communication, coordination, reporting, and problem-solving skills.',
+      'Must be willing to be based full-time at the project site.',
+    ],
+    note: 'Only shortlisted candidates will be contacted.',
+  },
+  {
+    title: 'Senior Solar Design Engineer',
+    team: 'Engineering',
+    company: 'Terra Sol',
+    location: 'Kathmandu, Nepal',
+    type: 'Full-time',
+  },
+  {
+    title: 'Grid Integration Specialist',
+    team: 'Engineering',
+    company: 'Grid Nepal',
+    location: 'Dhanusha, Nepal',
+    type: 'Full-time',
+  },
+  {
+    title: 'Microgrid Field Technician',
+    team: 'Operations',
+    company: 'Solaeris',
+    location: 'Karnali Province, Nepal',
+    type: 'Full-time',
+  },
+  {
+    title: 'Hydropower Project Manager',
+    team: 'Operations',
+    company: 'West Star',
+    location: 'Gandaki Province, Nepal',
+    type: 'Full-time',
+  },
+  {
+    title: 'Civil Site Supervisor',
+    team: 'Construction',
+    company: 'Aether Construction',
+    location: 'Darchula, Nepal',
+    type: 'Full-time',
+  },
+  {
+    title: 'Community Relations Officer',
+    team: 'Community',
+    company: 'Aether Renova',
+    location: 'Sunsari, Nepal',
+    type: 'Full-time',
+  },
+  {
+    title: 'R&D Engineering Intern',
+    team: 'Engineering',
+    company: 'Aether Renova',
+    location: 'Kathmandu, Nepal',
+    type: 'Internship',
+  },
+  {
+    title: 'Sustainability Analyst',
+    team: 'Community',
+    company: 'Aether Renova',
+    location: 'Kathmandu, Nepal',
+    type: 'Full-time',
+  },
+]
+
+export const getRole = (slug) => roles.find((r) => r.slug === slug)

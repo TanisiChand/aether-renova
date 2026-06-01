@@ -67,7 +67,7 @@ export default function Synergy() {
       <div className="absolute left-0 right-0 -bottom-40 h-40 bg-gradient-to-b from-transparent to-[#020203] pointer-events-none z-[1]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-14">
           <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-6 flex items-center justify-center gap-4">
             <span className="w-16 h-[1px] bg-aether-accent/50" />
             The Ecosystem
@@ -88,7 +88,7 @@ export default function Synergy() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-16">
+          <div className="flex justify-center mt-12">
             <p className="text-aether-muted text-sm tracking-wide max-w-2xl text-center">
               From civil construction to smart microgrids — our subsidiaries
               form an integrated ecosystem delivering end-to-end energy

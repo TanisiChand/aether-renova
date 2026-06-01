@@ -127,7 +127,7 @@ export default function FromTheGrid() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-14">
           <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-6 flex items-center justify-center gap-4">
             <span className="w-16 h-[1px] bg-aether-accent/50" />
             Latest Insights
@@ -148,7 +148,7 @@ export default function FromTheGrid() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-12">
           <Button href="/blog" variant="secondary">
             View All Articles
           </Button>

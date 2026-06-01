@@ -107,7 +107,7 @@ export default function TechnicalServices() {
   return (
     <section className="relative py-20 bg-[#020203] font-sans z-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-10">
           <div className="max-w-2xl">
             <p className="text-aether-accent uppercase tracking-[0.15em] text-sm font-semibold mb-6 flex items-center gap-3">
               <span className="w-8 h-[1px] bg-aether-accent" />
