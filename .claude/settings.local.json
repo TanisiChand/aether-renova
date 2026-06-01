@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(sleep 2 && cat /tmp/vite.log)",
+      "Read(//private/tmp/**)",
+      "Bash(pkill -f vite)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/src/main.jsx)",
+      "Bash(lsof -ti:5173)",
+      "Bash(npx vite *)",
+      "Bash(node -e \"console.log\\('node works, dist exists:', require\\('fs'\\).existsSync\\('dist'\\)\\)\")",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
