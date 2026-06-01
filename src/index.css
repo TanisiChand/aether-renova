@@ -34,26 +34,9 @@ html {
   }
 }
 
-/* Page transition — fade + gentle rise on each route change. */
-.page-fade {
-  animation: pageFade 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes pageFade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .page-fade {
-    animation: none;
-  }
+/* Page transition wrapper (crossfade handled inline in App.jsx). */
+.page-transition {
+  will-change: opacity, transform;
 }
 
 body {
