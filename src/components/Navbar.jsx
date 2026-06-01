@@ -1,9 +1,27 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import LanguageSwitcher from './LanguageSwitcher'
-import CompaniesDropdown from './CompaniesDropdown'
+import NavDropdown from './NavDropdown'
 import Logo from './Logo'
 import Button from './Button'
+
+const companyItems = [
+  { to: '/companies#terra-sol', name: 'Terra Sol', tag: 'Solar Farms', logo: '/logos/terrasol.svg' },
+  { to: '/companies#solaeris', name: 'Solaeris', tag: 'Microgrids', logo: '/logos/solaeris.svg' },
+  { to: '/companies#grid-nepal', name: 'Grid Nepal', tag: 'Transmission', logo: '/logos/gridnepal.svg' },
+  { to: '/companies#west-star', name: 'West Star', tag: 'Wind & Hydro', logo: '/logos/weststar.svg' },
+  {
+    to: '/companies#aether-construction',
+    name: 'Aether Construction',
+    tag: 'Civil & Heavy Infra',
+    logo: '/logos/aether.svg',
+  },
+]
+
+const aboutItems = [
+  { to: '/about', name: 'About Us', tag: 'Our Story & CSR' },
+  { to: '/team', name: 'Our Team', tag: 'The People' },
+]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -27,8 +45,8 @@ export default function Navbar() {
         </Link>
         <div className="nav-links">
           <Link to="/#projects">Projects</Link>
-          <CompaniesDropdown />
-          <Link to="/#about">About Us</Link>
+          <NavDropdown label="Companies" to="/companies" items={companyItems} />
+          <NavDropdown label="About Us" to="/about" items={aboutItems} />
           <Link to="/#careers">Careers</Link>
         </div>
         <div className="nav-right">

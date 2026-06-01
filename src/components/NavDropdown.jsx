@@ -1,19 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const companies = [
-  { id: 'terra-sol', name: 'Terra Sol', logo: '/logos/terrasol.svg', tag: 'Solar Farms' },
-  { id: 'solaeris', name: 'Solaeris', logo: '/logos/solaeris.svg', tag: 'Microgrids' },
-  { id: 'grid-nepal', name: 'Grid Nepal', logo: '/logos/gridnepal.svg', tag: 'Transmission' },
-  { id: 'west-star', name: 'West Star', logo: '/logos/weststar.svg', tag: 'Wind & Hydro' },
-  {
-    id: 'aether-construction',
-    name: 'Aether Construction',
-    logo: '/logos/aether.svg',
-    tag: 'Civil & Heavy Infra',
-  },
-]
-
 const CaretIcon = ({ open }) => (
   <svg
     className={`nav-caret${open ? ' open' : ''}`}
@@ -28,13 +15,16 @@ const CaretIcon = ({ open }) => (
   </svg>
 )
 
-export default function CompaniesDropdown() {
+/**
+ * Reusable hover dropdown for the nav.
+ * - `label` + `to`: the trigger text and the page it links to.
+ * - `items`: [{ to, name, tag, logo? }] rendered in the menu.
+ */
+export default function NavDropdown({ label, to, items }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
   const closeTimer = useRef(null)
 
-  // Open on hover (desktop), with a small close delay so the gap to the menu
-  // doesn't dismiss it.
   const handleEnter = () => {
     clearTimeout(closeTimer.current)
     setOpen(true)
@@ -43,7 +33,6 @@ export default function CompaniesDropdown() {
     closeTimer.current = setTimeout(() => setOpen(false), 120)
   }
 
-  // Close on outside click / Escape (covers tap + keyboard).
   useEffect(() => {
     if (!open) return
     const onClick = (e) => {
@@ -66,32 +55,36 @@ export default function CompaniesDropdown() {
       onMouseLeave={handleLeave}
     >
       <Link
-        to="/companies"
+        to={to}
         className="nav-dropdown-trigger"
         aria-haspopup="true"
         aria-expanded={open}
         onClick={() => setOpen(false)}
       >
-        Companies
+        {label}
         <CaretIcon open={open} />
       </Link>
 
       {open && (
         <div className="nav-dropdown-menu" role="menu">
-          {companies.map((c) => (
+          {items.map((item) => (
             <Link
-              key={c.id}
-              to={`/companies#${c.id}`}
+              key={item.to}
+              to={item.to}
               role="menuitem"
               className="nav-dropdown-item"
               onClick={() => setOpen(false)}
             >
-              <span className="nav-dropdown-logo">
-                <img src={c.logo} alt="" draggable="false" />
-              </span>
+              {item.logo && (
+                <span className="nav-dropdown-logo">
+                  <img src={item.logo} alt="" draggable="false" />
+                </span>
+              )}
               <span className="nav-dropdown-text">
-                <span className="nav-dropdown-name">{c.name}</span>
-                <span className="nav-dropdown-tag">{c.tag}</span>
+                <span className="nav-dropdown-name">{item.name}</span>
+                {item.tag && (
+                  <span className="nav-dropdown-tag">{item.tag}</span>
+                )}
               </span>
             </Link>
           ))}
