@@ -354,7 +354,7 @@ export default function Companies() {
           <p className="text-aether-muted text-lg mb-8">
             Want to learn more about a specific entity or partnership?
           </p>
-          <Button href="/#contact" variant="primary">
+          <Button href="/contact" variant="primary">
             Get In Touch
           </Button>
         </div>

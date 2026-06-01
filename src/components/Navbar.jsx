@@ -51,7 +51,7 @@ export default function Navbar() {
         </div>
         <div className="nav-right">
           <LanguageSwitcher />
-          <Button href="/#contact" variant="secondary" size="sm" withArrow={false}>
+          <Button href="/contact" variant="secondary" size="sm" withArrow={false}>
             Contact Us
           </Button>
         </div>

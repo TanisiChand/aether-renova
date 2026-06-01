@@ -290,7 +290,7 @@ export default function Careers() {
             We’re always glad to meet talented people. Send us your CV and tell
             us how you’d help build Nepal’s energy future.
           </p>
-          <Button href="/#contact" variant="primary">
+          <Button href="/contact" variant="primary">
             Send an Open Application
           </Button>
         </div>

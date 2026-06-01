@@ -345,7 +345,7 @@ export default function About() {
             <Button href="/team" variant="primary">
               Meet Our Team
             </Button>
-            <Button href="/#contact" variant="secondary" withArrow={false}>
+            <Button href="/contact" variant="secondary" withArrow={false}>
               Get In Touch
             </Button>
           </div>
