@@ -51,20 +51,17 @@ export default function Synergy() {
       id="companies"
       className="relative py-20 bg-transparent font-sans z-0 overflow-visible"
     >
-      {/* Animated synergy web (bleeds beyond the section bounds, but the whole
-          section sits at z-0 so it stays BEHIND the neighbouring sections and
-          their content/buttons). */}
-      <SynergyBackground />
+      {/* Animated synergy web — bleeds well beyond the section into the
+          (transparent) neighbouring sections above & below, fading softly at
+          its edges. Section sits at z-0 so it stays BEHIND neighbouring
+          content/buttons. */}
+      <SynergyBackground bleed={340} fade />
 
       {/* Branded radial glows */}
       <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,_rgba(0,240,152,0.10)_0%,_transparent_60%)]" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(0,240,152,0.06)_0%,_transparent_70%)]" />
       </div>
-
-      {/* Bottom fade so the grid gently dissolves as it bleeds down into the
-          About section. (Top bleed sits behind the opaque Spotlight section.) */}
-      <div className="absolute left-0 right-0 -bottom-40 h-40 bg-gradient-to-b from-transparent to-[#020203] pointer-events-none z-[1]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-14">

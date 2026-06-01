@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
  * connection lines when near each other, echoing an interconnected
  * energy grid. Rendered on a canvas sized to its parent section.
  */
-export default function SynergyBackground() {
+export default function SynergyBackground({ bleed = 160, fade = false }) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -200,15 +200,26 @@ export default function SynergyBackground() {
     }
   }, [])
 
+  // Soft-fade the top & bottom edges so the web dissolves gently where it
+  // bleeds into neighbouring sections instead of cutting off hard.
+  const fadeMask =
+    'linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%)'
+
   return (
     <canvas
       ref={canvasRef}
       // Extend above & below the section so the field bleeds into the
       // neighbouring sections rather than being clipped at the edges.
-      // Explicit height (section height + 2×bleed) avoids the canvas
-      // intrinsic-height conflict that top/bottom alone would cause.
-      className="absolute left-0 right-0 w-full h-[calc(100%+320px)] pointer-events-none"
-      style={{ zIndex: 0, top: '-160px' }}
+      // `bleed` controls how far (px) it reaches each side.
+      className="absolute left-0 right-0 w-full pointer-events-none"
+      style={{
+        zIndex: 0,
+        top: `-${bleed}px`,
+        height: `calc(100% + ${bleed * 2}px)`,
+        ...(fade
+          ? { WebkitMaskImage: fadeMask, maskImage: fadeMask }
+          : {}),
+      }}
       aria-hidden="true"
     />
   )

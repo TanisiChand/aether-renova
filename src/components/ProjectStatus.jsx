@@ -165,7 +165,7 @@ export default function ProjectStatus() {
     <section
       ref={sectionRef}
       id="project-status"
-      className="relative py-16 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] font-sans z-10 overflow-hidden"
+      className="relative py-16 bg-transparent font-sans z-10 overflow-hidden"
     >
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.12)_0%,_transparent_70%)]" />
