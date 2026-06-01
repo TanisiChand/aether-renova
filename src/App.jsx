@@ -16,6 +16,7 @@ import Projects from './pages/Projects'
 import KusahaSolar from './pages/KusahaSolar'
 import Investors from './pages/Investors'
 import Translator from './i18n/Translator'
+import ScrollReveal from './components/ScrollReveal'
 
 const FADE_MS = 160
 
@@ -111,6 +112,7 @@ function App() {
   return (
     <BrowserRouter>
       <Translator />
+      <ScrollReveal />
       <DnaTexture />
       <Navbar />
       <PageTransition />
