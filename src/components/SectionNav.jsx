@@ -54,7 +54,7 @@ export default function SectionNav({ sections }) {
 
       {/* vertical dot-nav (desktop only) */}
       <nav
-        className="hidden lg:flex flex-col gap-3 fixed right-6 top-1/2 -translate-y-1/2 z-[1100]"
+        className="hidden lg:flex flex-col gap-3 fixed left-6 top-1/2 -translate-y-1/2 z-[1100]"
         aria-label="Section navigation"
       >
         {sections.map((s) => {
@@ -63,10 +63,17 @@ export default function SectionNav({ sections }) {
             <button
               key={s.id}
               onClick={() => jump(s.id)}
-              className="group flex items-center gap-3 justify-end"
+              className="group flex items-center gap-3 justify-start"
               aria-label={s.label}
               aria-current={on ? 'true' : undefined}
             >
+              <span
+                className={`rounded-full transition-all duration-300 ${
+                  on
+                    ? 'w-3 h-3 bg-aether-accent shadow-[0_0_8px_rgba(0,240,152,0.7)]'
+                    : 'w-2 h-2 bg-aether-muted/40 group-hover:bg-aether-accent/60'
+                }`}
+              />
               <span
                 className={`whitespace-nowrap text-[11px] uppercase tracking-wider transition-all duration-300 ${
                   on
@@ -76,13 +83,6 @@ export default function SectionNav({ sections }) {
               >
                 {s.label}
               </span>
-              <span
-                className={`rounded-full transition-all duration-300 ${
-                  on
-                    ? 'w-3 h-3 bg-aether-accent shadow-[0_0_8px_rgba(0,240,152,0.7)]'
-                    : 'w-2 h-2 bg-aether-muted/40 group-hover:bg-aether-accent/60'
-                }`}
-              />
             </button>
           )
         })}
