@@ -13,6 +13,7 @@ import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Projects from './pages/Projects'
+import KusahaSolar from './pages/KusahaSolar'
 
 // Scroll to top on route change, or to a hash target if present.
 function ScrollManager() {
@@ -49,6 +50,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/companies" element={<Companies />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/kusaha-solar" element={<KusahaSolar />} />
         <Route path="/about" element={<About />} />
         <Route path="/team" element={<Team />} />
         <Route path="/careers" element={<Careers />} />

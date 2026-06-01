@@ -6,6 +6,7 @@ export const projects = [
     id: 'kusaha-solar',
     mapX: 872,
     mapY: 534,
+    detailUrl: '/projects/kusaha-solar',
     name: 'Kusaha Solar',
     type: 'Solar Generation',
     generation: 'Solar',

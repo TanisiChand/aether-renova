@@ -129,8 +129,13 @@ function ProjectCard({ project, index }) {
             </p>
           </div>
 
-          <div>
-            <Button href="/contact" variant="secondary" size="sm">
+          <div className="flex flex-wrap gap-3">
+            {project.detailUrl && (
+              <Button href={project.detailUrl} variant="primary" size="sm">
+                View Project
+              </Button>
+            )}
+            <Button href="/contact" variant="secondary" size="sm" withArrow={false}>
               Project Inquiry
             </Button>
           </div>
