@@ -2,6 +2,20 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import SectionNav from '../components/SectionNav'
+
+const NAV_SECTIONS = [
+  { id: 'highlights', label: 'Highlights' },
+  { id: 'overview', label: 'Overview' },
+  { id: 'site', label: 'Site' },
+  { id: 'status', label: 'Status' },
+  { id: 'timeline', label: 'Timeline' },
+  { id: 'financials', label: 'Financials' },
+  { id: 'captable', label: 'Cap Table' },
+  { id: 'resource', label: 'Solar Resource' },
+  { id: 'equipment', label: 'Equipment' },
+  { id: 'thesis', label: 'Thesis' },
+]
 
 /* ───────────────── helpers ───────────────── */
 const Eyebrow = ({ children, center }) => (
@@ -259,6 +273,8 @@ export default function KusahaSolar() {
 
   return (
     <main className="relative bg-[#020203] font-sans">
+      <SectionNav sections={NAV_SECTIONS} />
+
       {/* ── Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-[#020203]">
         <div className="absolute inset-0">
@@ -311,7 +327,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Investment highlights ── */}
-      <section ref={hlRef} className="relative py-16 border-t border-aether-border/40">
+      <section id="highlights" ref={hlRef} className="relative py-16 border-t border-aether-border/40 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Highlights</Eyebrow>
@@ -342,7 +358,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Overview specs ── */}
-      <section className="relative py-16">
+      <section id="overview" className="relative py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Project Overview</Eyebrow>
@@ -379,7 +395,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Site characteristics ── */}
-      <section className="relative py-16">
+      <section id="site" className="relative py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Site Walkthrough</Eyebrow>
@@ -405,7 +421,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Present status (interactive checklist) ── */}
-      <section className="relative py-16">
+      <section id="status" className="relative py-16 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Present Status</Eyebrow>
@@ -451,7 +467,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Construction timeline ── */}
-      <section className="relative py-20 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden">
+      <section id="timeline" className="relative py-20 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden scroll-mt-24">
         <SynergyBackground />
         <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-[#020203] to-transparent pointer-events-none z-[1]" />
         <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#020203] to-transparent pointer-events-none z-[1]" />
@@ -514,7 +530,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Financials: interactive cost breakdown ── */}
-      <section className="relative py-16">
+      <section id="financials" className="relative py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <Eyebrow>Financials</Eyebrow>
@@ -582,7 +598,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Cap table (interactive donut) ── */}
-      <section className="relative py-16">
+      <section id="captable" className="relative py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Cap Table</Eyebrow>
@@ -662,7 +678,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Solar resource ── */}
-      <section ref={resRef} className="relative py-16">
+      <section id="resource" ref={resRef} className="relative py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Solar Resource</Eyebrow>
@@ -693,7 +709,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Equipment tabs ── */}
-      <section className="relative py-16">
+      <section id="equipment" className="relative py-16 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Salient Features</Eyebrow>
@@ -736,7 +752,7 @@ export default function KusahaSolar() {
       </section>
 
       {/* ── Investment thesis ── */}
-      <section className="relative py-16">
+      <section id="thesis" className="relative py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Thesis</Eyebrow>
