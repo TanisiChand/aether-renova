@@ -15,7 +15,7 @@ import BlogPost from './pages/BlogPost'
 import Projects from './pages/Projects'
 import KusahaSolar from './pages/KusahaSolar'
 
-const FADE_MS = 280
+const FADE_MS = 160
 
 /**
  * Crossfade between pages: when the path changes, fade the current page out,
