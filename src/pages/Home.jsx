@@ -12,8 +12,8 @@ export default function Home() {
       <Hero />
       <WhoAreWe />
       <Synergy />
-      <CommunityImpact />
       <ProjectStatus />
+      <CommunityImpact />
       <InvestCTA />
       <FromTheGrid />
     </>
