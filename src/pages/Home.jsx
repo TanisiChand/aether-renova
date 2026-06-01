@@ -3,6 +3,7 @@ import TechnicalServices from '../components/TechnicalServices'
 import ProjectStatus from '../components/ProjectStatus'
 import Synergy from '../components/Synergy'
 import WhoAreWe from '../components/WhoAreWe'
+import InvestCTA from '../components/InvestCTA'
 import FromTheGrid from '../components/FromTheGrid'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Synergy />
       <WhoAreWe />
       <ProjectStatus />
+      <InvestCTA />
       <FromTheGrid />
     </>
   )
