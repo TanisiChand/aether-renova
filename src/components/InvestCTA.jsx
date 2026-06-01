@@ -56,17 +56,19 @@ export default function InvestCTA() {
             </div>
 
             {/* highlight stats */}
-            <div className="relative z-20 grid grid-cols-3 gap-4">
+            <div className="relative z-20 grid grid-cols-3 gap-2.5 sm:gap-4">
               {highlights.map((h) => (
                 <div
                   key={h.label}
-                  className="rounded-2xl border border-aether-accent/20 bg-[#080f0c]/95 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.5)] px-4 py-7 text-center transition-all duration-300 hover:border-aether-accent/50 hover:bg-[#0c1611]"
+                  className="rounded-2xl border border-aether-accent/20 bg-[#080f0c]/95 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.5)] px-2.5 py-6 sm:px-4 sm:py-7 text-center transition-all duration-300 hover:border-aether-accent/50 hover:bg-[#0c1611]"
                 >
-                  <div className="text-aether-accent text-3xl md:text-4xl font-bold tracking-tight leading-none">
+                  <div className="text-aether-accent text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-none whitespace-nowrap">
                     {h.value}
-                    {h.suffix && <span className="text-xl">{h.suffix}</span>}
+                    {h.suffix && (
+                      <span className="text-base md:text-xl">{h.suffix}</span>
+                    )}
                   </div>
-                  <div className="text-aether-muted text-[11px] uppercase tracking-wider mt-3 leading-snug">
+                  <div className="text-aether-muted text-[10px] sm:text-[11px] uppercase tracking-wider mt-3 leading-snug">
                     {h.label}
                   </div>
                 </div>

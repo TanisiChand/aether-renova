@@ -67,6 +67,7 @@ export default function Navbar() {
   }, [open])
 
   return (
+    <>
     <nav className={`site-nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
         <Link to="/" className="logo-container">
@@ -106,8 +107,11 @@ export default function Navbar() {
           <span className={`nav-burger-line${open ? ' c' : ''}`} />
         </button>
       </div>
+    </nav>
 
-      {/* mobile menu panel */}
+      {/* mobile menu panel — rendered OUTSIDE <nav> so the nav's
+          backdrop-filter (added on scroll) doesn't become the containing
+          block for this position:fixed overlay and trap it. */}
       <div className={`mobile-menu${open ? ' open' : ''}`}>
         <div className="mobile-menu-inner">
           {mobileGroups.map((g) => (
@@ -141,6 +145,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   )
 }

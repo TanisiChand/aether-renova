@@ -93,8 +93,8 @@ export default function WhoAreWe() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* ── Who We Are ─────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Copy */}
-          <div>
+          {/* Copy (right on desktop) */}
+          <div className="lg:order-2">
             <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-6 flex items-center gap-3">
               <span className="w-8 h-[1px] bg-aether-accent" />
               Who We Are
@@ -140,8 +140,8 @@ export default function WhoAreWe() {
             </Button>
           </div>
 
-          {/* Photo collage */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[480px]">
+          {/* Photo collage (left on desktop) */}
+          <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[480px] lg:order-1">
             {photos.map((photo) => (
               <div
                 key={photo.alt}

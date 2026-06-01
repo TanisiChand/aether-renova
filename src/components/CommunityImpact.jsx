@@ -110,12 +110,8 @@ export default function CommunityImpact() {
   return (
     <section
       id="community-impact"
-      className="relative py-20 font-sans z-10 overflow-hidden bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203]"
+      className="relative py-20 font-sans z-10 overflow-hidden bg-[#020203]"
     >
-      <div className="absolute inset-0 opacity-25 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.10)_0%,_transparent_65%)]" />
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
