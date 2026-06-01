@@ -14,6 +14,7 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Projects from './pages/Projects'
 import KusahaSolar from './pages/KusahaSolar'
+import Investors from './pages/Investors'
 
 const FADE_MS = 160
 
@@ -97,6 +98,7 @@ function ShownRoutes({ location }) {
       <Route path="/team" element={<Team />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/careers/:slug" element={<JobDetail />} />
+      <Route path="/investors" element={<Investors />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
