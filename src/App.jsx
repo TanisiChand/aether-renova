@@ -70,11 +70,13 @@ function PageTransition() {
     <div
       className="page-transition"
       style={{
+        // Opacity-only crossfade. NOTE: do not add `transform` here — a
+        // transformed (or will-change: transform) ancestor becomes the
+        // containing block for position:fixed descendants, which breaks
+        // fixed UI rendered inside pages (e.g. KusahaSolar's SectionNav
+        // progress bar + dot-nav).
         opacity: stage === 'out' ? 0 : 1,
-        transform: stage === 'out' ? 'translateY(8px)' : 'translateY(0)',
-        transition: reduce
-          ? 'none'
-          : `opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease`,
+        transition: reduce ? 'none' : `opacity ${FADE_MS}ms ease`,
       }}
     >
       {/* render the lagging "shown" location, not the live one */}

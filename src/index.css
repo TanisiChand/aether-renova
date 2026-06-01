@@ -34,10 +34,12 @@ html {
   }
 }
 
-/* Page transition wrapper (crossfade handled inline in App.jsx). */
-.page-transition {
-  will-change: opacity, transform;
-}
+/* Page transition wrapper — opacity crossfade handled inline in App.jsx.
+   Intentionally NO transform / will-change / filter here: any of those would
+   create a containing block (and/or a permanent stacking context) for the
+   page's position:fixed children, breaking fixed UI like KusahaSolar's
+   SectionNav (top progress bar + left dot-nav). A bare opacity transition
+   only forms a stacking context while it is actually mid-fade. */
 
 body {
   background-color: #020203;
