@@ -433,7 +433,7 @@ export default function Investors() {
       </section>
 
       {/* ── Key metrics ────────────────────────── */}
-      <section className="relative -mt-10 pb-8">
+      <section className="relative z-20 -mt-10 pb-8">
         <div
           ref={metricsRef}
           className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-4"
