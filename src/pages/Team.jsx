@@ -227,7 +227,7 @@ export default function Team() {
             Nepal’s energy future.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button href="/#careers" variant="primary">
+            <Button href="/careers" variant="primary">
               View Open Roles
             </Button>
             <Button href="/about" variant="secondary" withArrow={false}>

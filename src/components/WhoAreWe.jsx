@@ -254,7 +254,7 @@ export default function WhoAreWe() {
               ))}
             </div>
 
-            <Button href="#careers" variant="primary">
+            <Button href="/careers" variant="primary">
               Join Our Team
             </Button>
           </div>
