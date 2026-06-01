@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import LanguageSwitcher from './LanguageSwitcher'
+import CompaniesDropdown from './CompaniesDropdown'
 import Logo from './Logo'
 import Button from './Button'
 
@@ -26,7 +27,7 @@ export default function Navbar() {
         </Link>
         <div className="nav-links">
           <Link to="/#projects">Projects</Link>
-          <Link to="/companies">Companies</Link>
+          <CompaniesDropdown />
           <Link to="/#about">About Us</Link>
           <Link to="/#careers">Careers</Link>
         </div>

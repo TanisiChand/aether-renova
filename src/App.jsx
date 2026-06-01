@@ -12,11 +12,19 @@ function ScrollManager() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
     if (hash) {
-      const el = document.querySelector(hash)
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-        return
+      // The target section may not be mounted on the first frame after a
+      // cross-page navigation — retry briefly until it appears.
+      let tries = 0
+      const tryScroll = () => {
+        const el = document.querySelector(hash)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        } else if (tries++ < 10) {
+          setTimeout(tryScroll, 50)
+        }
       }
+      tryScroll()
+      return
     }
     window.scrollTo(0, 0)
   }, [pathname, hash])
