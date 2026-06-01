@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const languages = [
   { code: 'en', label: 'English', short: 'EN' },
@@ -49,21 +50,9 @@ const CheckIcon = () => (
 )
 
 export default function LanguageSwitcher() {
-  const [lang, setLang] = useState('en')
+  const { lang, setLang } = useLanguage()
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
-
-  // Restore saved preference (English is the default).
-  useEffect(() => {
-    const saved = localStorage.getItem('lang')
-    if (saved === 'ne' || saved === 'en') setLang(saved)
-  }, [])
-
-  // Reflect the selection on the document and persist it.
-  useEffect(() => {
-    document.documentElement.lang = lang
-    localStorage.setItem('lang', lang)
-  }, [lang])
 
   // Close the menu when clicking outside.
   useEffect(() => {
