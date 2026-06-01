@@ -41,6 +41,27 @@ html {
    SectionNav (top progress bar + left dot-nav). A bare opacity transition
    only forms a stacking context while it is actually mid-fade. */
 
+/* Project Status section animations */
+@keyframes statusSweep {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes statusFade {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 body {
   background-color: #020203;
   color: var(--white);

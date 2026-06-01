@@ -1,6 +1,6 @@
 import Hero from '../components/Hero'
 import TechnicalServices from '../components/TechnicalServices'
-import ProjectSpotlight from '../components/ProjectSpotlight'
+import ProjectStatus from '../components/ProjectStatus'
 import Synergy from '../components/Synergy'
 import WhoAreWe from '../components/WhoAreWe'
 import FromTheGrid from '../components/FromTheGrid'
@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Hero />
       <TechnicalServices />
-      <ProjectSpotlight />
+      <ProjectStatus />
       <Synergy />
       <WhoAreWe />
       <FromTheGrid />
