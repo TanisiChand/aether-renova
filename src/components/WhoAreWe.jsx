@@ -1,40 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Button from './Button'
 
-const MissionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-5 h-5 text-aether-accent"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-    <path d="M2 17l10 5 10-5" />
-    <path d="M2 12l10 5 10-5" />
-  </svg>
-)
-
-const VisionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-5 h-5 text-aether-accent"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <circle cx="12" cy="12" r="6" />
-    <circle cx="12" cy="12" r="2" />
-  </svg>
-)
-
 const stats = [
   { value: 500, suffix: ' MW', label: 'Hydropower & solar target' },
   { value: 50, suffix: ' MW', label: 'Clean-powered data centre' },
@@ -56,39 +22,6 @@ const photos = [
     src: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=900&h=650&fit=crop',
     alt: 'Collaborative work culture',
     span: '',
-  },
-]
-
-const values = [
-  {
-    img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop',
-    title: 'Engineering',
-    np: 'इन्जिनियरिङ',
-    desc: 'Build things that last',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop',
-    title: 'Collaboration',
-    np: 'सहकार्य',
-    desc: 'Grow stronger together',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop',
-    title: 'Impact',
-    np: 'सकारात्मक प्रभाव',
-    desc: 'Leave the world better',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop',
-    title: 'Resilience',
-    np: 'दृढता',
-    desc: 'Endure any challenge',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop',
-    title: 'Innovation',
-    np: 'नवप्रवर्तन',
-    desc: 'Always find a better way',
   },
 ]
 
@@ -141,58 +74,6 @@ function Counter({ value, suffix, active }) {
       {display}
       {suffix}
     </span>
-  )
-}
-
-function PurposeCard({ icon, title, quote, np }) {
-  return (
-    <div className="group relative bg-aether-card border border-aether-border rounded-2xl p-6 lg:p-8 transition-all duration-700 hover:border-aether-accent/40 hover:bg-[#0c0c11]">
-      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-aether-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-      <div className="flex items-center gap-3 mb-5">
-        <div className="w-10 h-10 rounded-xl bg-aether-accent/10 border border-aether-accent/30 flex items-center justify-center">
-          {icon}
-        </div>
-        <h3 className="text-white text-xl font-bold tracking-tight uppercase">
-          {title}
-        </h3>
-      </div>
-
-      <p className="text-white text-base leading-relaxed mb-4 font-light">
-        {quote}
-      </p>
-
-      <p className="text-aether-muted text-sm leading-relaxed border-t border-aether-border/50 pt-4 italic">
-        {np}
-      </p>
-    </div>
-  )
-}
-
-function ValueCard({ img, title, np, desc }) {
-  return (
-    <div className="group cursor-pointer h-full">
-      <div className="relative bg-aether-card border border-aether-border rounded-xl overflow-hidden transition-all duration-500 hover:border-aether-accent/50 hover:bg-[#0c0c11] hover:-translate-y-1 h-[200px] flex flex-col">
-        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-aether-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-        <div className="h-[90px] overflow-hidden relative">
-          <img
-            src={img}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-aether-card to-transparent" />
-        </div>
-
-        <div className="p-4 flex flex-col flex-grow justify-center text-center">
-          <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">
-            {title}
-          </h4>
-          <p className="text-aether-accent/70 text-xs mb-1">{np}</p>
-          <p className="text-aether-muted text-xs leading-tight">{desc}</p>
-        </div>
-      </div>
-    </div>
   )
 }
 
@@ -254,8 +135,8 @@ export default function WhoAreWe() {
               ))}
             </div>
 
-            <Button href="/careers" variant="primary">
-              Join Our Team
+            <Button href="/about" variant="primary">
+              Read Our Story
             </Button>
           </div>
 
@@ -275,47 +156,6 @@ export default function WhoAreWe() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute inset-0 bg-aether-accent/0 group-hover:bg-aether-accent/10 transition-colors duration-500" />
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── Mission & Vision ───────────────────────── */}
-        <div id="story" className="scroll-mt-24 mt-28">
-          <div className="text-center mb-12">
-            <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-5 flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-aether-accent/50" />
-              Our Purpose
-              <span className="w-12 h-[1px] bg-aether-accent/50" />
-            </p>
-            <p className="text-aether-muted text-lg">मूल्य मान्यता</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <PurposeCard
-              icon={<MissionIcon />}
-              title="Mission"
-              quote='"To harness clean energy through holistic engineering — generating jobs, empowering people, and spreading ideas that raise the standard of what infrastructure can achieve."'
-              np="“उत्कृष्ट इन्जिनियरिङमार्फत नवीकरणीय ऊर्जाको विकास गर्दै रोजगारी सिर्जना, मानव सशक्तिकरण, तथा पूर्वाधार निर्माणको गुणस्तर उकास्ने विचार र अभ्यासको प्रवर्द्धन गर्नु।”"
-            />
-            <PurposeCard
-              icon={<VisionIcon />}
-              title="Vision"
-              quote='"To build a world-class energy company rooted in integrity and driven by excellence."'
-              np="“नैतिकता र उत्कृष्टतालाई आधार बनाएर विश्वस्तरीय ऊर्जा संस्थाको स्थापना गर्नु।”"
-            />
-          </div>
-        </div>
-
-        {/* ── Core Values ────────────────────────────── */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
-              Core Values
-            </h3>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {values.map((value) => (
-              <ValueCard key={value.title} {...value} />
             ))}
           </div>
         </div>

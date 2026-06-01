@@ -72,12 +72,12 @@ function useCountUp(target, run, duration = 1300) {
 function Stat({ value, suffix, label, run }) {
   const n = useCountUp(value, run)
   return (
-    <div className="bg-aether-card border border-aether-border rounded-2xl px-5 py-6 text-center transition-colors duration-300 hover:border-aether-accent/40">
-      <div className="text-aether-accent text-3xl md:text-4xl font-bold font-mono leading-none">
+    <div className="bg-aether-card border border-aether-border rounded-2xl px-4 py-4 text-center transition-colors duration-300 hover:border-aether-accent/40">
+      <div className="text-aether-accent text-2xl md:text-3xl font-bold font-mono leading-none">
         {Math.round(n).toLocaleString()}
-        {suffix && <span className="text-xl align-top ml-0.5">{suffix}</span>}
+        {suffix && <span className="text-lg align-top ml-0.5">{suffix}</span>}
       </div>
-      <div className="text-aether-muted text-[11px] uppercase tracking-[0.18em] mt-2">
+      <div className="text-aether-muted text-[10px] uppercase tracking-[0.16em] mt-1.5">
         {label}
       </div>
     </div>
@@ -165,7 +165,7 @@ export default function ProjectStatus() {
     <section
       ref={sectionRef}
       id="project-status"
-      className="relative py-20 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] font-sans z-10 overflow-hidden"
+      className="relative py-16 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] font-sans z-10 overflow-hidden"
     >
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.12)_0%,_transparent_70%)]" />
@@ -173,22 +173,22 @@ export default function ProjectStatus() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* header */}
-        <div className="mb-14 max-w-3xl">
-          <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-4 flex items-center gap-3">
+        <div className="mb-10 max-w-3xl">
+          <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-3 flex items-center gap-3">
             <span className="w-8 h-[1px] bg-aether-accent" />
             Project Status
           </p>
-          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight uppercase leading-tight">
+          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase leading-tight">
             The Portfolio, <span className="text-aether-accent">Live</span>
           </h2>
-          <p className="text-aether-muted text-lg leading-relaxed mt-4">
+          <p className="text-aether-muted text-base leading-relaxed mt-3">
             From permitting to full operation — track every Aether Renova project
             as it moves through its lifecycle.
           </p>
         </div>
 
         {/* portfolio stat strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           <Stat value={portfolio.totalMW} suffix="MW" label="Total Capacity" run={inView} />
           <Stat value={portfolio.count} label="Active Projects" run={inView} />
           <Stat value={portfolio.operational} label="Operational" run={inView} />
@@ -261,9 +261,9 @@ export default function ProjectStatus() {
           </div>
 
           {/* detail panel */}
-          <div className="relative rounded-3xl border border-aether-border bg-aether-card overflow-hidden min-h-[420px]">
+          <div className="relative rounded-3xl border border-aether-border bg-aether-card overflow-hidden">
             {/* image header */}
-            <div className="relative h-44 md:h-52 overflow-hidden">
+            <div className="relative h-32 md:h-40 overflow-hidden">
               <img
                 key={p.id}
                 src={p.image}
@@ -308,7 +308,7 @@ export default function ProjectStatus() {
             </div>
 
             {/* body */}
-            <div className="p-6 md:p-7 space-y-7">
+            <div className="p-5 md:p-6 space-y-5">
               {/* completion bar */}
               <div>
                 <div className="flex items-center justify-between mb-2">

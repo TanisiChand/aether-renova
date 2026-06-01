@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <Hero />
       <TechnicalServices />
-      <ProjectStatus />
       <Synergy />
       <WhoAreWe />
+      <ProjectStatus />
       <FromTheGrid />
     </>
   )
