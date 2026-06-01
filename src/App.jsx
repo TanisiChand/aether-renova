@@ -12,6 +12,7 @@ import Careers from './pages/Careers'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import Projects from './pages/Projects'
 
 // Scroll to top on route change, or to a hash target if present.
 function ScrollManager() {
@@ -47,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/companies" element={<Companies />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/team" element={<Team />} />
         <Route path="/careers" element={<Careers />} />

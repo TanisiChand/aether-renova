@@ -44,18 +44,18 @@ const companies = [
       'Utility-scale photovoltaic development across Nepal’s sun-rich Terai belt, engineering solar farms built for high irradiance and long-term yield.',
     projects: [
       {
-        name: 'Kusaha Solar Farm',
+        name: 'Dhalkebar Solar',
         type: 'Solar Generation',
-        location: 'Sunsari District, Nepal',
-        status: 'Operational',
+        location: 'Dhanusha District, Nepal',
+        status: 'In Development',
         image:
-          'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&h=800&fit=crop',
+          'https://images.unsplash.com/photo-1545209463-e2825498edbf?q=80&w=1200&h=800&fit=crop',
         stats: [
           { value: '20 MW', label: 'Capacity' },
-          { value: '85,000', label: 'Solar Panels' },
-          { value: '40,000+', label: 'Households' },
+          { value: 'Solar', label: 'Generation' },
+          { value: 'Aether Construction', label: 'Built By' },
         ],
-        link: '#',
+        link: '/projects',
       },
     ],
   },
@@ -65,21 +65,21 @@ const companies = [
     logo: '/logos/solaeris.svg',
     tag: 'Microgrids',
     description:
-      'Smart, localized microgrids that bring resilient, autonomous clean power to remote communities — closing the gap where the national grid cannot reach.',
+      'Smart, localized clean-power systems bringing resilient generation to communities — including Nepal’s largest community-scale solar farm.',
     projects: [
       {
-        name: 'Highland Microgrid Network',
-        type: 'Distributed Microgrid',
-        location: 'Karnali Province, Nepal',
-        status: 'In Development',
+        name: 'Kusaha Solar',
+        type: 'Solar Generation',
+        location: 'Sunsari District, Nepal',
+        status: 'Operational',
         image:
-          'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1200&h=800&fit=crop',
+          'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&h=800&fit=crop',
         stats: [
-          { value: '5 MW', label: 'Distributed' },
-          { value: '12', label: 'Village Clusters' },
-          { value: '99.9%', label: 'Target Uptime' },
+          { value: '50 MW', label: 'Capacity' },
+          { value: 'Solar', label: 'Generation' },
+          { value: 'Aether Construction', label: 'Built By' },
         ],
-        link: '#',
+        link: '/projects',
       },
     ],
   },
@@ -89,21 +89,21 @@ const companies = [
     logo: '/logos/gridnepal.svg',
     tag: 'Transmission',
     description:
-      'The connective tissue of the ecosystem — high-voltage transmission and grid infrastructure that moves clean energy from source to where it’s needed.',
+      'The connective tissue of the ecosystem — grid infrastructure and large-scale hydropower that move clean energy from source to where it’s needed.',
     projects: [
       {
-        name: 'Dhalkebar Transmission Link',
-        type: 'Transmission & Grid',
-        location: 'Dhanusha District, Nepal',
+        name: 'Chameliya–Chettigad Hydropower',
+        type: 'Hydropower',
+        location: 'Darchula District, Nepal',
         status: 'In Development',
         image:
-          'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&h=800&fit=crop',
+          'https://images.unsplash.com/photo-1538300342682-cf57afb97285?q=80&w=1200&h=800&fit=crop',
         stats: [
-          { value: '220 kV', label: 'Line Voltage' },
-          { value: '78 km', label: 'Span' },
-          { value: '300 MW', label: 'Capacity' },
+          { value: '85 MW', label: 'Capacity' },
+          { value: 'Hydro', label: 'Generation' },
+          { value: 'Aether Construction', label: 'Built By' },
         ],
-        link: '#',
+        link: '/projects',
       },
     ],
   },
@@ -113,33 +113,21 @@ const companies = [
     logo: '/logos/weststar.svg',
     tag: 'Wind & Hydro',
     description:
-      'Harnessing the power of moving water and mountain wind — developing both hydropower and wind generation tuned to Nepal’s dramatic terrain.',
+      'Harnessing the power of moving water and mountain wind — developing hydropower and wind generation tuned to Nepal’s dramatic terrain.',
     projects: [
       {
-        name: 'Haru Ko Hydropower',
-        type: 'Run-of-River Hydro',
+        name: 'Chulini Hydropower',
+        type: 'Hydropower',
         location: 'Gandaki Province, Nepal',
         status: 'In Development',
         image:
-          'https://images.unsplash.com/photo-1538300342682-cf57afb97285?q=80&w=900&h=700&fit=crop',
+          'https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?q=80&w=1200&h=800&fit=crop',
         stats: [
-          { value: '42 MW', label: 'Capacity' },
-          { value: '210 GWh', label: 'Annual Output' },
+          { value: '35 MW', label: 'Capacity' },
+          { value: 'Hydro', label: 'Generation' },
+          { value: 'Aether Construction', label: 'Built By' },
         ],
-        link: '#',
-      },
-      {
-        name: 'Mustang Wind Park',
-        type: 'Wind Generation',
-        location: 'Mustang District, Nepal',
-        status: 'Planning',
-        image:
-          'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=900&h=700&fit=crop',
-        stats: [
-          { value: '30 MW', label: 'Capacity' },
-          { value: '11', label: 'Turbines' },
-        ],
-        link: '#',
+        link: '/projects',
       },
     ],
   },
@@ -150,21 +138,21 @@ const companies = [
     logo: '/logos/aether.svg',
     tag: 'Civil & Heavy Infrastructure',
     description:
-      'The build arm of the group — civil and heavy infrastructure delivering the dams, foundations, and access works that every energy project depends on.',
+      'The build arm of the group — civil and heavy infrastructure delivering the dams, foundations, and access works behind every project across the ecosystem.',
     projects: [
       {
-        name: 'Chameliya Civil Works',
+        name: 'All Group Projects',
         type: 'Civil & Heavy Infra',
-        location: 'Darchula District, Nepal',
+        location: 'Across Nepal',
         status: 'Operational',
         image:
           'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&h=800&fit=crop',
         stats: [
-          { value: '1.2M m³', label: 'Earthworks' },
-          { value: '14 km', label: 'Access Roads' },
+          { value: '190 MW', label: 'Built Capacity' },
+          { value: '4', label: 'Active Sites' },
           { value: '500+', label: 'Workforce' },
         ],
-        link: '#',
+        link: '/projects',
       },
     ],
   },

@@ -44,7 +44,7 @@ export default function Navbar() {
           <span className="logo-text">AETHER RENOVA</span>
         </Link>
         <div className="nav-links">
-          <Link to="/#projects">Projects</Link>
+          <Link to="/projects">Projects</Link>
           <NavDropdown label="Companies" to="/companies" items={companyItems} />
           <NavDropdown label="Who Are We" to="/about" items={aboutItems} />
           <Link to="/blog">Blog</Link>
