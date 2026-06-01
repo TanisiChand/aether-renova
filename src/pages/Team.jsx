@@ -21,81 +21,105 @@ const LinkedInIcon = () => (
 
 const leadership = [
   {
-    name: 'Rajesh Shrestha',
-    role: 'Founder & Chief Executive Officer',
-    bio: 'Two decades shaping Nepal’s energy landscape, from first hydro studies to utility-scale solar.',
-    image:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&h=700&fit=crop',
-  },
-  {
-    name: 'Anita Gurung',
-    role: 'Chief Operating Officer',
-    bio: 'Leads execution across all five subsidiaries, turning blueprints into operational megawatts.',
+    name: 'Puja Chand Thakur',
+    role: 'Managing Director & Chairperson',
+    bio: 'Sets the vision and direction of the group, steering Aether Renova’s long-term strategy and growth.',
     image:
       'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&h=700&fit=crop',
   },
   {
-    name: 'Bikash Koirala',
-    role: 'Chief Technical Officer',
-    bio: 'Heads engineering and R&D, championing climate-resilient design for high-altitude terrain.',
+    name: 'Kirti Chand Thakur',
+    role: 'Chief Advisor & Head of Engineering',
+    bio: 'Guides strategic decisions and leads engineering excellence across all of the group’s projects.',
+    image:
+      'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&h=700&fit=crop',
+  },
+  {
+    name: 'Karan Chand',
+    role: 'Chief Financial Officer',
+    bio: 'Oversees the group’s financial strategy, capital structure, and community-ownership models.',
     image:
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&h=700&fit=crop',
   },
   {
-    name: 'Sushila Rai',
-    role: 'Chief Financial Officer',
-    bio: 'Structures the capital and community-ownership models that keep value rooted locally.',
+    name: 'Dhiraj Bhohara',
+    role: 'Chief Engineer & Head of Engineering',
+    bio: 'Leads technical delivery from design through commissioning across hydro, solar, and grid works.',
     image:
-      'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&h=700&fit=crop',
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&h=700&fit=crop',
   },
 ]
 
 const team = [
   {
-    name: 'Prabin Thapa',
-    role: 'Head of Solar Development',
-    image:
-      'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=500&h=600&fit=crop',
-  },
-  {
-    name: 'Maya Tamang',
-    role: 'Head of Community Relations',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&h=600&fit=crop',
-  },
-  {
-    name: 'Dipesh Karki',
-    role: 'Lead Grid Engineer',
+    name: 'Purna Nand Joshi',
+    role: 'Director of Liaison & Government Relations',
     image:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&h=600&fit=crop',
   },
   {
-    name: 'Rita Magar',
-    role: 'Head of Sustainability',
-    image:
-      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=500&h=600&fit=crop',
-  },
-  {
-    name: 'Sanjay Lama',
-    role: 'Director of Construction',
-    image:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&h=600&fit=crop',
-  },
-  {
-    name: 'Pooja Adhikari',
-    role: 'R&D Program Lead',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=500&h=600&fit=crop',
-  },
-  {
-    name: 'Kiran Bhandari',
-    role: 'Head of Wind & Hydro',
+    name: 'Prakash Thapa',
+    role: 'Office Manager',
     image:
       'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&h=600&fit=crop',
   },
   {
-    name: 'Nisha Shakya',
-    role: 'People & Internships Lead',
+    name: 'Dipendra Bahadur Kadyat',
+    role: 'Civil Engineer',
+    image:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Parash Bahadur Singh',
+    role: 'Assistant Engineer',
+    image:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Siddhartha Singh',
+    role: 'Account & HR Officer',
+    image:
+      'https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Keshav Raj Malla Thakuri',
+    role: 'Administrative & Procurement Officer',
+    image:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Ram Thapa',
+    role: 'Office Assistant & Support Staff',
+    image:
+      'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Dhan Bahadur Basnet',
+    role: 'Company Chef & Catering Officer',
+    image:
+      'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Sudip Shamsher Rana',
+    role: 'Site Manager',
+    image:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Tanisi Chand',
+    role: 'Head of Marketing & Creative',
+    image:
+      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Samina Rana',
+    role: 'Asst. Brand Manager',
+    image:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=500&h=600&fit=crop',
+  },
+  {
+    name: 'Shrijana Shrestha',
+    role: 'Office Manager',
     image:
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&h=600&fit=crop',
   },
