@@ -1,5 +1,6 @@
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import NepalMap from '../components/NepalMap'
 import { projects } from '../data/projects'
 
 const Eyebrow = ({ children, center }) => (
@@ -183,6 +184,22 @@ export default function Projects() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Map ────────────────────────────────── */}
+      <section className="relative py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <Eyebrow center>Where We Build</Eyebrow>
+            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase">
+              Projects Across Nepal
+            </h2>
+            <p className="text-aether-muted text-base mt-4">
+              Hover a marker to see the project.
+            </p>
+          </div>
+          <NepalMap />
         </div>
       </section>
 

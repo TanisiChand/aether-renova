@@ -4,6 +4,8 @@
 export const projects = [
   {
     id: 'kusaha-solar',
+    mapX: 872,
+    mapY: 534,
     name: 'Kusaha Solar',
     type: 'Solar Generation',
     generation: 'Solar',
@@ -21,6 +23,8 @@ export const projects = [
   },
   {
     id: 'dhalkebar-solar',
+    mapX: 732,
+    mapY: 501,
     name: 'Dhalkebar Solar',
     type: 'Solar Generation',
     generation: 'Solar',
@@ -38,6 +42,8 @@ export const projects = [
   },
   {
     id: 'chameliya-chettigad-hydropower',
+    mapX: 60,
+    mapY: 83,
     name: 'Chameliya–Chettigad Hydropower',
     type: 'Hydropower',
     generation: 'Hydro',
@@ -55,6 +61,8 @@ export const projects = [
   },
   {
     id: 'chulini-hydropower',
+    mapX: 484,
+    mapY: 300,
     name: 'Chulini Hydropower',
     type: 'Hydropower',
     generation: 'Hydro',
