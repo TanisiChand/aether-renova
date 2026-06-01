@@ -33,7 +33,13 @@ export default function ScrollReveal() {
       const targets = []
       root.querySelectorAll(CONTAINER_SEL).forEach((container) => {
         Array.from(container.children).forEach((child, i) => {
-          if (child.dataset.reveal) return
+          // Already tagged (e.g. the persistent footer). The observer is
+          // recreated each route, so re-observe anything not yet revealed —
+          // otherwise persistent elements can get stuck hidden.
+          if (child.dataset.reveal) {
+            if (!child.classList.contains('is-visible')) targets.push(child)
+            return
+          }
           const pos = getComputedStyle(child).position
           if (pos === 'fixed' || pos === 'absolute') return
           child.dataset.reveal = '1'
