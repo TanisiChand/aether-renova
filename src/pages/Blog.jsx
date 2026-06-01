@@ -203,35 +203,6 @@ export default function Blog() {
           </div>
         </div>
       </section>
-
-      {/* ── Newsletter CTA ─────────────────────── */}
-      <section className="relative py-24">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Never miss an update
-          </h2>
-          <p className="text-aether-muted text-lg mb-8">
-            Subscribe for the latest stories from Nepal’s energy transformation.
-          </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-aether-card border border-aether-border rounded-lg text-white text-sm placeholder:text-aether-muted/50 focus:outline-none focus:border-aether-accent/50 transition-colors"
-            />
-            <button
-              type="submit"
-              className="group inline-flex items-center justify-center gap-2 rounded-lg font-sans font-bold uppercase tracking-wider text-sm px-6 py-3 bg-aether-accent text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,240,152,0.4)]"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
     </main>
   )
 }
