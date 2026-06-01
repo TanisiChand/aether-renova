@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import { projects } from '../data/projects'
 
 const Eyebrow = ({ children, center }) => (
   <p
@@ -60,66 +60,6 @@ const BuildIcon = () => (
     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
   </svg>
 )
-
-// Authoritative project list.
-const projects = [
-  {
-    name: 'Kusaha Solar',
-    type: 'Solar Generation',
-    company: 'Solaeris',
-    companyLogo: '/logos/solaeris.svg',
-    capacity: '50 MW',
-    location: 'Sunsari District, Nepal',
-    status: 'Operational',
-    builder: 'Aether Construction',
-    image:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&h=800&fit=crop',
-    blurb:
-      'A landmark utility-scale solar installation in Nepal’s Terai region, delivering clean power at scale.',
-  },
-  {
-    name: 'Dhalkebar Solar',
-    type: 'Solar Generation',
-    company: 'Terra Sol',
-    companyLogo: '/logos/terrasol.svg',
-    capacity: '20 MW',
-    location: 'Dhanusha District, Nepal',
-    status: 'In Development',
-    builder: 'Aether Construction',
-    image:
-      'https://images.unsplash.com/photo-1545209463-e2825498edbf?q=80&w=1200&h=800&fit=crop',
-    blurb:
-      'High-yield photovoltaic generation feeding directly into one of Nepal’s key grid substations.',
-  },
-  {
-    name: 'Chameliya–Chettigad Hydropower',
-    type: 'Hydropower',
-    company: 'Grid Nepal',
-    companyLogo: '/logos/gridnepal.svg',
-    capacity: '85 MW',
-    location: 'Darchula District, Nepal',
-    status: 'In Development',
-    builder: 'Aether Construction',
-    image:
-      'https://images.unsplash.com/photo-1538300342682-cf57afb97285?q=80&w=1200&h=800&fit=crop',
-    blurb:
-      'A combined run-of-river hydropower scheme harnessing the Chameliya and Chettigad river systems.',
-  },
-  {
-    name: 'Chulini Hydropower',
-    type: 'Hydropower',
-    company: 'West Star',
-    companyLogo: '/logos/weststar.svg',
-    capacity: '35 MW',
-    location: 'Gandaki Province, Nepal',
-    status: 'In Development',
-    builder: 'Aether Construction',
-    image:
-      'https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?q=80&w=1200&h=800&fit=crop',
-    blurb:
-      'A mountain run-of-river project tuned to the seasonal flows of Nepal’s mid-hills.',
-  },
-]
 
 function ProjectCard({ project, index }) {
   const flip = index % 2 === 1

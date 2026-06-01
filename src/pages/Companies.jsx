@@ -1,5 +1,6 @@
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import { projectsByCompany } from '../data/projects'
 
 const StatusBadge = ({ status }) => {
   const map = {
@@ -34,6 +35,8 @@ const PinIcon = () => (
   </svg>
 )
 
+// Company metadata. Each company's project(s) are pulled from the shared
+// projects data by companyId, so names/stats/images stay in sync site-wide.
 const companies = [
   {
     id: 'terra-sol',
@@ -42,22 +45,6 @@ const companies = [
     tag: 'Solar Farms',
     description:
       'Utility-scale photovoltaic development across Nepal’s sun-rich Terai belt, engineering solar farms built for high irradiance and long-term yield.',
-    projects: [
-      {
-        name: 'Dhalkebar Solar',
-        type: 'Solar Generation',
-        location: 'Dhanusha District, Nepal',
-        status: 'In Development',
-        image:
-          'https://images.unsplash.com/photo-1545209463-e2825498edbf?q=80&w=1200&h=800&fit=crop',
-        stats: [
-          { value: '20 MW', label: 'Capacity' },
-          { value: 'Solar', label: 'Generation' },
-          { value: 'Aether Construction', label: 'Built By' },
-        ],
-        link: '/projects',
-      },
-    ],
   },
   {
     id: 'solaeris',
@@ -66,22 +53,6 @@ const companies = [
     tag: 'Microgrids',
     description:
       'Smart, localized clean-power systems bringing resilient generation to communities — including Nepal’s largest community-scale solar farm.',
-    projects: [
-      {
-        name: 'Kusaha Solar',
-        type: 'Solar Generation',
-        location: 'Sunsari District, Nepal',
-        status: 'Operational',
-        image:
-          'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&h=800&fit=crop',
-        stats: [
-          { value: '50 MW', label: 'Capacity' },
-          { value: 'Solar', label: 'Generation' },
-          { value: 'Aether Construction', label: 'Built By' },
-        ],
-        link: '/projects',
-      },
-    ],
   },
   {
     id: 'grid-nepal',
@@ -90,22 +61,6 @@ const companies = [
     tag: 'Transmission',
     description:
       'The connective tissue of the ecosystem — grid infrastructure and large-scale hydropower that move clean energy from source to where it’s needed.',
-    projects: [
-      {
-        name: 'Chameliya–Chettigad Hydropower',
-        type: 'Hydropower',
-        location: 'Darchula District, Nepal',
-        status: 'In Development',
-        image:
-          'https://images.unsplash.com/photo-1538300342682-cf57afb97285?q=80&w=1200&h=800&fit=crop',
-        stats: [
-          { value: '85 MW', label: 'Capacity' },
-          { value: 'Hydro', label: 'Generation' },
-          { value: 'Aether Construction', label: 'Built By' },
-        ],
-        link: '/projects',
-      },
-    ],
   },
   {
     id: 'west-star',
@@ -114,22 +69,6 @@ const companies = [
     tag: 'Wind & Hydro',
     description:
       'Harnessing the power of moving water and mountain wind — developing hydropower and wind generation tuned to Nepal’s dramatic terrain.',
-    projects: [
-      {
-        name: 'Chulini Hydropower',
-        type: 'Hydropower',
-        location: 'Gandaki Province, Nepal',
-        status: 'In Development',
-        image:
-          'https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?q=80&w=1200&h=800&fit=crop',
-        stats: [
-          { value: '35 MW', label: 'Capacity' },
-          { value: 'Hydro', label: 'Generation' },
-          { value: 'Aether Construction', label: 'Built By' },
-        ],
-        link: '/projects',
-      },
-    ],
   },
   {
     id: 'aether-construction',
@@ -139,22 +78,20 @@ const companies = [
     tag: 'Civil & Heavy Infrastructure',
     description:
       'The build arm of the group — civil and heavy infrastructure delivering the dams, foundations, and access works behind every project across the ecosystem.',
-    projects: [
-      {
-        name: 'All Group Projects',
-        type: 'Civil & Heavy Infra',
-        location: 'Across Nepal',
-        status: 'Operational',
-        image:
-          'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&h=800&fit=crop',
-        stats: [
-          { value: '190 MW', label: 'Built Capacity' },
-          { value: '4', label: 'Active Sites' },
-          { value: '500+', label: 'Workforce' },
-        ],
-        link: '/projects',
-      },
-    ],
+    // Builds everything, so it shows a portfolio summary rather than one project.
+    summary: {
+      name: 'All Group Projects',
+      type: 'Civil & Heavy Infra',
+      location: 'Across Nepal',
+      status: 'Operational',
+      image:
+        'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&h=800&fit=crop',
+      stats: [
+        { value: '190 MW', label: 'Built Capacity' },
+        { value: '4', label: 'Active Sites' },
+        { value: '500+', label: 'Workforce' },
+      ],
+    },
   },
 ]
 
@@ -225,6 +162,13 @@ function EcosystemHero() {
 
 /* ---- A single project tile ---- */
 function ProjectTile({ project, horizontal }) {
+  // Accept either a shared project (capacity/generation/builder) or a bespoke
+  // summary tile (pre-built stats array).
+  const stats = project.stats || [
+    { value: project.capacity, label: 'Capacity' },
+    { value: project.generation, label: 'Generation' },
+    { value: project.builder, label: 'Built By' },
+  ]
   return (
     <div
       className={`group/tile relative bg-[#020203]/60 border border-aether-border rounded-2xl overflow-hidden transition-all duration-500 hover:border-aether-accent/40 ${
@@ -261,7 +205,7 @@ function ProjectTile({ project, horizontal }) {
         </p>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6">
-          {project.stats.map((s) => (
+          {stats.map((s) => (
             <div key={s.label}>
               <div className="text-white text-lg font-bold leading-tight">
                 {s.value}
@@ -274,7 +218,7 @@ function ProjectTile({ project, horizontal }) {
         </div>
 
         <div className="mt-auto">
-          <Button href={project.link} variant="secondary" size="sm">
+          <Button href="/projects" variant="secondary" size="sm">
             View Project
           </Button>
         </div>
@@ -285,7 +229,9 @@ function ProjectTile({ project, horizontal }) {
 
 /* ---- A company section ---- */
 function CompanySection({ company, index }) {
-  const { id, name, logo, tag, description, projects } = company
+  const { id, name, logo, tag, description, summary } = company
+  // Pull this company's project(s) from the shared source of truth.
+  const projects = summary ? [summary] : projectsByCompany[id] || []
   const multi = projects.length > 1
   return (
     <article
