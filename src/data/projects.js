@@ -55,8 +55,7 @@ export const projects = [
     location: 'Darchula District, Nepal',
     status: 'In Development',
     builder: 'Aether Construction',
-    image:
-      'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=1200&h=800&fit=crop',
+    image: '/projects/chameliya-chettigad.jpg',
     blurb:
       'A combined run-of-river hydropower scheme harnessing the Chameliya and Chettigad river systems.',
   },
@@ -74,8 +73,7 @@ export const projects = [
     location: 'Gandaki Province, Nepal',
     status: 'In Development',
     builder: 'Aether Construction',
-    image:
-      'https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=1200&h=800&fit=crop',
+    image: '/projects/chulini.jpg',
     blurb:
       'A mountain run-of-river project tuned to the seasonal flows of Nepal’s mid-hills.',
   },

@@ -505,6 +505,9 @@ nav.site-nav.scrolled {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .project-card:hover {

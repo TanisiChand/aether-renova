@@ -26,7 +26,7 @@ export default function NepalMap() {
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       <svg
-        viewBox="-60 -90 1120 760"
+        viewBox="-30 -36 1060 644"
         className="w-full h-auto overflow-visible"
         role="img"
         aria-label="Map of Aether Renova projects across Nepal"
@@ -68,10 +68,10 @@ export default function NepalMap() {
             const charW = Math.max(p.name.length * 7.2, line2.length * 5.4)
             const tipW = Math.min(Math.max(charW + 40, 130), 360)
             const tipH = 46
-            // keep the tooltip inside the [-60, 1060] horizontal bounds
+            // keep the tooltip inside the [-30, 1030] horizontal bounds
             const half = tipW / 2
-            const minC = -60 + half + 6 - p.mapX
-            const maxC = 1060 - half - 6 - p.mapX
+            const minC = -30 + half + 6 - p.mapX
+            const maxC = 1030 - half - 6 - p.mapX
             const cx = Math.max(minC, Math.min(0, maxC))
 
             return (

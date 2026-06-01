@@ -1,37 +1,6 @@
+import { Link } from 'react-router-dom'
 import Button from './Button'
-
-const projects = [
-  {
-    category: 'Hydropower',
-    name: 'Haru Ko',
-    image:
-      'https://images.unsplash.com/photo-1538300342682-cf57afb97285?w=800&h=900&fit=crop',
-  },
-  {
-    category: 'Transmission',
-    name: 'Kusaha',
-    image:
-      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=700&h=500&fit=crop',
-  },
-  {
-    category: 'Grid Tech',
-    name: 'Dhalkebar',
-    image:
-      'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&h=500&fit=crop',
-  },
-  {
-    category: 'Infrastructure',
-    name: 'Chameliya',
-    image:
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&h=500&fit=crop',
-  },
-  {
-    category: 'Solar Farm',
-    name: 'Chettigad',
-    image:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&h=500&fit=crop',
-  },
-]
+import { projects } from '../data/projects'
 
 export default function Hero() {
   return (
@@ -47,17 +16,21 @@ export default function Hero() {
             infrastructure for a sustainable, resilient, and electrified Nepal.
           </p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <Button href="#companies" variant="primary" withArrow={false}>
-              Our Ecosystem
+            <Button href="/projects" variant="primary" withArrow={false}>
+              Our Projects
             </Button>
-            <Button href="#story" variant="secondary" withArrow={false}>
+            <Button href="/about" variant="secondary" withArrow={false}>
               Our Mission
             </Button>
           </div>
         </div>
         <div className="hero-visual" id="projects">
           {projects.map((project) => (
-            <div className="project-card" key={project.name}>
+            <Link
+              className="project-card"
+              key={project.id}
+              to={project.detailUrl || '/projects'}
+            >
               <img
                 className="project-card-img"
                 src={project.image}
@@ -65,9 +38,9 @@ export default function Hero() {
                 loading="lazy"
               />
               <div className="project-card-overlay" />
-              <span>{project.category}</span>
+              <span>{project.type}</span>
               <h3>{project.name}</h3>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
