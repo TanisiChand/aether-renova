@@ -58,7 +58,7 @@ export default function SectionNav({ sections }) {
   const jump = (id) => {
     const el = document.getElementById(id)
     if (!el) return
-    const y = el.getBoundingClientRect().top + window.pageYOffset - 118
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 132
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
 
@@ -72,17 +72,17 @@ export default function SectionNav({ sections }) {
         />
       </div>
 
-      {/* sticky jump-to-section pill bar (all screen sizes) */}
+      {/* sticky jump-to-section pill bar (all screen sizes).
+          The wrapper is pointer-events-none so only the pill bar itself is
+          clickable — it never intercepts taps meant for the navbar/hamburger. */}
       <div
-        className={`fixed left-0 right-0 top-[56px] md:top-[60px] z-[980] transition-all duration-300 ${
-          show
-            ? 'translate-y-0 opacity-100'
-            : '-translate-y-3 opacity-0 pointer-events-none'
+        className={`fixed left-0 right-0 top-[68px] md:top-[72px] z-[980] pointer-events-none transition-all duration-300 ${
+          show ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
         }`}
         aria-label="Jump to section"
       >
         <div className="mx-auto max-w-5xl px-3 sm:px-6">
-          <div className="flex items-center gap-2 rounded-full border border-aether-border bg-[#06060a]/85 backdrop-blur-md px-2 py-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.45)]">
+          <div className={`flex items-center gap-2 rounded-full border border-aether-border bg-[#06060a]/90 backdrop-blur-md px-2 py-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.45)] ${show ? 'pointer-events-auto' : ''}`}>
             <span className="hidden sm:flex items-center gap-1.5 pl-2 pr-1 text-[10px] uppercase tracking-[0.18em] text-aether-muted/70 shrink-0">
               <svg className="w-3.5 h-3.5 text-aether-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
               On this page
