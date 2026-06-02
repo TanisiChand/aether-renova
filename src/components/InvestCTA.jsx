@@ -48,7 +48,7 @@ export default function InvestCTA() {
                 </Link>
                 <a
                   href={DECK_MAILTO}
-                  className="inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-4 text-sm bg-transparent border border-aether-border text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent"
+                  className="inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-4 text-sm bg-white/[0.06] border border-white/30 text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent"
                 >
                   Request Deck
                 </a>

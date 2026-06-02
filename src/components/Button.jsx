@@ -19,7 +19,7 @@ const VARIANTS = {
   primary:
     'bg-aether-accent text-black hover:shadow-[0_0_30px_rgba(0,240,152,0.4)] hover:-translate-y-0.5',
   secondary:
-    'bg-transparent border border-aether-border text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent',
+    'bg-white/[0.06] border border-white/30 text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent',
 }
 
 const SIZES = {

@@ -26,12 +26,14 @@ const companyItems = [
   },
 ]
 
+// "Who Are We" links to the About page; its one subpage is the Team page.
+const aboutItems = [{ to: '/team', name: 'Our Team', tag: 'The People' }]
+
 // Mobile menu structure (flat groups).
 const mobileGroups = [
   { label: 'Projects', to: '/projects', items: projectItems },
   { label: 'Companies', to: '/companies', items: companyItems },
-  { label: 'Who Are We', to: '/about' },
-  { label: 'Team', to: '/team' },
+  { label: 'Who Are We', to: '/about', items: aboutItems },
   { label: 'Investors', to: '/investors' },
   { label: 'Blog', to: '/blog' },
   { label: 'Careers', to: '/careers' },
@@ -77,7 +79,7 @@ export default function Navbar() {
         <div className="nav-links">
           <NavDropdown label="Projects" to="/projects" items={projectItems} />
           <NavDropdown label="Companies" to="/companies" items={companyItems} />
-          <Link to="/about">Who Are We</Link>
+          <NavDropdown label="Who Are We" to="/about" items={aboutItems} />
           <Link to="/investors">Investors</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/careers">Careers</Link>
