@@ -450,7 +450,7 @@ nav.site-nav.scrolled {
 .nav-links a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.2px;
   transition: var(--transition);
@@ -473,7 +473,7 @@ nav.site-nav.scrolled {
   gap: 5px;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.2px;
   transition: var(--transition);
