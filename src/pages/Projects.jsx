@@ -193,7 +193,7 @@ export default function Projects() {
       </section>
 
       {/* ── Map ────────────────────────────────── */}
-      <section className="relative py-16">
+      <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Where We Build</Eyebrow>

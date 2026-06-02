@@ -13,7 +13,7 @@ const highlights = [
 
 export default function InvestCTA() {
   return (
-    <section className="relative py-16 font-sans z-10 overflow-hidden">
+    <section className="relative py-20 font-sans z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative rounded-3xl border border-aether-accent/20 bg-gradient-to-br from-[#08140f] via-[#06100c] to-[#020203] overflow-hidden">
           {/* glow accents */}

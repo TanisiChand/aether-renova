@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
 import SectionNav from '../components/SectionNav'
+import StoryTimeline from '../components/StoryTimeline'
 
 const NAV_SECTIONS = [
   { id: 'highlights', label: 'Highlights' },
@@ -178,22 +179,6 @@ const StatusPill = ({ state }) => (
   </span>
 )
 
-const TimelineIcon = ({ type }) => {
-  const paths = {
-    flag: 'M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7',
-    build: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z',
-    panel: 'M3 4h18v11H3zM7 4v11M12 4v11M17 4v11M3 9h18M9 19h6M12 15v4',
-    check: 'M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3',
-    bolt: 'M13 2 3 14h9l-1 8 10-12h-9l1-8z',
-    cash: 'M2 7h20v10H2zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6M6 7v10M18 7v10',
-  }
-  return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d={paths[type] || paths.check} />
-    </svg>
-  )
-}
-
 /* ───────────────── page ───────────────── */
 export default function DhalkebarSolar() {
   const [hlRef, hlIn] = useInView()
@@ -258,7 +243,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Investment highlights ── */}
-      <section id="highlights" ref={hlRef} className="relative py-16 border-t border-aether-border/40 scroll-mt-24">
+      <section id="highlights" ref={hlRef} className="relative py-20 border-t border-aether-border/40 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Highlights</Eyebrow>
@@ -289,7 +274,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Overview specs ── */}
-      <section id="overview" className="relative py-16 scroll-mt-24">
+      <section id="overview" className="relative py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Project Snapshot</Eyebrow>
@@ -326,7 +311,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Present status ── */}
-      <section id="status" className="relative py-16 scroll-mt-24">
+      <section id="status" className="relative py-20 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Present Status</Eyebrow>
@@ -369,7 +354,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Construction timeline ── */}
-      <section id="timeline" className="relative py-20 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden scroll-mt-24">
+      <section id="timeline" className="relative py-24 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden scroll-mt-24">
         <SynergyBackground />
         <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-[#020203] to-transparent pointer-events-none z-[1]" />
         <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#020203] to-transparent pointer-events-none z-[1]" />
@@ -384,52 +369,12 @@ export default function DhalkebarSolar() {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-aether-accent/0 via-aether-accent/40 to-aether-accent/0 md:-translate-x-1/2" />
-            <div className="space-y-8">
-              {timeline.map((m, i) => (
-                <div
-                  key={m.date}
-                  className={`relative flex items-center gap-6 md:gap-0 ${
-                    i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
-                    <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${
-                        m.highlight
-                          ? 'bg-aether-accent text-black border-aether-accent shadow-[0_0_25px_rgba(0,240,152,0.6)]'
-                          : 'bg-[#0c0c11] text-aether-accent border-aether-accent/40'
-                      }`}
-                    >
-                      <TimelineIcon type={m.icon} />
-                    </div>
-                  </div>
-                  <div className={`ml-16 md:ml-0 md:w-[calc(50%-3rem)] ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div
-                      className={`group bg-aether-card border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 ${
-                        m.highlight
-                          ? 'border-aether-accent/50 shadow-[0_0_30px_rgba(0,240,152,0.12)]'
-                          : 'border-aether-border hover:border-aether-accent/40'
-                      }`}
-                    >
-                      <p className="text-aether-accent text-xs font-bold uppercase tracking-wider mb-1">
-                        {m.date}
-                      </p>
-                      <h3 className="text-white text-lg font-bold mb-1">{m.title}</h3>
-                      <p className="text-aether-muted text-sm">{m.detail}</p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block md:w-[calc(50%-3rem)]" />
-                </div>
-              ))}
-            </div>
-          </div>
+          <StoryTimeline items={timeline} />
         </div>
       </section>
 
       {/* ── Financials ── */}
-      <section id="financials" className="relative py-16 scroll-mt-24">
+      <section id="financials" className="relative py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <Eyebrow>Financials</Eyebrow>
@@ -483,7 +428,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Sensitivity ── */}
-      <section id="sensitivity" className="relative py-16 scroll-mt-24">
+      <section id="sensitivity" className="relative py-20 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Sensitivity Analysis</Eyebrow>
@@ -509,7 +454,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Cap table ── */}
-      <section id="captable" className="relative py-16 scroll-mt-24">
+      <section id="captable" className="relative py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Cap Table</Eyebrow>
@@ -587,7 +532,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Solar resource ── */}
-      <section id="resource" ref={resRef} className="relative py-16 scroll-mt-24">
+      <section id="resource" ref={resRef} className="relative py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Solar Resource</Eyebrow>
@@ -626,7 +571,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── EPC partner ── */}
-      <section id="epc" className="relative py-16 scroll-mt-24">
+      <section id="epc" className="relative py-20 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>EPC Partner</Eyebrow>
@@ -657,7 +602,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Investment thesis ── */}
-      <section id="thesis" className="relative py-16 scroll-mt-24">
+      <section id="thesis" className="relative py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Thesis</Eyebrow>

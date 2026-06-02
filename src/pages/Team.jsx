@@ -213,7 +213,7 @@ export default function Team() {
       </section>
 
       {/* ── Leadership ─────────────────────────── */}
-      <section className="relative py-16">
+      <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow center>Leadership</Eyebrow>
@@ -230,7 +230,7 @@ export default function Team() {
       </section>
 
       {/* ── Team grid ──────────────────────────── */}
-      <section className="relative py-16">
+      <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow center>The Team</Eyebrow>
