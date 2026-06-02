@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
 import SectionNav from '../components/SectionNav'
-import StoryTimeline from '../components/StoryTimeline'
+import MilestoneTimeline from '../components/MilestoneTimeline'
 
 const NAV_SECTIONS = [
   { id: 'highlights', label: 'Highlights' },
@@ -104,7 +104,7 @@ const specs = [
   ['Evacuation', 'Dhalkebar SS · 5 km line'],
   ['Module Type', '720 Wp Bifacial · 1500 V'],
   ['Land', '35 Bigha · 120 owners'],
-  ['Target COD', 'April 2027'],
+  ['Target COD', 'November 2026'],
 ]
 
 const status = [
@@ -116,13 +116,39 @@ const status = [
   { n: 6, title: 'Financial Close', detail: 'Targeted July 2026 — construction-ready', state: 'Ongoing' },
 ]
 
-const timeline = [
-  { date: 'Jul 2026', title: 'Contract & Detailed Design', detail: 'Financial close and design lock-in', icon: 'flag' },
-  { date: 'Aug–Oct 2026', title: 'Procurement & Shipment', detail: 'Equipment procurement and delivery', icon: 'cash' },
-  { date: 'Sep–Dec 2026', title: 'Civil Works & Foundations', detail: 'Site civil works and pile foundations', icon: 'build' },
-  { date: 'Nov 2026 – Feb 2027', title: 'Module Mounting & Electrical', detail: 'Module installation and DC/AC works', icon: 'panel' },
-  { date: 'Dec 2026 – Mar 2027', title: 'Substation & Transmission', detail: '5 km dedicated line to Dhalkebar SS', icon: 'bolt' },
-  { date: 'Mar–Apr 2027', title: 'Testing, Commissioning & COD', detail: 'Grid energization — commercial operation', icon: 'check', highlight: true },
+// Milestone-by-milestone development & construction timeline.
+// done = milestone reached on or before the 2 June 2026 marker.
+const milestones = [
+  { date: '29 Nov 2024', title: 'Tender Winning LOI', cat: 'lic', done: true },
+  { date: '9 Feb 2025', title: 'Survey License', cat: 'lic', done: true },
+  { date: '27 Feb 2025', title: 'Feasibility Study Completed', cat: 'lic', done: true },
+  { date: '13 Oct 2025', title: 'Power Purchase Agreement (PPA)', cat: 'lic', done: true },
+  { date: '17 Oct 2025', title: 'Major OEM Contracts Signed', cat: 'proc', done: true },
+  { date: '25 Nov 2025', title: 'Transmission Line License', cat: 'lic', done: true },
+  { date: '14 Feb 2026', title: 'Land Acquisition Completed', cat: 'land', done: true },
+  { date: '22 Feb 2026', title: 'MMS Structures Delivered to Birgunj', cat: 'proc', done: true },
+  { date: '28 Feb 2026', title: 'Inverter Delivery', cat: 'proc', done: true },
+  {
+    date: '15 Apr 2026',
+    title: 'IEE Completed',
+    cat: 'lic',
+    done: true,
+    note: 'Requirement changed from EIA to IEE. All work was halted after the TOR approval and scoping stage for the EIA, then resumed under the IEE process.',
+  },
+  { date: '1 May 2026', title: 'Panels Delivery', cat: 'proc', done: true },
+  { today: true },
+  { date: '15 Jun 2026', title: 'DPR Study', cat: 'lic' },
+  { date: '15 Jun 2026', title: 'Transmission Line Feasibility Study', cat: 'lic' },
+  { date: '15 Jun 2026', title: 'Land Levelling & Boundary Work Completed', cat: 'land' },
+  { date: '18 Jun 2026', title: 'Generation License Issued', cat: 'lic' },
+  { date: '1 Aug 2026', title: '25 MVA Transformer Delivery', cat: 'proc' },
+  { date: '1 Sep 2026', title: 'Control Room & Permanent Camps', cat: 'cons' },
+  { date: '1 Sep 2026', title: 'SCADA & Box Transformer Panels Delivery', cat: 'proc' },
+  { date: '5 Sep 2026', title: 'Piling Completion', cat: 'cons' },
+  { date: '20 Sep 2026', title: 'Panel Installation', cat: 'cons' },
+  { date: '15 Oct 2026', title: 'Inverter & Transformer Installation', cat: 'cons' },
+  { date: '20 Oct 2026', title: 'SCADA & Debugging', cat: 'cons' },
+  { date: '1 Nov 2026', title: 'Commercial Operation Date (COD)', cat: 'cons', cod: true },
 ]
 
 const returns = [
@@ -221,7 +247,7 @@ export default function DhalkebarSolar() {
               Construction-Ready
             </span>
             <span className="rounded-full border border-aether-border bg-aether-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-aether-muted">
-              COD Apr 2027
+              COD Nov 2026
             </span>
           </div>
 
@@ -358,18 +384,19 @@ export default function DhalkebarSolar() {
         <SynergyBackground />
         <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-[#020203] to-transparent pointer-events-none z-[1]" />
         <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#020203] to-transparent pointer-events-none z-[1]" />
-        <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+        <div className="max-w-3xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
             <Eyebrow center>Project Timeline</Eyebrow>
             <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
-              10-Month Build
+              Development &amp; Construction Timeline
             </h2>
             <p className="text-aether-muted text-base mt-4">
-              Financial close July 2026 to commercial operation April 2027.
+              Milestone-by-milestone progress from tender award through the
+              Commercial Operation Date (COD).
             </p>
           </div>
 
-          <StoryTimeline items={timeline} />
+          <MilestoneTimeline milestones={milestones} />
         </div>
       </section>
 
