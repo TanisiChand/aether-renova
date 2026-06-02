@@ -23,7 +23,10 @@
 }
 
 html {
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) clips horizontal overflow WITHOUT turning <html>
+     into a scroll container — `hidden` here made <html> the scroller, and
+     overscroll-behavior on the scroller can break vertical scrolling on iOS. */
+  overflow-x: clip;
   /* Match the app background so the rubber-band/overscroll area at the top of
      the page on mobile shows the dark theme — not a black flash — and disable
      pull-to-refresh (the "black screen + spinner" when pulling down at top). */
@@ -92,7 +95,8 @@ body {
   background-color: #020203;
   color: var(--white);
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  /* `clip` clips horizontal overflow without creating a scroll container. */
+  overflow-x: clip;
   line-height: 1.6;
 }
 
