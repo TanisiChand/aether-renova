@@ -15,7 +15,10 @@ export default function Home() {
       <ProjectStatus />
       <CommunityImpact />
       <InvestCTA />
-      <FromTheGrid />
+      {/* "From The Grid" hidden on mobile, shown on tablet/desktop */}
+      <div className="hidden md:block">
+        <FromTheGrid />
+      </div>
     </>
   )
 }
