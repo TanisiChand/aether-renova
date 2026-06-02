@@ -87,7 +87,8 @@ export default function NepalMap() {
               <g
                 key={p.id}
                 transform={`translate(${p.mapX} ${p.mapY})`}
-                className="cursor-pointer"
+                className="cursor-pointer focus:outline-none"
+                style={{ outline: 'none', WebkitTapHighlightColor: 'transparent' }}
                 onMouseEnter={() => setActive(p.id)}
                 onMouseLeave={() => setActive(null)}
                 onFocus={() => setActive(p.id)}
