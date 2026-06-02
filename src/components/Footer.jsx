@@ -88,7 +88,7 @@ export default function Footer() {
         <div className="absolute top-0 right-1/4 w-[1px] h-full bg-gradient-to-b from-aether-accent/0 via-aether-accent/30 to-aether-accent/0" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 pt-14 pb-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-14">
           {/* Brand + socials */}
           <div className="lg:col-span-2">

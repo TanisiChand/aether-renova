@@ -31,20 +31,26 @@ function useInView() {
   return [ref, inView]
 }
 
-// Eased count-up via setInterval (rAF stalls in background tabs).
-function useCountUp(target, run, duration = 1300) {
+// Eased count-up. Uses requestAnimationFrame for a smooth ramp — it only
+// starts once the band is on-screen (run === true), so rAF is never throttled.
+function useCountUp(target, run, duration = 1500) {
   const [val, setVal] = useState(0)
   useEffect(() => {
     if (!run) return
-    const steps = 45
-    let i = 0
-    const id = setInterval(() => {
-      i += 1
-      const t = Math.min(i / steps, 1)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVal(target)
+      return
+    }
+    let raf
+    let start
+    const tick = (ts) => {
+      if (start === undefined) start = ts
+      const t = Math.min((ts - start) / duration, 1)
       setVal(target * (1 - Math.pow(1 - t, 3)))
-      if (t >= 1) clearInterval(id)
-    }, duration / steps)
-    return () => clearInterval(id)
+      if (t < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
   }, [target, run, duration])
   return val
 }

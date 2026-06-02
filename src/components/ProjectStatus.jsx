@@ -111,8 +111,9 @@ function StageTracker({ phase }) {
                       : 'border-aether-border bg-[#0c0c11]'
                 }`}
               />
+              {/* full labels only where there's room; hidden on mobile */}
               <span
-                className={`text-[9px] md:text-[10px] uppercase tracking-wider text-center transition-colors duration-500 ${
+                className={`hidden md:block text-[10px] uppercase tracking-wider text-center transition-colors duration-500 ${
                   isCurrent
                     ? 'text-aether-accent font-semibold'
                     : done
@@ -126,6 +127,10 @@ function StageTracker({ phase }) {
           )
         })}
       </div>
+      {/* mobile: single current-stage label (full row would overlap) */}
+      <p className="md:hidden text-center text-aether-accent text-[11px] font-semibold uppercase tracking-wider mt-3">
+        {PROJECT_STAGES[current]}
+      </p>
     </div>
   )
 }

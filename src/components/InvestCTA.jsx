@@ -21,7 +21,7 @@ export default function InvestCTA() {
           <div className="absolute -bottom-24 -left-16 w-72 h-72 bg-aether-accent/5 rounded-full blur-[90px] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(0,240,152,0.10)_0%,_transparent_55%)] pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-9 md:p-14">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center p-6 sm:p-9 md:p-14">
             {/* copy */}
             <div>
               <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-5 flex items-center gap-3">
