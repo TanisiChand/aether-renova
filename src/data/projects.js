@@ -45,7 +45,7 @@ export const projects = [
     location: 'Mahottari, Madhesh Pradesh, Nepal',
     status: 'In Development',
     phase: 'Construction',
-    progress: 48,
+    progress: 50,
     target: 'Target COD · Nov 2026',
     output: '40 GWh / yr',
     households: '18,000+',

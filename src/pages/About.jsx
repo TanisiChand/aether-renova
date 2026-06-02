@@ -274,7 +274,7 @@ export default function About() {
       </section>
 
       {/* ── Company story ──────────────────────── */}
-      <section className="relative py-20 md:py-28">
+      <section className="relative pt-20 md:pt-28 pb-0">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <Eyebrow>Our Story</Eyebrow>
@@ -284,22 +284,15 @@ export default function About() {
             <div className="space-y-5 text-aether-muted text-base leading-relaxed">
               <p>
                 We develop hydropower and solar infrastructure engineered for
-                enduring technical and operational quality. Through five
-                specialized companies, we deliver everything from civil
-                construction to smart microgrids — an integrated ecosystem
-                across Nepal.
+                enduring quality. Through five specialized companies, we deliver
+                everything from civil construction to smart microgrids — one
+                integrated ecosystem across Nepal.
               </p>
               <p>
-                We treat knowledge as infrastructure too, strengthening the
-                wider sector through R&amp;D, internships, and our Industry
-                Talk program. We believe a stronger sector benefits every
-                project within it, including our own.
-              </p>
-              <p>
-                Looking ahead, we’re working toward a combined 500&nbsp;MW of
-                generation, a 50&nbsp;MW clean-powered data centre, and a fully
-                integrated agriculture and fisheries platform owned in the
-                majority by local communities.
+                Looking ahead, we’re building toward 500&nbsp;MW of clean
+                generation, a 50&nbsp;MW clean-powered data centre, and an
+                agriculture and fisheries platform owned in the majority by
+                local communities.
               </p>
             </div>
             <p className="text-white/90 text-lg italic border-l-2 border-aether-accent pl-5 mt-8">
@@ -339,8 +332,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Stats band ─────────────────────────── */}
-      <section className="relative py-20 md:py-28">
+      {/* ── Stats band (sits close under Our Story) ─ */}
+      <section className="relative pt-12 md:pt-16 pb-20 md:pb-28">
         <div
           ref={statsRef}
           className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-4"

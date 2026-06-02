@@ -146,7 +146,7 @@ function Metric({ value, suffix, label, run }) {
   const n = useCountUp(value, run)
   return (
     <div className="rounded-2xl border border-aether-border bg-aether-card/50 px-5 py-6 text-center transition-colors duration-300 hover:border-aether-accent/40">
-      <div className="text-aether-accent text-3xl md:text-4xl font-medium tracking-tight leading-none">
+      <div className="font-montserrat text-aether-accent text-3xl md:text-4xl font-semibold tracking-tight leading-none">
         {fmt(n)}
         {suffix && <span className="text-xl">{suffix}</span>}
       </div>
@@ -173,7 +173,7 @@ function GrowthChart() {
             {set.label}
           </p>
           <p className="text-white text-2xl font-bold">
-            <span className="text-aether-accent">{fmt(active.v)}</span>{' '}
+            <span className="font-montserrat text-aether-accent">{fmt(active.v)}</span>{' '}
             <span className="text-base font-medium text-aether-muted">
               {set.unit}
             </span>{' '}
@@ -215,7 +215,7 @@ function GrowthChart() {
               className="group relative flex-1 h-full flex flex-col justify-end items-center"
             >
               <span
-                className={`mb-2 text-[10px] md:text-xs font-mono font-bold transition-opacity duration-300 ${
+                className={`mb-2 text-[10px] md:text-xs font-montserrat font-bold transition-opacity duration-300 ${
                   on ? 'text-aether-accent opacity-100' : 'text-aether-muted opacity-0 group-hover:opacity-100'
                 }`}
               >
@@ -269,7 +269,7 @@ function ImpactCalculator() {
         <span className="text-aether-muted text-xs uppercase tracking-wider">
           Investment
         </span>
-        <span className="text-aether-accent text-3xl font-bold font-mono">
+        <span className="text-aether-accent text-3xl font-bold font-montserrat">
           ${amount}
           <span className="text-lg">M</span>
         </span>
@@ -295,7 +295,7 @@ function ImpactCalculator() {
             key={o.label}
             className="rounded-xl border border-aether-border bg-[#020203]/50 px-4 py-4"
           >
-            <p className="text-white text-xl font-bold leading-tight">
+            <p className="font-montserrat text-white text-xl font-bold leading-tight">
               {o.value}
             </p>
             <p className="text-aether-muted text-[11px] uppercase tracking-wider mt-1">
@@ -485,7 +485,7 @@ export default function Investors() {
                 Today’s portfolio
               </p>
               <p className="text-white text-2xl font-bold mb-6">
-                {portfolio.totalMW} MW in development
+                <span className="font-montserrat">{portfolio.totalMW}</span> MW in development
               </p>
 
               <div className="flex h-4 rounded-full overflow-hidden mb-4">
@@ -570,7 +570,7 @@ export default function Investors() {
                 key={s.n}
                 className="group relative rounded-2xl border border-aether-border bg-aether-card/50 p-7 transition-all duration-300 hover:border-aether-accent/40 hover:-translate-y-1"
               >
-                <span className="text-aether-accent/30 text-5xl font-bold font-mono group-hover:text-aether-accent/60 transition-colors">
+                <span className="text-aether-accent/30 text-5xl font-bold font-montserrat group-hover:text-aether-accent/60 transition-colors">
                   {s.n}
                 </span>
                 <h3 className="text-white text-lg font-bold mt-3 mb-2">

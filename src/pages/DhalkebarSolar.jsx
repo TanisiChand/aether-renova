@@ -125,6 +125,7 @@ const milestones = [
   { date: '13 Oct 2025', title: 'Power Purchase Agreement (PPA)', cat: 'lic', done: true },
   { date: '17 Oct 2025', title: 'Major OEM Contracts Signed', cat: 'proc', done: true },
   { date: '25 Nov 2025', title: 'Transmission Line License', cat: 'lic', done: true },
+  { date: '1 Feb 2026', title: 'Construction Camp Completed', cat: 'cons', done: true },
   { date: '14 Feb 2026', title: 'Land Acquisition Completed', cat: 'land', done: true },
   { date: '22 Feb 2026', title: 'MMS Structures Delivered to Birgunj', cat: 'proc', done: true },
   { date: '28 Feb 2026', title: 'Inverter Delivery', cat: 'proc', done: true },

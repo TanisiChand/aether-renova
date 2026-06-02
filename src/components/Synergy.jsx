@@ -16,13 +16,13 @@ const entities = [
 function EntityCard({ logo, name, display, tag }) {
   return (
     <div className="group cursor-pointer">
-      <div className="relative aspect-square bg-aether-card/70 border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-700 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
+      <div className="relative aspect-square bg-aether-card/70 border border-aether-border rounded-3xl flex flex-col items-center justify-center transition-all duration-700 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
         <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-aether-accent/10 to-transparent" />
 
         {/* gradient ring on hover */}
         <div className="absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-aether-accent/30 via-transparent to-transparent [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] p-px pointer-events-none" />
 
-        {/* logo — centered within the card */}
+        {/* logo + name centered together as one balanced block */}
         <div className="relative z-10 w-20 h-20 flex items-center justify-center transition-transform duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(0,240,152,0.5)]">
           <img
             src={logo}
@@ -31,16 +31,14 @@ function EntityCard({ logo, name, display, tag }) {
             draggable="false"
           />
         </div>
+        <p className="relative z-10 mt-4 px-3 text-center font-montserrat text-white font-bold tracking-wider text-sm uppercase leading-tight whitespace-pre-line">
+          {display || name}
+        </p>
 
-        {/* name + tag — pinned to the bottom so the logo stays centered */}
-        <div className="absolute inset-x-0 bottom-5 z-10 text-center px-4">
-          <p className="font-montserrat text-white font-bold tracking-wider text-sm uppercase leading-tight whitespace-pre-line">
-            {display || name}
-          </p>
-          <p className="text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-            {tag}
-          </p>
-        </div>
+        {/* tag — pinned to the bottom so it never offsets the centered block */}
+        <p className="absolute inset-x-0 bottom-4 z-10 text-center text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
+          {tag}
+        </p>
 
         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-aether-accent/40 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
