@@ -16,7 +16,7 @@ const entities = [
 function EntityCard({ logo, name, display, tag }) {
   return (
     <div className="group cursor-pointer">
-      <div className="relative aspect-square bg-aether-card/60 backdrop-blur-md border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-700 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
+      <div className="relative aspect-square bg-aether-card/70 border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-700 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
         <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-aether-accent/10 to-transparent" />
 
         {/* gradient ring on hover */}
@@ -31,7 +31,7 @@ function EntityCard({ logo, name, display, tag }) {
               draggable="false"
             />
           </div>
-          <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
+          <p className="font-montserrat text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
             {display || name}
           </p>
           <p className="text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
@@ -71,7 +71,7 @@ export default function Synergy() {
             <span className="w-16 h-[1px] bg-aether-accent/50" />
           </p>
           <h2 className="text-white text-5xl md:text-6xl font-medium tracking-tight mb-6">
-            Synergy
+            Our Companies
           </h2>
           <p className="text-aether-muted text-lg max-w-xl mx-auto">
             Five specialized entities. One unified vision.

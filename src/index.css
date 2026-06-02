@@ -109,6 +109,13 @@ h1,
 h2,
 h3 {
   font-family: 'Montserrat', 'Inter', sans-serif;
+  /* Balance heading lines so no single word is left hanging. */
+  text-wrap: balance;
+}
+
+/* Avoid orphan/widow words (a lone word on the last line) in copy. */
+p {
+  text-wrap: pretty;
 }
 
 

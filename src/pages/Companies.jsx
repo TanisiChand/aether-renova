@@ -127,7 +127,7 @@ function EcosystemHero() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           {companies.map((c) => (
             <a key={c.id} href={`#${c.id}`} className="group cursor-pointer">
-              <div className="relative aspect-square bg-aether-card/60 backdrop-blur-md border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-500 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
+              <div className="relative aspect-square bg-aether-card/70 border border-aether-border rounded-3xl flex items-center justify-center transition-all duration-500 hover:border-aether-accent/40 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,152,0.15)] hover:bg-aether-card/80">
                 <div className="relative z-10 text-center px-4">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(0,240,152,0.5)]">
                     <img
@@ -137,7 +137,7 @@ function EcosystemHero() {
                       draggable="false"
                     />
                   </div>
-                  <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
+                  <p className="font-montserrat text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
                     {c.display || c.name}
                   </p>
                   <p className="text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">

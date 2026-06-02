@@ -27,8 +27,17 @@ export default function ScrollReveal() {
     if (!root) return
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // 1) scroll for the new view (synchronously, before paint)
-    if (!location.hash) window.scrollTo(0, 0)
+    // 1) scroll for the new view (synchronously, before paint). Force an
+    //    instant jump — the global `scroll-behavior: smooth` would otherwise
+    //    animate it, and we don't want browser scroll-restoration here.
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }
 
     // 2) tag content blocks, hiding any new ones before the first paint
     const targets = []

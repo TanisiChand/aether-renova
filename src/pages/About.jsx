@@ -265,10 +265,10 @@ export default function About() {
           <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
             Who Are We
           </h1>
-          <p className="text-aether-muted text-lg md:text-xl leading-relaxed">
+          <p className="text-aether-muted text-lg md:text-xl leading-relaxed text-balance">
             Aether Renova Holdings is a Nepali clean-energy group building the
             infrastructure tomorrow runs on — hydropower, solar, transmission,
-            and the communities that power it all.
+            and the communities that power it&nbsp;all.
           </p>
         </div>
       </section>

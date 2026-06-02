@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-content">
           <span className="hero-label">Leading Nepal's Energy Future</span>
-          <h1>AETHER RENOVA</h1>
+          <h1>Aether Renova</h1>
           <p>
             We build what tomorrow runs on — next-generation infrastructure for
             a resilient, electrified Nepal.
