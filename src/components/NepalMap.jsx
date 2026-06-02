@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { projects } from '../data/projects'
 
 // Accurate Nepal outline (equirectangular projection, viewBox 1000x572)
@@ -22,6 +23,7 @@ const statusColor = {
 
 export default function NepalMap() {
   const [active, setActive] = useState(null)
+  const navigate = useNavigate()
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
@@ -62,17 +64,24 @@ export default function NepalMap() {
             const isOn = active === p.id
             const color = statusColor[p.status] || '#0AF2AD'
 
-            // tooltip sizing \u2014 generous padding, width based on the longer of
-            // the two lines, clamped so edge markers never clip.
+            const hasLink = !!p.detailUrl
+
+            // tooltip sizing \u2014 generous padding, width based on the longest
+            // line, clamped so edge markers never clip.
             const line2 = `${p.capacity} \u00b7 ${p.company}`
-            const charW = Math.max(p.name.length * 7.2, line2.length * 5.4)
-            const tipW = Math.min(Math.max(charW + 40, 130), 360)
-            const tipH = 46
+            const charW = Math.max(p.name.length * 9, line2.length * 6.8)
+            const tipW = Math.min(Math.max(charW + 48, 168), 400)
+            const tipH = hasLink ? 78 : 60
             // keep the tooltip inside the [-30, 1030] horizontal bounds
             const half = tipW / 2
             const minC = -30 + half + 6 - p.mapX
             const maxC = 1030 - half - 6 - p.mapX
             const cx = Math.max(minC, Math.min(0, maxC))
+
+            const handleClick = () => {
+              if (hasLink) navigate(p.detailUrl)
+              else setActive(active === p.id ? null : p.id)
+            }
 
             return (
               <g
@@ -83,6 +92,15 @@ export default function NepalMap() {
                 onMouseLeave={() => setActive(null)}
                 onFocus={() => setActive(p.id)}
                 onBlur={() => setActive(null)}
+                onClick={handleClick}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    handleClick()
+                  }
+                }}
+                role="link"
+                aria-label={hasLink ? `${p.name} \u2014 view project` : p.name}
                 tabIndex={0}
               >
                 {/* counter-rotate the marker's visuals so dots/text stay upright */}
@@ -112,17 +130,17 @@ export default function NepalMap() {
                         y={-tipH}
                         width={tipW}
                         height={tipH}
-                        rx="8"
+                        rx="9"
                         fill="rgba(5,5,7,0.97)"
                         stroke="rgba(10,242,173,0.4)"
                         strokeWidth="1"
                       />
                       <text
                         x={cx}
-                        y={-tipH + 20}
+                        y={-tipH + 26}
                         textAnchor="middle"
                         fill="#ffffff"
-                        fontSize="12"
+                        fontSize="16"
                         fontWeight="700"
                         fontFamily="Inter, sans-serif"
                       >
@@ -130,14 +148,28 @@ export default function NepalMap() {
                       </text>
                       <text
                         x={cx}
-                        y={-tipH + 36}
+                        y={-tipH + 46}
                         textAnchor="middle"
                         fill={color}
-                        fontSize="9.5"
+                        fontSize="12.5"
                         fontFamily="Inter, sans-serif"
                       >
                         {line2}
                       </text>
+                      {hasLink && (
+                        <text
+                          x={cx}
+                          y={-tipH + 66}
+                          textAnchor="middle"
+                          fill="rgba(10,242,173,0.9)"
+                          fontSize="11"
+                          fontWeight="600"
+                          fontFamily="Inter, sans-serif"
+                          letterSpacing="0.04em"
+                        >
+                          View project →
+                        </text>
+                      )}
                       <path d="M-7 0 L0 8 L7 0 Z" fill="rgba(5,5,7,0.97)" />
                     </g>
                   )}

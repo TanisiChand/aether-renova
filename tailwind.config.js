@@ -5,7 +5,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        // No monospace anywhere — `font-mono` resolves to Inter as a safety net.
+        mono: ['Inter', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {

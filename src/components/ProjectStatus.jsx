@@ -73,7 +73,7 @@ function Stat({ value, suffix, label, run }) {
   const n = useCountUp(value, run)
   return (
     <div className="bg-aether-card border border-aether-border rounded-2xl px-4 py-4 text-center transition-colors duration-300 hover:border-aether-accent/40">
-      <div className="text-aether-accent text-2xl md:text-3xl font-bold font-mono leading-none whitespace-nowrap">
+      <div className="text-aether-accent text-2xl md:text-3xl font-bold font-sans leading-none whitespace-nowrap">
         {Math.round(n).toLocaleString()}
         {suffix && <span className="text-lg align-top ml-0.5">{suffix}</span>}
       </div>
@@ -328,7 +328,7 @@ export default function ProjectStatus() {
                   <span className="text-aether-muted text-xs uppercase tracking-wider">
                     Overall Progress
                   </span>
-                  <span className="text-aether-accent text-sm font-bold font-mono">
+                  <span className="text-aether-accent text-sm font-bold font-sans">
                     {p.progress}%
                   </span>
                 </div>

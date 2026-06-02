@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import StatBand from '../components/StatBand'
 import { projects, portfolio } from '../data/projects'
 
 const IR_EMAIL = 'investors@aetherrenova.com'
@@ -334,7 +335,7 @@ function Thesis() {
               className="w-full flex items-center gap-4 text-left px-5 md:px-6 py-5"
             >
               <span
-                className={`font-mono text-sm font-bold shrink-0 transition-colors ${
+                className={`font-sans text-sm font-bold shrink-0 transition-colors ${
                   isOpen ? 'text-aether-accent' : 'text-aether-muted'
                 }`}
               >
@@ -434,13 +435,8 @@ export default function Investors() {
 
       {/* ── Key metrics ────────────────────────── */}
       <section className="relative z-20 -mt-10 pb-8">
-        <div
-          ref={metricsRef}
-          className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-4"
-        >
-          {metrics.map((m) => (
-            <Metric key={m.label} {...m} run={metricsInView} />
-          ))}
+        <div className="max-w-7xl mx-auto px-6">
+          <StatBand stats={metrics} />
         </div>
       </section>
 
@@ -507,7 +503,7 @@ export default function Investors() {
                     <span className="w-3 h-3 rounded-sm bg-aether-accent" />
                     Hydropower
                   </span>
-                  <span className="text-aether-muted font-mono">
+                  <span className="text-aether-muted font-sans">
                     {hydroMW} MW
                   </span>
                 </div>
@@ -516,7 +512,7 @@ export default function Investors() {
                     <span className="w-3 h-3 rounded-sm bg-aether-accent/30" />
                     Solar
                   </span>
-                  <span className="text-aether-muted font-mono">
+                  <span className="text-aether-muted font-sans">
                     {solarMW} MW
                   </span>
                 </div>

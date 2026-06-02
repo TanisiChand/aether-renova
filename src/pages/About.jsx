@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
+import StatBand from '../components/StatBand'
 
 /* ---- count-up helpers (shared pattern) ---- */
 function useInView(threshold = 0.4) {
@@ -334,23 +335,8 @@ export default function About() {
 
       {/* ── Stats band (sits close under Our Story) ─ */}
       <section className="relative pt-12 md:pt-16 pb-20 md:pb-28">
-        <div
-          ref={statsRef}
-          className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-4"
-        >
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="group rounded-2xl border border-aether-border bg-aether-card/40 p-6 text-center transition-all duration-500 hover:border-aether-accent/40 hover:bg-aether-card/70"
-            >
-              <div className="text-aether-accent text-4xl font-medium tracking-tight mb-2">
-                <Counter value={s.value} suffix={s.suffix} active={statsInView} />
-              </div>
-              <div className="text-aether-muted text-sm leading-snug">
-                {s.label}
-              </div>
-            </div>
-          ))}
+        <div className="max-w-7xl mx-auto px-6">
+          <StatBand stats={stats} />
         </div>
       </section>
 

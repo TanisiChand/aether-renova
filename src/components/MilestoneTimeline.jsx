@@ -89,10 +89,10 @@ function Row({ m }) {
         }`}
       >
         <div className="flex items-baseline justify-between gap-3 flex-wrap">
-          <span className={`font-mono text-[11px] ${m.done || m.cod ? 'text-aether-accent' : 'text-aether-muted'}`}>
+          <span className={`font-sans text-[11px] ${m.done || m.cod ? 'text-aether-accent' : 'text-aether-muted'}`}>
             {m.date}
           </span>
-          <span className={`font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border ${cat.cls}`}>
+          <span className={`font-sans text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border ${cat.cls}`}>
             {cat.name}
           </span>
         </div>
@@ -134,7 +134,7 @@ export default function MilestoneTimeline({ milestones }) {
             {shownPct}
             <span className="text-aether-muted text-2xl font-medium">%</span>
           </div>
-          <div className="font-mono text-sm text-aether-muted">
+          <div className="font-sans text-sm text-aether-muted">
             {doneCount} of {total} milestones complete
           </div>
         </div>
@@ -167,11 +167,11 @@ export default function MilestoneTimeline({ milestones }) {
           >
             <span className="text-white text-[15px] font-medium">
               {doneCount} completed milestones
-              <span className="text-aether-muted font-mono text-[11px] ml-2">
+              <span className="text-aether-muted font-sans text-[11px] ml-2">
                 Nov 2024 – {doneItems[doneItems.length - 1]?.date}
               </span>
             </span>
-            <span className="flex items-center gap-2 text-aether-accent font-mono text-[11px] uppercase tracking-wider shrink-0">
+            <span className="flex items-center gap-2 text-aether-accent font-sans text-[11px] uppercase tracking-wider shrink-0">
               {showDone ? 'Hide' : 'Show'}
               <svg className={`w-4 h-4 transition-transform duration-300 ${showDone ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
             </span>
@@ -198,7 +198,7 @@ export default function MilestoneTimeline({ milestones }) {
               return (
                 <div key={`today-${i}`} className="relative pl-4 py-1">
                   <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-[3px] border-[#020203] shadow-[0_0_0_4px_rgba(251,191,36,0.25)] animate-pulse" />
-                  <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-amber-300 bg-amber-400/10 border border-dashed border-amber-400/40 px-3.5 py-1.5 rounded-full">
+                  <span className="inline-flex items-center gap-2 font-sans text-[11px] uppercase tracking-[0.12em] text-amber-300 bg-amber-400/10 border border-dashed border-amber-400/40 px-3.5 py-1.5 rounded-full">
                     ● Today — 2 June 2026
                   </span>
                 </div>
