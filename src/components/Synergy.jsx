@@ -31,9 +31,13 @@ function EntityCard({ logo, name, display, tag }) {
             draggable="false"
           />
         </div>
-        <p className="relative z-10 mt-4 px-3 text-center font-montserrat text-white font-bold tracking-wider text-sm uppercase leading-tight whitespace-pre-line">
-          {display || name}
-        </p>
+        {/* fixed-height name area so every card (incl. the two-line
+            "Aether Construction") keeps the same balanced padding */}
+        <div className="relative z-10 mt-4 h-10 flex items-center justify-center px-3">
+          <p className="text-center font-montserrat text-white font-bold tracking-wider text-sm uppercase leading-tight whitespace-pre-line">
+            {display || name}
+          </p>
+        </div>
 
         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-aether-accent/40 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
