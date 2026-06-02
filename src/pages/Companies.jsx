@@ -194,23 +194,29 @@ function ProjectTile({ project, horizontal }) {
       </div>
 
       {/* content */}
-      <div className="p-6 flex flex-col">
-        <p className="text-aether-accent text-xs font-semibold uppercase tracking-wider mb-1">
+      <div className="p-6 lg:p-7 flex flex-col">
+        <p className="text-aether-accent text-xs font-semibold uppercase tracking-wider mb-1.5">
           {project.type}
         </p>
-        <h3 className="text-white text-xl font-bold mb-2">{project.name}</h3>
-        <p className="text-aether-muted text-sm flex items-center gap-2 mb-5">
+        <h3 className="text-white text-xl lg:text-2xl font-bold tracking-tight mb-2">
+          {project.name}
+        </h3>
+        <p className="text-aether-muted text-sm flex items-center gap-2 mb-6">
           <PinIcon />
           {project.location}
         </p>
 
-        <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <div className="text-white text-lg font-bold leading-tight">
+        {/* metrics strip */}
+        <div className="flex flex-wrap items-stretch gap-x-6 gap-y-4 mb-7">
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className={i > 0 ? 'sm:pl-6 sm:border-l sm:border-aether-border/60' : ''}
+            >
+              <div className="text-white text-base font-bold leading-tight">
                 {s.value}
               </div>
-              <div className="text-aether-muted text-[11px] leading-snug mt-0.5">
+              <div className="text-aether-muted text-[11px] uppercase tracking-wider leading-snug mt-1">
                 {s.label}
               </div>
             </div>
@@ -218,7 +224,7 @@ function ProjectTile({ project, horizontal }) {
         </div>
 
         <div className="mt-auto">
-          <Button href="/projects" variant="secondary" size="sm">
+          <Button href={project.detailUrl || '/projects'} variant="secondary" size="sm">
             View Project
           </Button>
         </div>
@@ -238,9 +244,9 @@ function CompanySection({ company, index }) {
       id={id}
       className="scroll-mt-28 bg-aether-card border border-aether-border rounded-3xl p-8 lg:p-10"
     >
-      {/* header */}
-      <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
-        <div className="w-16 h-16 rounded-2xl bg-[#020203] border border-aether-border flex items-center justify-center p-3 shrink-0">
+      {/* header — logo + name + description grouped as one block */}
+      <div className="flex items-start gap-5 mb-8">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#020203] border border-aether-border flex items-center justify-center p-3 shrink-0">
           <img
             src={logo}
             alt={name}
@@ -248,17 +254,17 @@ function CompanySection({ company, index }) {
             draggable="false"
           />
         </div>
-        <div className="flex-1">
-          <p className="text-aether-accent/70 text-[11px] uppercase tracking-[0.2em] mb-1">
+        <div className="min-w-0">
+          <p className="text-aether-accent/70 text-[11px] uppercase tracking-[0.2em] mb-1.5">
             {String(index + 1).padStart(2, '0')} · {tag}
           </p>
           <h2 className="text-white text-2xl lg:text-3xl font-medium tracking-tight">
             {name}
           </h2>
+          <p className="text-aether-muted text-base leading-relaxed mt-3 max-w-3xl">
+            {description}
+          </p>
         </div>
-        <p className="text-aether-muted text-base leading-relaxed md:max-w-md">
-          {description}
-        </p>
       </div>
 
       {/* projects */}
