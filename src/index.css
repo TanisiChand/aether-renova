@@ -104,6 +104,13 @@ body {
   line-height: 1.6;
 }
 
+/* Titles & headings use Montserrat; body stays Inter. */
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
 
 .dna-texture {
   position: fixed;

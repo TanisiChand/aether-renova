@@ -365,12 +365,10 @@ export default function About() {
       <section className="relative py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight mb-4">
+            <Eyebrow center>Our Purpose · मूल्य मान्यता</Eyebrow>
+            <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight">
               Core Values
             </h2>
-            <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold">
-              Our Purpose · मूल्य मान्यता
-            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">

@@ -186,15 +186,15 @@ export default function ProjectStatus() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* header */}
-        <div className="mb-10 max-w-3xl">
-          <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-3 flex items-center gap-3">
+        <div className="mb-12 max-w-3xl">
+          <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-6 flex items-center gap-3">
             <span className="w-8 h-[1px] bg-aether-accent" />
             Project Status
           </p>
-          <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight leading-tight">
+          <h2 className="text-white text-4xl md:text-5xl font-medium tracking-tight">
             The Portfolio, <span className="text-aether-accent">Live</span>
           </h2>
-          <p className="text-aether-muted text-base leading-relaxed mt-3">
+          <p className="text-aether-muted text-lg leading-relaxed mt-5">
             From permitting to full operation — track every Aether Renova project
             as it moves through its lifecycle.
           </p>
