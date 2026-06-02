@@ -272,7 +272,7 @@ export default function KusahaSolar() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-[#020203]/80 to-[#020203]/60" />
         </div>
         <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.12)_0%,_transparent_65%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.12)_0%,_transparent_65%)]" />
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
