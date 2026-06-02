@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 
 /* ---------------------------------------------------------------------------
-   Scroll-driven "storybook" timeline.
+   Scroll-linked "storybook" timeline.
 
-   As you scroll down, each step's icon lights up in sequence and the
-   connecting line fills behind it — like flipping through a story. Cards start
-   dimmed and brighten as their step activates. Robust: uses a scroll/resize
-   listener + IntersectionObserver + an on-mount check, and reveals everything
-   immediately for reduced-motion users.
+   The green connector line is scrubbed directly to scroll position (updated on
+   a requestAnimationFrame, writing the height straight to the DOM — no React
+   re-render per frame), so it tracks the scroll smoothly and identically on
+   every project page. Each node lights up the instant the line passes its
+   centre; cards ease + un-blur into focus as they activate.
 
    items: [{ date, title, detail, icon, highlight? }]
 --------------------------------------------------------------------------- */
@@ -39,64 +39,72 @@ function Icon({ type }) {
 }
 
 export default function StoryTimeline({ items }) {
-  // index of the furthest step the reader has scrolled to (-1 = none yet)
-  const [active, setActive] = useState(-1)
-  const itemRefs = useRef([])
+  const containerRef = useRef(null)
+  const fillRef = useRef(null)
+  const nodeRefs = useRef([])
+  const [activeCount, setActiveCount] = useState(0)
 
   useEffect(() => {
+    const cont = containerRef.current
+    if (!cont) return
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setActive(items.length - 1)
+      if (fillRef.current) fillRef.current.style.height = '100%'
+      setActiveCount(items.length)
       return
     }
-    const els = () => itemRefs.current.filter(Boolean)
 
-    const update = () => {
-      const mark = window.innerHeight * 0.62 // activate as a step reaches mid-screen
-      let furthest = -1
-      els().forEach((el, i) => {
-        if (el.getBoundingClientRect().top <= mark) furthest = i
+    // Compute directly on scroll — cheap (a handful of getBoundingClientRect
+    // reads) and avoids any rAF-throttling/stall, so it stays perfectly in
+    // sync with scroll position on every browser.
+    const compute = () => {
+      const rect = cont.getBoundingClientRect()
+      // The line "draws" down to a fixed activation line ~58% down the screen.
+      const lineY = window.innerHeight * 0.58
+      const fill = Math.max(0, Math.min(rect.height, lineY - rect.top))
+      if (fillRef.current) fillRef.current.style.height = `${fill}px`
+
+      let count = 0
+      nodeRefs.current.forEach((el) => {
+        if (!el) return
+        const nr = el.getBoundingClientRect()
+        const centre = nr.top - rect.top + nr.height / 2
+        if (centre <= fill + 1) count += 1
       })
-      setActive((prev) => (furthest > prev ? furthest : prev))
+      setActiveCount((prev) => (prev === count ? prev : count))
     }
 
-    update()
-    const obs = new IntersectionObserver(update, {
-      threshold: [0, 0.25, 0.6, 1],
-      rootMargin: '0px 0px -38% 0px',
-    })
-    els().forEach((el) => obs.observe(el))
-    window.addEventListener('scroll', update, { passive: true })
-    window.addEventListener('resize', update)
-    // safety: if neither scroll nor IO ever fires (sandboxes), reveal all.
-    const safety = setTimeout(() => setActive(items.length - 1), 4000)
+    compute()
+    window.addEventListener('scroll', compute, { passive: true })
+    window.addEventListener('resize', compute)
+    // recompute after layout settles (fonts/images)
+    const t1 = setTimeout(compute, 300)
+    const t2 = setTimeout(compute, 1200)
     return () => {
-      obs.disconnect()
-      window.removeEventListener('scroll', update)
-      window.removeEventListener('resize', update)
-      clearTimeout(safety)
+      window.removeEventListener('scroll', compute)
+      window.removeEventListener('resize', compute)
+      clearTimeout(t1)
+      clearTimeout(t2)
     }
   }, [items.length])
 
-  const fillPct =
-    items.length > 1 ? Math.max(0, ((active + 0.5) / items.length) * 100) : 0
-
   return (
-    <div className="relative">
+    <div ref={containerRef} className="relative">
       {/* base connector */}
       <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-[2px] bg-aether-border md:-translate-x-1/2" />
-      {/* progress fill that grows as you scroll */}
+      {/* scroll-scrubbed fill (height written directly in rAF) */}
       <div
-        className="absolute left-[19px] md:left-1/2 top-0 w-[2px] bg-gradient-to-b from-aether-accent to-aether-accent/50 md:-translate-x-1/2 transition-[height] duration-700 ease-out shadow-[0_0_12px_rgba(0,240,152,0.6)]"
-        style={{ height: `${fillPct}%` }}
+        ref={fillRef}
+        className="absolute left-[19px] md:left-1/2 top-0 w-[2px] bg-gradient-to-b from-aether-accent to-aether-accent/50 md:-translate-x-1/2 shadow-[0_0_12px_rgba(0,240,152,0.6)]"
+        style={{ height: '0px' }}
       />
 
       <div className="space-y-8">
         {items.map((m, i) => {
-          const on = i <= active
+          const on = i < activeCount
           return (
             <div
               key={m.date}
-              ref={(el) => (itemRefs.current[i] = el)}
               className={`relative flex items-center gap-6 md:gap-0 ${
                 i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
@@ -104,7 +112,8 @@ export default function StoryTimeline({ items }) {
               {/* node */}
               <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${
+                  ref={(el) => (nodeRefs.current[i] = el)}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 ease-out ${
                     on
                       ? m.highlight
                         ? 'bg-aether-accent text-black border-aether-accent shadow-[0_0_30px_rgba(0,240,152,0.75)] scale-110'
@@ -123,10 +132,10 @@ export default function StoryTimeline({ items }) {
                 }`}
               >
                 <div
-                  className={`bg-aether-card border rounded-2xl p-5 transition-all duration-500 ${
+                  className={`bg-aether-card border rounded-2xl p-5 transition-all duration-700 ease-out ${
                     on
-                      ? 'border-aether-accent/40 opacity-100 translate-y-0 shadow-[0_0_24px_rgba(0,240,152,0.08)]'
-                      : 'border-aether-border opacity-40 translate-y-2'
+                      ? 'border-aether-accent/40 opacity-100 translate-y-0 blur-0 shadow-[0_0_24px_rgba(0,240,152,0.08)]'
+                      : 'border-aether-border opacity-40 translate-y-3 blur-[2px]'
                   }`}
                 >
                   <p

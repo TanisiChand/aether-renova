@@ -243,7 +243,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Investment highlights ── */}
-      <section id="highlights" ref={hlRef} className="relative py-20 border-t border-aether-border/40 scroll-mt-24">
+      <section id="highlights" ref={hlRef} className="relative py-24 md:py-32 border-t border-aether-border/40 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Highlights</Eyebrow>
@@ -274,7 +274,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Overview specs ── */}
-      <section id="overview" className="relative py-20 scroll-mt-24">
+      <section id="overview" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Project Snapshot</Eyebrow>
@@ -311,7 +311,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Present status ── */}
-      <section id="status" className="relative py-20 scroll-mt-24">
+      <section id="status" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Present Status</Eyebrow>
@@ -354,7 +354,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Construction timeline ── */}
-      <section id="timeline" className="relative py-24 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden scroll-mt-24">
+      <section id="timeline" className="relative py-24 md:py-32 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden scroll-mt-24">
         <SynergyBackground />
         <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-[#020203] to-transparent pointer-events-none z-[1]" />
         <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#020203] to-transparent pointer-events-none z-[1]" />
@@ -374,7 +374,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Financials ── */}
-      <section id="financials" className="relative py-20 scroll-mt-24">
+      <section id="financials" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <Eyebrow>Financials</Eyebrow>
@@ -428,7 +428,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Sensitivity ── */}
-      <section id="sensitivity" className="relative py-20 scroll-mt-24">
+      <section id="sensitivity" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Sensitivity Analysis</Eyebrow>
@@ -454,7 +454,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Cap table ── */}
-      <section id="captable" className="relative py-20 scroll-mt-24">
+      <section id="captable" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Cap Table</Eyebrow>
@@ -532,7 +532,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Solar resource ── */}
-      <section id="resource" ref={resRef} className="relative py-20 scroll-mt-24">
+      <section id="resource" ref={resRef} className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Solar Resource</Eyebrow>
@@ -571,7 +571,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── EPC partner ── */}
-      <section id="epc" className="relative py-20 scroll-mt-24">
+      <section id="epc" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>EPC Partner</Eyebrow>
@@ -602,7 +602,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── Investment thesis ── */}
-      <section id="thesis" className="relative py-20 scroll-mt-24">
+      <section id="thesis" className="relative py-24 md:py-32 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Thesis</Eyebrow>
@@ -628,7 +628,7 @@ export default function DhalkebarSolar() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative py-24 border-t border-aether-border/40">
+      <section className="relative py-24 md:py-32 border-t border-aether-border/40">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-4">
             This is your moment — own it in the next 11 months.

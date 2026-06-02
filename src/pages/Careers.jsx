@@ -153,7 +153,7 @@ export default function Careers() {
       </section>
 
       {/* ── Why work here ──────────────────────── */}
-      <section className="relative py-24">
+      <section className="relative py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>Why Aether Renova</Eyebrow>
@@ -191,7 +191,7 @@ export default function Careers() {
       </section>
 
       {/* ── Open roles ─────────────────────────── */}
-      <section id="open-roles" className="scroll-mt-28 relative py-24">
+      <section id="open-roles" className="scroll-mt-28 relative py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Open Positions</Eyebrow>
@@ -235,7 +235,7 @@ export default function Careers() {
       </section>
 
       {/* ── No-fit CTA ─────────────────────────── */}
-      <section className="relative py-24">
+      <section className="relative py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-5">
             Don’t see your role?
