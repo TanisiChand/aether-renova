@@ -16,7 +16,7 @@ import { useEffect, useRef, useState } from 'react'
 --------------------------------------------------------------------------- */
 
 const SIZES = {
-  lg: { num: 'clamp(36px,5.8vw,62px)', pad: 'py-10 md:py-12 lg:py-14', gap: 'gap-y-9', label: 'text-xs md:text-sm', mt: 'mt-4', line: 'mt-5' },
+  lg: { num: 'clamp(30px,5.4vw,60px)', pad: 'py-10 md:py-12 lg:py-14', gap: 'gap-y-9', label: 'text-xs md:text-sm', mt: 'mt-4', line: 'mt-5' },
   sm: { num: 'clamp(26px,3vw,40px)', pad: 'py-6 md:py-7', gap: 'gap-y-7', label: 'text-[11px] md:text-xs', mt: 'mt-3', line: 'mt-4' },
 }
 
@@ -79,7 +79,7 @@ function Stat({ s, idx, inView, size }) {
   return (
     <div className="group relative px-3 lg:px-6 text-center">
       <div
-        className="font-montserrat text-white font-semibold tracking-tight leading-none transition-all duration-500 group-hover:-translate-y-1 group-hover:[text-shadow:0_0_28px_rgba(10,242,173,0.4)]"
+        className="font-montserrat text-white font-semibold tracking-tight leading-none whitespace-nowrap transition-all duration-500 group-hover:-translate-y-1 group-hover:[text-shadow:0_0_28px_rgba(10,242,173,0.4)]"
         style={{ fontSize: sz.num }}
       >
         {s.prefix && <Affix side="pre">{s.prefix}</Affix>}
@@ -157,8 +157,10 @@ export default function StatBand({ stats, variant = 'panel', size = 'lg', classN
       )}
 
       <div
-        className={`relative grid ${mobileCols} ${lgCols} ${sz.gap} lg:gap-0 ${
-          singleRow ? 'lg:divide-x lg:divide-aether-border/50' : ''
+        className={`relative grid ${mobileCols} ${lgCols} ${
+          singleRow
+            ? `${sz.gap} lg:gap-0 lg:divide-x lg:divide-aether-border/50`
+            : 'gap-x-2 gap-y-10 lg:gap-x-6 lg:gap-y-14'
         } ${isPanel ? sz.pad : ''}`}
       >
         {stats.map((s, i) => (
