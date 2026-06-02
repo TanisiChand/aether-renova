@@ -126,7 +126,7 @@ function PurposeCard({ icon, title, quote, np }) {
         <div className="w-10 h-10 rounded-xl bg-aether-accent/10 border border-aether-accent/30 flex items-center justify-center">
           {icon}
         </div>
-        <h3 className="text-white text-xl font-bold tracking-tight uppercase">
+        <h3 className="text-white text-xl font-semibold tracking-tight">
           {title}
         </h3>
       </div>
@@ -262,7 +262,7 @@ export default function About() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>About The Group</Eyebrow>
-          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight uppercase mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
             Who Are We
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed">
@@ -278,7 +278,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <Eyebrow>Our Story</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-6">
               Building what tomorrow runs on
             </h2>
             <div className="space-y-5 text-aether-muted text-base leading-relaxed">
@@ -350,7 +350,7 @@ export default function About() {
               key={s.label}
               className="group rounded-2xl border border-aether-border bg-aether-card/40 p-6 text-center transition-all duration-500 hover:border-aether-accent/40 hover:bg-aether-card/70"
             >
-              <div className="text-aether-accent text-4xl font-bold tracking-tight mb-2">
+              <div className="text-aether-accent text-4xl font-semibold tracking-tight mb-2">
                 <Counter value={s.value} suffix={s.suffix} active={statsInView} />
               </div>
               <div className="text-aether-muted text-sm leading-snug">
@@ -387,7 +387,7 @@ export default function About() {
           {/* Core Values */}
           <div className="mt-20">
             <div className="text-center mb-12">
-              <h3 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+              <h3 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
                 Core Values
               </h3>
             </div>
@@ -405,7 +405,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>Corporate Social Responsibility</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase mb-5">
+            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight mb-5">
               Power With Purpose
             </h2>
             <p className="text-aether-muted text-lg">
@@ -449,7 +449,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow center>In The Community</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
               Community Projects
             </h2>
           </div>
@@ -492,7 +492,7 @@ export default function About() {
       {/* ── CTA ────────────────────────────────── */}
       <section className="relative py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-5">
+          <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-5">
             Build the future with us
           </h2>
           <p className="text-aether-muted text-lg mb-8">

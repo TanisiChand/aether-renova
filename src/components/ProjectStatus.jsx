@@ -191,7 +191,7 @@ export default function ProjectStatus() {
             <span className="w-8 h-[1px] bg-aether-accent" />
             Project Status
           </p>
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase leading-tight">
+          <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
             The Portfolio, <span className="text-aether-accent">Live</span>
           </h2>
           <p className="text-aether-muted text-base leading-relaxed mt-3">

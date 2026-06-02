@@ -225,7 +225,7 @@ export default function DhalkebarSolar() {
             </span>
           </div>
 
-          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight uppercase mb-4">
+          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-4">
             Dhalkebar Solar
           </h1>
           <p className="text-aether-accent text-xl md:text-2xl font-bold mb-4">
@@ -247,7 +247,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Highlights</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Why Dhalkebar — At a Glance
             </h2>
           </div>
@@ -257,7 +257,7 @@ export default function DhalkebarSolar() {
                 key={h.label}
                 className="group rounded-2xl border border-aether-border bg-aether-card/40 p-6 text-center transition-all duration-500 hover:border-aether-accent/40 hover:bg-aether-card/70 hover:-translate-y-1"
               >
-                <div className="text-aether-accent text-3xl md:text-4xl font-bold tracking-tight mb-2">
+                <div className="text-aether-accent text-3xl md:text-4xl font-semibold tracking-tight mb-2">
                   <Counter {...h} active={hlIn} />
                 </div>
                 <div className="text-aether-muted text-xs uppercase tracking-wider leading-snug">
@@ -278,7 +278,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Project Snapshot</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-5">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-5">
               Dhalkebar Solar Power Project
             </h2>
             <p className="text-aether-muted text-base leading-relaxed mb-8">
@@ -315,7 +315,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Present Status</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Where We Stand Today
             </h2>
           </div>
@@ -361,7 +361,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <Eyebrow center>Project Timeline</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               10-Month Build
             </h2>
             <p className="text-aether-muted text-base mt-4">
@@ -378,7 +378,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <Eyebrow>Financials</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-2">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-2">
               Capital Structure
             </h2>
             <p className="text-aether-muted text-sm mb-8">
@@ -412,7 +412,7 @@ export default function DhalkebarSolar() {
 
           <div>
             <Eyebrow>Key Parameters</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-8">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-8">
               Returns &amp; Coverage
             </h2>
             <div className="grid grid-cols-2 gap-4">
@@ -432,7 +432,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Sensitivity Analysis</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Returns Hold Under Stress
             </h2>
             <p className="text-aether-muted text-base mt-4">
@@ -458,7 +458,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Cap Table</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Shareholding Structure
             </h2>
             <p className="text-aether-muted text-sm mt-3">
@@ -536,7 +536,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Solar Resource</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Validated Solar Yield
             </h2>
             <p className="text-aether-muted text-sm mt-3 max-w-2xl mx-auto">
@@ -575,7 +575,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>EPC Partner</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Sunshine Engineering
             </h2>
           </div>
@@ -606,7 +606,7 @@ export default function DhalkebarSolar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Thesis</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
               Why Dhalkebar Solar?
             </h2>
           </div>
@@ -630,7 +630,7 @@ export default function DhalkebarSolar() {
       {/* ── CTA ── */}
       <section className="relative py-24 md:py-32 border-t border-aether-border/40">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-4">
+          <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-4">
             This is your moment — own it in the next 11 months.
           </h2>
           <p className="text-aether-muted text-lg mb-8">

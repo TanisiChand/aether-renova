@@ -76,7 +76,7 @@ export default function JobDetail() {
             </span>
           </div>
 
-          <h1 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-2">
+          <h1 className="text-white text-4xl md:text-5xl font-semibold tracking-tight mb-2">
             {role.title}
             {role.subtitle && (
               <span className="text-aether-muted font-medium"> — {role.subtitle}</span>
@@ -110,7 +110,7 @@ export default function JobDetail() {
             </div>
 
             <div>
-              <h2 className="text-white text-2xl font-bold tracking-tight mb-5">
+              <h2 className="text-white text-2xl font-semibold tracking-tight mb-5">
                 Key Responsibilities
               </h2>
               <ul className="space-y-3">
@@ -124,7 +124,7 @@ export default function JobDetail() {
             </div>
 
             <div>
-              <h2 className="text-white text-2xl font-bold tracking-tight mb-5">
+              <h2 className="text-white text-2xl font-semibold tracking-tight mb-5">
                 Requirements
               </h2>
               <ul className="space-y-3">

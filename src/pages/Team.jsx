@@ -202,7 +202,7 @@ export default function Team() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>The People</Eyebrow>
-          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight uppercase mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
             Our Team
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed">
@@ -217,7 +217,7 @@ export default function Team() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow center>Leadership</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
               Guiding the Vision
             </h2>
           </div>
@@ -234,7 +234,7 @@ export default function Team() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow center>The Team</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
               The People Behind the Power
             </h2>
           </div>
@@ -250,7 +250,7 @@ export default function Team() {
       <section className="relative py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Eyebrow center>Join Us</Eyebrow>
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-5">
+          <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-5">
             We’re always looking for great people
           </h2>
           <p className="text-aether-muted text-lg mb-8">

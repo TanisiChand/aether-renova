@@ -98,7 +98,7 @@ function ImpactStat({ value, plus, unit, label, run }) {
   const n = useCountUp(value, run)
   return (
     <div className="text-center">
-      <div className="text-aether-accent text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-none whitespace-nowrap">
+      <div className="text-aether-accent text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-none whitespace-nowrap">
         {fmt(n)}
         {plus && '+'}
       </div>
@@ -130,7 +130,7 @@ export default function CommunityImpact() {
             Community &amp; Country
             <span className="w-12 h-[1px] bg-aether-accent/60" />
           </p>
-          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight uppercase leading-tight">
+          <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
             Good For Nepal,
             <span className="block text-aether-accent">Owned By Nepalis</span>
           </h2>

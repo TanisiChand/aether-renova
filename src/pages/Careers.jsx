@@ -139,7 +139,7 @@ export default function Careers() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>Careers</Eyebrow>
-          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight uppercase mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
             Build With Us
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed mb-8">
@@ -157,7 +157,7 @@ export default function Careers() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>Why Aether Renova</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase">
+            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
               More Than a Job
             </h2>
           </div>
@@ -195,7 +195,7 @@ export default function Careers() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Open Positions</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight uppercase mb-4">
+            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight mb-4">
               Open Roles
             </h2>
             <p className="text-aether-muted text-lg">
@@ -237,7 +237,7 @@ export default function Careers() {
       {/* ── No-fit CTA ─────────────────────────── */}
       <section className="relative py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight mb-5">
+          <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-5">
             Don’t see your role?
           </h2>
           <p className="text-aether-muted text-lg mb-8">

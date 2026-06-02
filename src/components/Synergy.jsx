@@ -70,7 +70,7 @@ export default function Synergy() {
             The Ecosystem
             <span className="w-16 h-[1px] bg-aether-accent/50" />
           </p>
-          <h2 className="text-white text-5xl md:text-6xl font-bold tracking-tight uppercase mb-6">
+          <h2 className="text-white text-5xl md:text-6xl font-semibold tracking-tight mb-6">
             Synergy
           </h2>
           <p className="text-aether-muted text-lg max-w-xl mx-auto">
