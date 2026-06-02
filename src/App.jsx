@@ -14,6 +14,8 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Projects from './pages/Projects'
 import KusahaSolar from './pages/KusahaSolar'
+import DhalkebarSolar from './pages/DhalkebarSolar'
+import ChameliyaHydropower from './pages/ChameliyaHydropower'
 import Investors from './pages/Investors'
 import Translator from './i18n/Translator'
 import ScrollReveal from './components/ScrollReveal'
@@ -96,6 +98,8 @@ function ShownRoutes({ location }) {
       <Route path="/companies" element={<Companies />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/projects/kusaha-solar" element={<KusahaSolar />} />
+      <Route path="/projects/dhalkebar-solar" element={<DhalkebarSolar />} />
+      <Route path="/projects/chameliya-chettigad" element={<ChameliyaHydropower />} />
       <Route path="/about" element={<About />} />
       <Route path="/team" element={<Team />} />
       <Route path="/careers" element={<Careers />} />
