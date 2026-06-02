@@ -24,6 +24,15 @@
 
 html {
   overflow-x: hidden;
+  /* Match the app background so the rubber-band/overscroll area at the top of
+     the page on mobile shows the dark theme — not a black flash — and disable
+     pull-to-refresh (the "black screen + spinner" when pulling down at top). */
+  background-color: #020203;
+  overscroll-behavior-y: none;
+}
+
+body {
+  overscroll-behavior-y: none;
 }
 
 /* Smooth in-page scrolling (anchor jumps, scroll-spy), unless the user

@@ -110,7 +110,7 @@ export default function CommunityImpact() {
   return (
     <section
       id="community-impact"
-      className="relative py-20 font-sans z-10 overflow-hidden bg-[#020203]"
+      className="relative py-16 font-sans z-10 overflow-hidden bg-[#020203]"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* header */}
