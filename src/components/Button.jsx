@@ -44,7 +44,7 @@ export default function Button({
 }) {
   const classes = [
     'group inline-flex items-center justify-center gap-2 rounded-full',
-    'font-sans font-bold uppercase tracking-wider',
+    'font-sans font-semibold tracking-wide',
     'transition-all duration-300 cursor-pointer',
     SIZES[size],
     VARIANTS[variant],

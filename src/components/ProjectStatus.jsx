@@ -178,7 +178,7 @@ export default function ProjectStatus() {
     <section
       ref={sectionRef}
       id="project-status"
-      className="relative py-24 md:py-32 bg-transparent font-sans z-10 overflow-hidden"
+      className="relative py-20 md:py-28 bg-transparent font-sans z-10 overflow-hidden"
     >
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.12)_0%,_transparent_70%)]" />
@@ -366,7 +366,7 @@ export default function ProjectStatus() {
                 {p.detailUrl ? (
                   <Link
                     to={p.detailUrl}
-                    className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-bold uppercase tracking-wider transition-all duration-300 px-8 py-3.5 text-sm bg-aether-accent text-black hover:shadow-[0_0_30px_rgba(0,240,152,0.4)] hover:-translate-y-0.5"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-3.5 text-sm bg-aether-accent text-black hover:shadow-[0_0_30px_rgba(0,240,152,0.4)] hover:-translate-y-0.5"
                   >
                     View Project Details
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -374,7 +374,7 @@ export default function ProjectStatus() {
                 ) : (
                   <Link
                     to="/projects"
-                    className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-bold uppercase tracking-wider transition-all duration-300 px-8 py-3.5 text-sm bg-transparent border border-aether-border text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-3.5 text-sm bg-transparent border border-aether-border text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent"
                   >
                     Explore All Projects
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

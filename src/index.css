@@ -157,16 +157,19 @@ nav.site-nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 24px 0;
+  padding: 22px 0;
   z-index: 1000;
-  transition: var(--transition);
+  /* Smoothly ease only what actually changes (avoids a flickery border line). */
+  transition:
+    padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 nav.site-nav.scrolled {
-  background: rgba(0, 0, 0, 0.85);
+  background-color: rgba(2, 2, 3, 0.7);
   backdrop-filter: blur(20px);
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(10, 242, 173, 0.1);
+  padding: 14px 0;
 }
 
 .nav-inner {
@@ -447,10 +450,9 @@ nav.site-nav.scrolled {
 .nav-links a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
   transition: var(--transition);
 }
 
@@ -471,10 +473,9 @@ nav.site-nav.scrolled {
   gap: 5px;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
   transition: var(--transition);
 }
 

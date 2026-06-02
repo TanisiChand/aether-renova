@@ -105,7 +105,7 @@ export default function Contact() {
       </section>
 
       {/* ── Form + details ─────────────────────── */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-10">
           {/* Form */}
           <div className="lg:col-span-3 bg-aether-card border border-aether-border rounded-3xl p-8 lg:p-10">

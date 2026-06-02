@@ -181,7 +181,7 @@ export default function BlogPost() {
 
       {/* ── Related ────────────────────────────── */}
       {related.length > 0 && (
-        <section className="relative py-24 md:py-32 border-t border-aether-border/50">
+        <section className="relative py-20 md:py-28 border-t border-aether-border/50">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-white text-2xl font-medium tracking-tight mb-8">
               More from the Grid

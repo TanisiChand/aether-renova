@@ -445,7 +445,7 @@ export default function Investors() {
       </section>
 
       {/* ── Why invest (thesis) ────────────────── */}
-      <section id="thesis" className="scroll-mt-24 relative py-24 md:py-32">
+      <section id="thesis" className="scroll-mt-24 relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>The Investment Thesis</Eyebrow>
@@ -462,7 +462,7 @@ export default function Investors() {
       </section>
 
       {/* ── Growth trajectory + portfolio mix ──── */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12 max-w-2xl">
             <Eyebrow>Growth Trajectory</Eyebrow>
@@ -537,7 +537,7 @@ export default function Investors() {
       </section>
 
       {/* ── Impact calculator ──────────────────── */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Model Your Impact</Eyebrow>
@@ -556,7 +556,7 @@ export default function Investors() {
       </section>
 
       {/* ── How to invest ──────────────────────── */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203]">
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-[#020203] via-[#0a1510] to-[#020203]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>The Process</Eyebrow>
@@ -586,7 +586,7 @@ export default function Investors() {
       </section>
 
       {/* ── CTA ────────────────────────────────── */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.10)_0%,_transparent_70%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight mb-5">

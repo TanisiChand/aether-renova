@@ -13,7 +13,7 @@ const highlights = [
 
 export default function InvestCTA() {
   return (
-    <section className="relative py-24 md:py-32 font-sans z-10 overflow-hidden">
+    <section className="relative py-20 md:py-28 font-sans z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative rounded-3xl border border-aether-accent/20 bg-gradient-to-br from-[#08140f] via-[#06100c] to-[#020203] overflow-hidden">
           {/* glow accents */}
@@ -41,14 +41,14 @@ export default function InvestCTA() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/investors"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-bold uppercase tracking-wider transition-all duration-300 px-8 py-4 text-sm bg-aether-accent text-black hover:shadow-[0_0_30px_rgba(0,240,152,0.4)] hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-4 text-sm bg-aether-accent text-black hover:shadow-[0_0_30px_rgba(0,240,152,0.4)] hover:-translate-y-0.5"
                 >
                   Why Invest in Us
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
                 <a
                   href={DECK_MAILTO}
-                  className="inline-flex items-center justify-center gap-2 rounded-full font-sans font-bold uppercase tracking-wider transition-all duration-300 px-8 py-4 text-sm bg-transparent border border-aether-border text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent"
+                  className="inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-4 text-sm bg-transparent border border-aether-border text-white hover:border-aether-accent hover:bg-aether-accent/10 hover:text-aether-accent"
                 >
                   Request Deck
                 </a>

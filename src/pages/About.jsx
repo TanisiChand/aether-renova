@@ -274,7 +274,7 @@ export default function About() {
       </section>
 
       {/* ── Company story ──────────────────────── */}
-      <section className="relative py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <Eyebrow>Our Story</Eyebrow>
@@ -340,7 +340,7 @@ export default function About() {
       </section>
 
       {/* ── Stats band ─────────────────────────── */}
-      <section className="relative py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
         <div
           ref={statsRef}
           className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-4"
@@ -362,7 +362,7 @@ export default function About() {
       </section>
 
       {/* ── Our Purpose (Mission & Vision) ─────── */}
-      <section className="relative py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Our Purpose · मूल्य मान्यता</Eyebrow>
@@ -395,7 +395,7 @@ export default function About() {
       </section>
 
       {/* ── CSR pillars ────────────────────────── */}
-      <section className="relative py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>Corporate Social Responsibility</Eyebrow>
@@ -439,7 +439,7 @@ export default function About() {
       </section>
 
       {/* ── Community projects ─────────────────── */}
-      <section className="relative py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow center>In The Community</Eyebrow>
@@ -484,7 +484,7 @@ export default function About() {
       </section>
 
       {/* ── CTA ────────────────────────────────── */}
-      <section className="relative py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-5">
             Build the future with us
