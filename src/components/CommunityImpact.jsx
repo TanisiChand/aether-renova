@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import StatBand from './StatBand'
 
 /* ---------------------------------------------------------------------------
    Community & Country — homepage showcase of our community activities and the
@@ -58,10 +59,10 @@ function useCountUp(target, run, duration = 1500) {
 const fmt = (n) => Math.round(n).toLocaleString()
 
 const impact = [
-  { value: 40000, plus: true, label: 'Homes powered with clean energy' },
-  { value: 1200, plus: true, label: 'Local jobs & livelihoods supported' },
-  { value: 12, plus: false, label: 'Communities partnered with' },
-  { value: 35000, plus: false, unit: ' t/yr', label: 'CO₂ emissions avoided' },
+  { value: 40000, suffix: '+', label: 'Homes powered with clean energy' },
+  { value: 1200, suffix: '+', label: 'Local jobs & livelihoods supported' },
+  { value: 12, label: 'Communities partnered with' },
+  { value: 35000, suffix: ' t/yr', label: 'CO₂ emissions avoided' },
 ]
 
 const activities = [
@@ -142,14 +143,7 @@ export default function CommunityImpact() {
         </div>
 
         {/* impact stats */}
-        <div
-          ref={statsRef}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 lg:gap-8 mb-16 py-10 border-y border-aether-border"
-        >
-          {impact.map((s) => (
-            <ImpactStat key={s.label} {...s} run={statsInView} />
-          ))}
-        </div>
+        <StatBand stats={impact} className="mb-16" />
 
         {/* community activity cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

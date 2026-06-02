@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import StatBand from './StatBand'
 
 const IR_EMAIL = 'investors@aetherrenova.com'
 const DECK_MAILTO = `mailto:${IR_EMAIL}?subject=${encodeURIComponent(
@@ -6,9 +7,9 @@ const DECK_MAILTO = `mailto:${IR_EMAIL}?subject=${encodeURIComponent(
 )}`
 
 const highlights = [
-  { value: '500', suffix: ' MW', label: 'Generation pipeline' },
-  { value: '5', suffix: '', label: 'Operating companies' },
-  { value: '100', suffix: '%', label: 'Community-majority' },
+  { value: 500, suffix: ' MW', label: 'Generation pipeline' },
+  { value: 5, label: 'Operating companies' },
+  { value: 100, suffix: '%', label: 'Community-majority' },
 ]
 
 export default function InvestCTA() {
@@ -56,24 +57,12 @@ export default function InvestCTA() {
             </div>
 
             {/* highlight stats */}
-            <div className="relative z-20 grid grid-cols-3 gap-2.5 sm:gap-4">
-              {highlights.map((h) => (
-                <div
-                  key={h.label}
-                  className="rounded-2xl border border-aether-accent/20 bg-[#080f0c]/95 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.5)] px-3 py-8 sm:px-5 sm:py-9 text-center transition-all duration-300 hover:border-aether-accent/50 hover:bg-[#0c1611]"
-                >
-                  <div className="text-aether-accent text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight leading-none whitespace-nowrap">
-                    {h.value}
-                    {h.suffix && (
-                      <span className="text-base md:text-xl">{h.suffix}</span>
-                    )}
-                  </div>
-                  <div className="text-aether-muted text-[10px] sm:text-[11px] uppercase tracking-wider mt-4 leading-snug">
-                    {h.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <StatBand
+              stats={highlights}
+              variant="panel"
+              size="sm"
+              className="relative z-20 bg-[#080f0c]/70 border-aether-accent/20"
+            />
           </div>
         </div>
       </div>

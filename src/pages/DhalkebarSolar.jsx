@@ -4,6 +4,7 @@ import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
 import SectionNav from '../components/SectionNav'
 import MilestoneTimeline from '../components/MilestoneTimeline'
+import StatBand from '../components/StatBand'
 
 const NAV_SECTIONS = [
   { id: 'highlights', label: 'Highlights' },
@@ -278,21 +279,7 @@ export default function DhalkebarSolar() {
               Why Dhalkebar — At a Glance
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {highlights.map((h) => (
-              <div
-                key={h.label}
-                className="group rounded-2xl border border-aether-border bg-aether-card/40 p-6 text-center transition-all duration-500 hover:border-aether-accent/40 hover:bg-aether-card/70 hover:-translate-y-1"
-              >
-                <div className="text-aether-accent text-3xl md:text-4xl font-medium tracking-tight mb-2">
-                  <Counter {...h} active={hlIn} />
-                </div>
-                <div className="text-aether-muted text-xs uppercase tracking-wider leading-snug">
-                  {h.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          <StatBand stats={highlights} />
           <p className="text-center text-aether-muted text-sm mt-8 max-w-2xl mx-auto">
             <span className="text-aether-accent font-semibold">Structural advantage:</span>{' '}
             deferred equipment payments · 70 : 30 loan-to-equity · 10-month build.

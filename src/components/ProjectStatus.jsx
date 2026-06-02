@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import StatBand from './StatBand'
 import { projects, portfolio, PROJECT_STAGES } from '../data/projects'
 
 /* ---------------------------------------------------------------------------
@@ -201,12 +202,15 @@ export default function ProjectStatus() {
         </div>
 
         {/* portfolio stat strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-          <Stat value={portfolio.totalMW} suffix="MW" label="Total Capacity" run={inView} />
-          <Stat value={portfolio.count} label="Active Projects" run={inView} />
-          <Stat value={portfolio.operational} label="Operational" run={inView} />
-          <Stat value={portfolio.inDevelopment} label="In Development" run={inView} />
-        </div>
+        <StatBand
+          className="mb-8"
+          stats={[
+            { value: portfolio.totalMW, suffix: ' MW', label: 'Total Capacity' },
+            { value: portfolio.count, label: 'Active Projects' },
+            { value: portfolio.operational, label: 'Operational' },
+            { value: portfolio.inDevelopment, label: 'In Development' },
+          ]}
+        />
 
         {/* interactive selector + detail */}
         <div

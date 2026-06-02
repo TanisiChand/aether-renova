@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
 import Button from './Button'
+import StatBand from './StatBand'
 
 const stats = [
   { value: 500, suffix: ' MW', label: 'Hydropower & solar target' },
@@ -25,60 +25,7 @@ const photos = [
   },
 ]
 
-function useInView(threshold = 0.3) {
-  const ref = useRef(null)
-  const [inView, setInView] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true)
-          obs.disconnect()
-        }
-      },
-      { threshold },
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  return [ref, inView]
-}
-
-function Counter({ value, suffix, active }) {
-  const [display, setDisplay] = useState(0)
-  useEffect(() => {
-    if (!active) return
-    const prefersReduced = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    if (prefersReduced) {
-      setDisplay(value)
-      return
-    }
-    let raf
-    const duration = 1400
-    const start = performance.now()
-    const tick = (now) => {
-      const t = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - t, 3)
-      setDisplay(Math.round(value * eased))
-      if (t < 1) raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [active, value])
-  return (
-    <span>
-      {display}
-      {suffix}
-    </span>
-  )
-}
-
 export default function WhoAreWe() {
-  const [statsRef, statsInView] = useInView(0.4)
 
   return (
     <section
@@ -115,25 +62,7 @@ export default function WhoAreWe() {
             </p>
 
             {/* Animated stats */}
-            <div ref={statsRef} className="grid grid-cols-3 gap-4 mt-10 mb-10">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="group rounded-xl border border-aether-border bg-aether-card/40 p-4 transition-all duration-500 hover:border-aether-accent/40 hover:bg-aether-card/70"
-                >
-                  <div className="text-aether-accent text-3xl font-bold font-sans tracking-tight">
-                    <Counter
-                      value={stat.value}
-                      suffix={stat.suffix}
-                      active={statsInView}
-                    />
-                  </div>
-                  <div className="text-aether-muted text-xs mt-2 leading-snug">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <StatBand stats={stats} variant="bare" size="sm" className="mt-10 mb-10" />
 
             <Button href="/about" variant="primary">
               Read Our Story
