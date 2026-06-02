@@ -83,8 +83,7 @@ export default function SectionNav({ sections }) {
       >
         <div className="mx-auto max-w-5xl px-3 sm:px-6">
           <div className={`flex items-center gap-2 rounded-full border border-aether-border bg-[#06060a]/90 backdrop-blur-md px-2 py-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.45)] ${show ? 'pointer-events-auto' : ''}`}>
-            <span className="hidden sm:flex items-center gap-1.5 pl-2 pr-1 text-[10px] uppercase tracking-[0.18em] text-aether-muted/70 shrink-0">
-              <svg className="w-3.5 h-3.5 text-aether-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+            <span className="hidden sm:flex items-center pl-3 pr-1 text-[10px] uppercase tracking-[0.18em] text-aether-muted/70 shrink-0">
               On this page
             </span>
             <span className="hidden sm:block w-px h-5 bg-aether-border shrink-0" />

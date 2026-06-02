@@ -35,11 +35,6 @@ function EntityCard({ logo, name, display, tag }) {
           {display || name}
         </p>
 
-        {/* tag — pinned to the bottom so it never offsets the centered block */}
-        <p className="absolute inset-x-0 bottom-4 z-10 text-center text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-          {tag}
-        </p>
-
         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-aether-accent/40 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
     </div>
