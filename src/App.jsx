@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DnaTexture from './components/DnaTexture'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -20,80 +19,13 @@ import Investors from './pages/Investors'
 import Translator from './i18n/Translator'
 import ScrollReveal from './components/ScrollReveal'
 
-const FADE_MS = 160
-
 /**
- * Crossfade between pages: when the path changes, fade the current page out,
- * then swap content + scroll, then fade the new page in. Reads as smooth
- * rather than an instant snap.
+ * Page routes. Entrance animation + scroll handling on route change are owned
+ * by <ScrollReveal/>, so navigation and refresh animate identically.
  */
-function PageTransition() {
-  const location = useLocation()
-  // The location actually rendered (lags real location during fade-out).
-  const [shown, setShown] = useState(location)
-  const [stage, setStage] = useState('in') // 'in' | 'out'
-
-  const reduce =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-  // Same pathname+hash means no visual change needed.
-  const sameKey =
-    location.pathname === shown.pathname && location.hash === shown.hash
-
-  useEffect(() => {
-    if (sameKey) return
-    if (reduce) {
-      setShown(location)
-      return
-    }
-    setStage('out')
-    const t = setTimeout(() => {
-      setShown(location)
-      setStage('in')
-    }, FADE_MS)
-    return () => clearTimeout(t)
-  }, [location, sameKey, reduce])
-
-  // Handle scrolling once the new page is shown.
-  useEffect(() => {
-    const { hash } = shown
-    if (hash) {
-      let tries = 0
-      const tryScroll = () => {
-        const el = document.querySelector(hash)
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
-        else if (tries++ < 10) setTimeout(tryScroll, 50)
-      }
-      tryScroll()
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-    }
-  }, [shown])
-
+function Pages() {
   return (
-    <div
-      className="page-transition"
-      style={{
-        // Opacity-only crossfade. NOTE: do not add `transform` here — a
-        // transformed (or will-change: transform) ancestor becomes the
-        // containing block for position:fixed descendants, which breaks
-        // fixed UI rendered inside pages (e.g. KusahaSolar's SectionNav
-        // progress bar + dot-nav).
-        opacity: stage === 'out' ? 0 : 1,
-        transition: reduce ? 'none' : `opacity ${FADE_MS}ms ease`,
-      }}
-    >
-      {/* render the lagging "shown" location, not the live one */}
-      <ShownRoutes location={shown} />
-    </div>
-  )
-}
-
-// Render routes for a specific (possibly stale) location object.
-function ShownRoutes({ location }) {
-  return (
-    <Routes location={location}>
+    <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/companies" element={<Companies />} />
       <Route path="/projects" element={<Projects />} />
@@ -119,7 +51,7 @@ function App() {
       <ScrollReveal />
       <DnaTexture />
       <Navbar />
-      <PageTransition />
+      <Pages />
       <Footer />
     </BrowserRouter>
   )

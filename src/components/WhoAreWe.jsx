@@ -99,7 +99,7 @@ export default function WhoAreWe() {
               <span className="w-8 h-[1px] bg-aether-accent" />
               Who We Are
             </p>
-            <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+            <h2 className="text-white text-4xl md:text-5xl font-medium tracking-tight mb-6">
               Aether Renova Holdings
             </h2>
 

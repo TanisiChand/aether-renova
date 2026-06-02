@@ -219,7 +219,7 @@ export default function ChameliyaHydropower() {
             </span>
           </div>
 
-          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-4">
+          <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-4">
             Chameliya–Chettigad
           </h1>
           <p className="text-aether-accent text-xl md:text-2xl font-bold mb-4">
@@ -242,7 +242,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Highlights</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Why Chameliya — At a Glance
             </h2>
           </div>
@@ -252,7 +252,7 @@ export default function ChameliyaHydropower() {
                 key={h.label}
                 className="group rounded-2xl border border-aether-border bg-aether-card/40 p-6 text-center transition-all duration-500 hover:border-aether-accent/40 hover:bg-aether-card/70 hover:-translate-y-1"
               >
-                <div className="text-aether-accent text-3xl md:text-4xl font-semibold tracking-tight mb-2">
+                <div className="text-aether-accent text-3xl md:text-4xl font-medium tracking-tight mb-2">
                   <Counter {...h} active={hlIn} />
                 </div>
                 <div className="text-aether-muted text-xs uppercase tracking-wider leading-snug">
@@ -273,7 +273,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Technical Profile</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-5">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-5">
               Project Attributes
             </h2>
             <p className="text-aether-muted text-base leading-relaxed mb-8">
@@ -310,7 +310,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Present Status</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Where We Stand Today
             </h2>
           </div>
@@ -356,7 +356,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <Eyebrow center>Funding Plan</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Equity-First Drawdown
             </h2>
             <p className="text-aether-muted text-base mt-4 max-w-2xl mx-auto">
@@ -374,7 +374,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <Eyebrow>Financials</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-2">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-2">
               Capital Structure
             </h2>
             <p className="text-aether-muted text-sm mb-8">
@@ -409,7 +409,7 @@ export default function ChameliyaHydropower() {
 
           <div>
             <Eyebrow>Key Parameters</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-8">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-8">
               Returns &amp; Coverage
             </h2>
             <div className="grid grid-cols-2 gap-4">
@@ -433,7 +433,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Risk · Sensitivity</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Resilient Returns
             </h2>
             <p className="text-aether-muted text-base mt-4">
@@ -463,7 +463,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Cap Table</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Shareholding Structure
             </h2>
             <p className="text-aether-muted text-sm mt-3">
@@ -541,7 +541,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Hydrology &amp; Generation</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Year-Round Energy Yield
             </h2>
             <p className="text-aether-muted text-sm mt-3 max-w-2xl mx-auto">
@@ -597,7 +597,7 @@ export default function ChameliyaHydropower() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Investment Thesis</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Why Chameliya–Chettigad?
             </h2>
           </div>
@@ -621,7 +621,7 @@ export default function ChameliyaHydropower() {
       {/* ── CTA ── */}
       <section className="relative py-24 md:py-32 border-t border-aether-border/40">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-4">
             Be part of the Mahakali’s clean-energy future.
           </h2>
           <p className="text-aether-muted text-lg mb-8">

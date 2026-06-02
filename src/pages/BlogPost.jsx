@@ -34,7 +34,7 @@ function Block({ block }) {
   switch (block.type) {
     case 'h2':
       return (
-        <h2 className="text-white text-2xl md:text-3xl font-semibold tracking-tight mt-12 mb-4">
+        <h2 className="text-white text-2xl md:text-3xl font-medium tracking-tight mt-12 mb-4">
           {block.text}
         </h2>
       )
@@ -109,7 +109,7 @@ export default function BlogPost() {
             </span>
           </div>
 
-          <h1 className="text-white text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
+          <h1 className="text-white text-3xl md:text-5xl font-medium tracking-tight leading-tight mb-6">
             {article.title}
           </h1>
 
@@ -183,7 +183,7 @@ export default function BlogPost() {
       {related.length > 0 && (
         <section className="relative py-24 md:py-32 border-t border-aether-border/50">
           <div className="max-w-5xl mx-auto px-6">
-            <h2 className="text-white text-2xl font-semibold tracking-tight mb-8">
+            <h2 className="text-white text-2xl font-medium tracking-tight mb-8">
               More from the Grid
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

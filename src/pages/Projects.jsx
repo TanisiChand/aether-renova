@@ -83,7 +83,7 @@ function ProjectCard({ project, index }) {
           </div>
           {/* big capacity badge */}
           <div className="absolute bottom-5 left-5 flex items-baseline gap-2">
-            <span className="text-aether-accent text-4xl font-semibold tracking-tight">
+            <span className="text-aether-accent text-4xl font-medium tracking-tight">
               {project.capacity}
             </span>
           </div>
@@ -110,7 +110,7 @@ function ProjectCard({ project, index }) {
             </div>
           </div>
 
-          <h2 className="text-white text-2xl lg:text-3xl font-semibold tracking-tight mb-4">
+          <h2 className="text-white text-2xl lg:text-3xl font-medium tracking-tight mb-4">
             {project.name}
           </h2>
           <p className="text-aether-muted text-base leading-relaxed mb-6">
@@ -163,7 +163,7 @@ export default function Projects() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>Our Work</Eyebrow>
-          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
             Projects
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed mb-10">
@@ -197,7 +197,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Eyebrow center>Where We Build</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight">
               Projects Across Nepal
             </h2>
             <p className="text-aether-muted text-base mt-4">

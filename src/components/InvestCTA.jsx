@@ -28,7 +28,7 @@ export default function InvestCTA() {
                 <span className="w-8 h-[1px] bg-aether-accent" />
                 Investor Relations
               </p>
-              <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-5">
+              <h2 className="text-white text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-5">
                 Invest in Nepal’s
                 <span className="block text-aether-accent">Energy Future</span>
               </h2>
@@ -62,7 +62,7 @@ export default function InvestCTA() {
                   key={h.label}
                   className="rounded-2xl border border-aether-accent/20 bg-[#080f0c]/95 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.5)] px-3 py-8 sm:px-5 sm:py-9 text-center transition-all duration-300 hover:border-aether-accent/50 hover:bg-[#0c1611]"
                 >
-                  <div className="text-aether-accent text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-none whitespace-nowrap">
+                  <div className="text-aether-accent text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight leading-none whitespace-nowrap">
                     {h.value}
                     {h.suffix && (
                       <span className="text-base md:text-xl">{h.suffix}</span>

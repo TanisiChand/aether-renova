@@ -115,7 +115,7 @@ function EcosystemHero() {
             The Ecosystem
             <span className="w-16 h-[1px] bg-aether-accent/50" />
           </p>
-          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
             Our Companies
           </h1>
           <p className="text-aether-muted text-lg max-w-xl mx-auto">
@@ -252,7 +252,7 @@ function CompanySection({ company, index }) {
           <p className="text-aether-accent/70 text-[11px] uppercase tracking-[0.2em] mb-1">
             {String(index + 1).padStart(2, '0')} · {tag}
           </p>
-          <h2 className="text-white text-2xl lg:text-3xl font-semibold tracking-tight">
+          <h2 className="text-white text-2xl lg:text-3xl font-medium tracking-tight">
             {name}
           </h2>
         </div>

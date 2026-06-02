@@ -146,7 +146,7 @@ function Metric({ value, suffix, label, run }) {
   const n = useCountUp(value, run)
   return (
     <div className="rounded-2xl border border-aether-border bg-aether-card/50 px-5 py-6 text-center transition-colors duration-300 hover:border-aether-accent/40">
-      <div className="text-aether-accent text-3xl md:text-4xl font-semibold tracking-tight leading-none">
+      <div className="text-aether-accent text-3xl md:text-4xl font-medium tracking-tight leading-none">
         {fmt(n)}
         {suffix && <span className="text-xl">{suffix}</span>}
       </div>
@@ -412,7 +412,7 @@ export default function Investors() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>Investor Relations</Eyebrow>
-          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
             Invest in Nepal’s
             <span className="block text-aether-accent">Energy Future</span>
           </h1>
@@ -449,7 +449,7 @@ export default function Investors() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>The Investment Thesis</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight">
               Why Invest in Us
             </h2>
             <p className="text-aether-muted text-lg mt-4">
@@ -466,7 +466,7 @@ export default function Investors() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12 max-w-2xl">
             <Eyebrow>Growth Trajectory</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               A Pipeline Built to Scale
             </h2>
             <p className="text-aether-muted text-base mt-4">
@@ -541,7 +541,7 @@ export default function Investors() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <Eyebrow>Model Your Impact</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-semibold tracking-tight mb-5">
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-5">
               Capital That Builds More Than Returns
             </h2>
             <p className="text-aether-muted text-lg leading-relaxed">
@@ -560,7 +560,7 @@ export default function Investors() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <Eyebrow center>The Process</Eyebrow>
-            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight">
+            <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight">
               How to Invest
             </h2>
           </div>
@@ -589,7 +589,7 @@ export default function Investors() {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[radial-gradient(ellipse_at_center,_rgba(0,240,152,0.10)_0%,_transparent_70%)] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight mb-5">
+          <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight mb-5">
             Let’s build the platform together
           </h2>
           <p className="text-aether-muted text-lg mb-9">

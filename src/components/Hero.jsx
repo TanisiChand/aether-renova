@@ -14,8 +14,8 @@ export default function Hero() {
           <span className="hero-label">Leading Nepal's Energy Future</span>
           <h1>AETHER RENOVA</h1>
           <p>
-            We build what tomorrow runs on. Developing next-generation
-            infrastructure for a sustainable, resilient, and electrified Nepal.
+            We build what tomorrow runs on — next-generation infrastructure for
+            a resilient, electrified Nepal.
           </p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Button href="/projects" variant="primary" withArrow={false}>

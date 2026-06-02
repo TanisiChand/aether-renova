@@ -153,7 +153,7 @@ export default function Blog() {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>From The Grid</Eyebrow>
-          <h1 className="text-white text-5xl md:text-7xl font-semibold tracking-tight mb-6">
+          <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
             Blog &amp; Insights
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed">

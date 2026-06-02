@@ -76,8 +76,8 @@ export const ne = {
 
   /* ── Hero ── */
   "Leading Nepal's Energy Future": 'नेपालको ऊर्जा भविष्यको नेतृत्व',
-  'We build what tomorrow runs on. Developing next-generation infrastructure for a sustainable, resilient, and electrified Nepal.':
-    'भोलि चल्ने आधार हामी निर्माण गर्छौं। दिगो, उत्थानशील र विद्युतीकृत नेपालका लागि नयाँ पुस्ताको पूर्वाधार विकास गर्दै।',
+  'We build what tomorrow runs on — next-generation infrastructure for a resilient, electrified Nepal.':
+    'भोलि चल्ने आधार हामी निर्माण गर्छौं — उत्थानशील, विद्युतीकृत नेपालका लागि नयाँ पुस्ताको पूर्वाधार।',
 
   /* ── Who We Are (home) ── */
   'Who We Are': 'हामी को हौं',
