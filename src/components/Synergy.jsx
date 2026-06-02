@@ -34,7 +34,7 @@ function EntityCard({ logo, name, display, tag }) {
           <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
             {display || name}
           </p>
-          <p className="hidden md:block text-aether-accent/60 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <p className="text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
             {tag}
           </p>
         </div>

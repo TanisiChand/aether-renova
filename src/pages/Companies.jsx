@@ -75,7 +75,7 @@ const companies = [
     name: 'Aether Construction',
     display: 'Aether\nConstruction',
     logo: '/logos/aether.svg',
-    tag: 'Civil & Heavy Infrastructure',
+    tag: 'Civil & Heavy Infra',
     description:
       'The build arm of the group — civil and heavy infrastructure delivering the dams, foundations, and access works behind every project across the ecosystem.',
     // Builds everything, so it shows a portfolio summary rather than one project.
@@ -140,7 +140,7 @@ function EcosystemHero() {
                   <p className="text-white font-bold tracking-wider text-sm uppercase h-10 flex items-center justify-center leading-tight whitespace-pre-line">
                     {c.display || c.name}
                   </p>
-                  <p className="hidden md:block text-aether-accent/60 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-aether-accent/70 text-[10px] uppercase tracking-[0.2em] mt-2 h-4 whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                     {c.tag}
                   </p>
                 </div>

@@ -98,12 +98,16 @@ function ImpactStat({ value, plus, unit, label, run }) {
   const n = useCountUp(value, run)
   return (
     <div className="text-center">
-      <div className="text-aether-accent text-4xl md:text-5xl font-bold tracking-tight leading-none">
+      <div className="text-aether-accent text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-none whitespace-nowrap">
         {fmt(n)}
-        {plus && <span>+</span>}
-        {unit && <span className="text-2xl">{unit}</span>}
+        {plus && '+'}
       </div>
-      <div className="text-aether-muted text-xs md:text-sm mt-3 leading-snug max-w-[180px] mx-auto">
+      {unit && (
+        <div className="text-aether-accent text-base sm:text-lg font-bold mt-1">
+          {unit.trim()}
+        </div>
+      )}
+      <div className="text-aether-muted text-xs md:text-sm mt-2 leading-snug max-w-[180px] mx-auto">
         {label}
       </div>
     </div>
@@ -140,7 +144,7 @@ export default function CommunityImpact() {
         {/* impact stats */}
         <div
           ref={statsRef}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 py-10 border-y border-aether-border"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 lg:gap-8 mb-16 py-10 border-y border-aether-border"
         >
           {impact.map((s) => (
             <ImpactStat key={s.label} {...s} run={statsInView} />

@@ -618,7 +618,11 @@ nav.site-nav.scrolled {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 40%, #051a14 0%, #020203 70%);
+  /* Top glow fills the otherwise-empty area behind the nav / status bar on
+     mobile, plus the main centred glow. */
+  background:
+    radial-gradient(120% 60% at 50% -8%, rgba(10, 242, 173, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 50% 38%, #06231a 0%, #020203 72%);
 }
 
 .hero-fade {

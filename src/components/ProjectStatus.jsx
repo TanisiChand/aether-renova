@@ -140,6 +140,7 @@ export default function ProjectStatus() {
   const [active, setActive] = useState(0)
   const [auto, setAuto] = useState(true)
   const [hover, setHover] = useState(false)
+  const detailRef = useRef(null)
 
   // Auto-rotate through projects while idle + in view.
   useEffect(() => {
@@ -154,6 +155,13 @@ export default function ProjectStatus() {
   const select = (i) => {
     setActive(i)
     setAuto(false) // user took over — stop rotating
+    // On mobile the detail card sits below the list — bring it into view so the
+    // tapped project's stages are actually visible.
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      setTimeout(() => {
+        detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 60)
+    }
   }
 
   const p = projects[active]
@@ -266,7 +274,7 @@ export default function ProjectStatus() {
           </div>
 
           {/* detail panel */}
-          <div className="relative rounded-3xl border border-aether-border bg-aether-card overflow-hidden">
+          <div ref={detailRef} className="relative rounded-3xl border border-aether-border bg-aether-card overflow-hidden scroll-mt-24">
             {/* image header */}
             <div className="relative h-32 md:h-40 overflow-hidden">
               <img
