@@ -332,6 +332,10 @@ export default function EnergyLandscape() {
           </div>
         </div>
       </div>
+
+      {/* soft fade to black at the bottom so the scene melts into the page
+          instead of ending on a hard edge */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 z-20 bg-gradient-to-b from-transparent to-[#020203]" />
     </div>
   )
 }
