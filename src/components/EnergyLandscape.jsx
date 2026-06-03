@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import SynergyBackground from './SynergyBackground'
 
 /* ---------------------------------------------------------------------------
    Interactive energy-landscape panorama. A teal line-art scene of what Aether
@@ -120,12 +119,6 @@ export default function EnergyLandscape() {
         .ar-card .d { color:#8ba1b5; font-size:12.5px; line-height:1.55; }
         .ar-card .l { display:inline-flex; align-items:center; gap:5px; margin-top:10px; color:${A}; font-size:12px; font-weight:600; letter-spacing:.02em; }
       `}</style>
-
-      {/* animated node-web — contained to the graphic (no bleed) so it never
-          reaches up into the Who We Are text; fades softly at top & bottom */}
-      <div className="absolute inset-0 opacity-70 pointer-events-none z-0">
-        <SynergyBackground bleed={0} fade />
-      </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] bg-[radial-gradient(60%_120%_at_50%_120%,rgba(10,242,173,0.10),transparent_70%)]" />
 
