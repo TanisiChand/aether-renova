@@ -57,13 +57,7 @@ export default function WhoAreWe() {
       </div>
 
       {/* ── The Full Value Chain — full-bleed finale (desktop/tablet only) ── */}
-      <div className="hidden md:block relative z-10 mt-16 lg:mt-24">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <p className="text-aether-accent text-xs font-semibold uppercase tracking-[0.2em] inline-flex items-center gap-2">
-            Hover any point to explore
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </p>
-        </div>
+      <div className="hidden md:block relative z-10 mt-6 lg:mt-8">
         <EnergyLandscape />
       </div>
     </section>
