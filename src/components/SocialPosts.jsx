@@ -13,16 +13,15 @@ const COMPANIES = [
   { logo: '/logos/solaeris.svg', tag: 'Microgrids', name: 'Solaeris', sub: 'Distribution' },
 ]
 
-/* AETHER RENOVA lockup for dark cards */
+/* AETHER RENOVA HOLDINGS lockup (white version, for dark cards) */
 function Brand({ className = '' }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <Logo className="w-6 h-6 object-contain" />
-      <div className="leading-none">
-        <p className="font-montserrat font-bold text-white tracking-[0.14em] text-[10px]">
-          AETHER RENOVA
-        </p>
-        <p className="text-aether-accent/70 tracking-[0.34em] text-[6px] mt-[3px]">
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <Logo className="h-9 w-auto object-contain" />
+      <div className="leading-[1.04]">
+        <p className="font-montserrat font-normal text-white tracking-[0.08em] text-[13px]">AETHER</p>
+        <p className="font-montserrat font-normal text-white tracking-[0.08em] text-[13px]">RENOVA</p>
+        <p className="font-montserrat font-medium text-aether-accent tracking-[0.42em] text-[5.5px] mt-1 pl-[0.42em]">
           HOLDINGS
         </p>
       </div>
@@ -87,8 +86,8 @@ export default function SocialPosts() {
           {/* ── Post 1: full-bleed image hero ── */}
           <Card>
             <img
-              src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=900&h=1125&fit=crop"
-              alt="Clean energy infrastructure"
+              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&h=1125&fit=crop"
+              alt="Solar energy"
               className="absolute inset-0 w-full h-full object-cover opacity-90"
               loading="lazy"
             />
