@@ -1,31 +1,28 @@
+import Logo from './Logo'
+
 /* ---------------------------------------------------------------------------
-   Social posts — minimal, professional Instagram-format (4:5) cards shown at
-   the end of the homepage, in a horizontal carousel. Light/editorial mockups
-   that double as ready-to-share brand graphics.
+   Social posts — premium, on-brand Instagram-format (4:5) cards shown at the
+   end of the homepage in a horizontal carousel. Dark/editorial mockups that
+   double as ready-to-share brand graphics, consistent with the site identity.
 --------------------------------------------------------------------------- */
 
-const G = '#0c9d72' // post accent green (reads well on light cards)
-const PAPER = '#f4f2ec'
+const COMPANIES = [
+  { logo: '/logos/gridnepal.svg', tag: 'Hydro + Grid', name: 'Grid Nepal', sub: 'Transmission' },
+  { logo: '/logos/weststar.svg', tag: 'Wind & Hydro', name: 'West Star', sub: 'Generation' },
+  { logo: '/logos/terrasol.svg', tag: 'Solar', name: 'Terra Sol', sub: 'Solar Farms' },
+  { logo: '/logos/solaeris.svg', tag: 'Microgrids', name: 'Solaeris', sub: 'Distribution' },
+]
 
-/* AETHER RENOVA HOLDINGS lockup in black (for light cards) */
-function Brand({ small }) {
+/* AETHER RENOVA lockup for dark cards */
+function Brand({ className = '' }) {
   return (
-    <div className="flex items-center gap-2.5">
-      <img
-        src="/logos/aether.svg"
-        alt="Aether Renova"
-        className={small ? 'w-7 h-7' : 'w-9 h-9'}
-        style={{ filter: 'brightness(0)' }}
-        draggable="false"
-      />
-      <div className="leading-[1.05]">
-        <p className="font-montserrat font-extrabold text-black tracking-[0.08em]" style={{ fontSize: small ? 11 : 13 }}>
-          AETHER
+    <div className={`flex items-center gap-2 ${className}`}>
+      <Logo className="w-6 h-6 object-contain" />
+      <div className="leading-none">
+        <p className="font-montserrat font-bold text-white tracking-[0.14em] text-[10px]">
+          AETHER RENOVA
         </p>
-        <p className="font-montserrat font-extrabold text-black tracking-[0.08em]" style={{ fontSize: small ? 11 : 13 }}>
-          RENOVA
-        </p>
-        <p className="text-black/70 tracking-[0.34em]" style={{ fontSize: small ? 5.5 : 6.5 }}>
+        <p className="text-aether-accent/70 tracking-[0.34em] text-[6px] mt-[3px]">
           HOLDINGS
         </p>
       </div>
@@ -33,23 +30,32 @@ function Brand({ small }) {
   )
 }
 
-/* shared card frame — Instagram portrait 4:5 */
-function Card({ children, className = '' }) {
+function Handle() {
   return (
-    <div
-      className={`relative shrink-0 snap-start w-[280px] sm:w-[320px] aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 ${className}`}
-      style={{ background: PAPER }}
-    >
-      {children}
+    <div className="flex items-center justify-between pt-3.5 border-t border-white/10">
+      <span className="text-white/45 text-[9px] tracking-wide">@aetherrenova</span>
+      <span className="text-aether-accent/80 text-[9px] tracking-wide">aetherrenova.com</span>
     </div>
   )
 }
 
 const Eyebrow = ({ children }) => (
-  <p className="font-semibold tracking-[0.18em] uppercase" style={{ color: G, fontSize: 9.5 }}>
+  <p className="text-aether-accent font-semibold uppercase tracking-[0.22em] text-[9px] flex items-center gap-2">
+    <span className="w-4 h-px bg-aether-accent/70" />
     {children}
   </p>
 )
+
+/* 4:5 dark card frame */
+function Card({ children, className = '' }) {
+  return (
+    <div
+      className={`relative shrink-0 snap-start w-[280px] sm:w-[316px] aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-[0_28px_80px_rgba(0,0,0,0.6)] bg-gradient-to-b from-[#0a1712] to-[#050608] ${className}`}
+    >
+      {children}
+    </div>
+  )
+}
 
 export default function SocialPosts() {
   return (
@@ -78,113 +84,99 @@ export default function SocialPosts() {
 
         {/* carousel */}
         <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {/* ── Post 1: image + caption ── */}
+          {/* ── Post 1: full-bleed image hero ── */}
           <Card>
-            <div className="h-[58%] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=900&h=700&fit=crop"
-                alt="Hydropower & solar"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="h-[42%] px-5 py-5 flex flex-col justify-center">
-              <Brand small />
-              <div className="flex gap-3 mt-3.5">
-                <span className="w-[3px] rounded-full shrink-0" style={{ background: G }} />
-                <h3 className="font-display font-semibold text-black leading-[1.08]" style={{ fontSize: 22 }}>
-                  We build what tomorrow runs on.
+            <img
+              src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=900&h=1125&fit=crop"
+              alt="Clean energy infrastructure"
+              className="absolute inset-0 w-full h-full object-cover opacity-90"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#040605] via-[#040605]/55 to-[#040605]/20" />
+            <div className="absolute inset-0 p-6 flex flex-col">
+              <Brand />
+              <div className="mt-auto">
+                <Eyebrow>Clean Energy · Nepal</Eyebrow>
+                <h3 className="font-display font-semibold text-white leading-[1.08] mt-3" style={{ fontSize: 27 }}>
+                  We build what tomorrow runs&nbsp;on.
                 </h3>
+                <p className="text-aether-accent text-[10.5px] tracking-wide mt-2.5">
+                  Innovation. Sustainability. Strength.
+                </p>
               </div>
-              <p className="font-medium mt-2.5" style={{ color: G, fontSize: 11 }}>
-                Innovation. Sustainability. Strength.
-              </p>
             </div>
           </Card>
 
-          {/* ── Post 2: image + headline ── */}
+          {/* ── Post 2: image band + statement ── */}
           <Card>
-            <div className="h-[55%] overflow-hidden">
+            <div className="h-[46%] relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=900&h=700&fit=crop"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=900&h=560&fit=crop"
                 alt="Engineering & collaboration"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-85"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1712] via-transparent to-transparent" />
+              <div className="absolute top-5 left-5"><Brand /></div>
             </div>
-            <div className="h-[45%] px-5 py-5 flex flex-col justify-center">
+            <div className="h-[54%] p-6 flex flex-col">
               <Eyebrow>Engineering &amp; Collaboration</Eyebrow>
-              <h3 className="font-display font-semibold text-black leading-[1.05] mt-2" style={{ fontSize: 26 }}>
+              <h3 className="font-display font-semibold text-white leading-[1.05] mt-3" style={{ fontSize: 28 }}>
                 Built together.<br />Built to last.
               </h3>
-              <p className="text-black/55 leading-relaxed mt-3" style={{ fontSize: 10.5 }}>
+              <p className="text-white/55 leading-relaxed mt-3" style={{ fontSize: 10.5 }}>
                 Engineering discipline meets community partnership — we design,
                 build, and operate alongside the people and places we serve.
               </p>
+              <div className="mt-auto"><Handle /></div>
             </div>
           </Card>
 
           {/* ── Post 3: all-type promise ── */}
           <Card>
-            <div className="h-full px-6 py-7 flex flex-col">
+            <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-aether-accent/10 blur-3xl" />
+            <div className="relative h-full p-7 flex flex-col">
               <Brand />
-              <div className="mt-6">
-                <Eyebrow>Our Promise</Eyebrow>
-              </div>
-              <h3 className="font-display font-bold text-black leading-[1.04] mt-7" style={{ fontSize: 30 }}>
-                We build what tomorrow runs on.
+              <div className="mt-7"><Eyebrow>Our Promise</Eyebrow></div>
+              <h3 className="font-display font-bold text-white leading-[1.05] mt-6" style={{ fontSize: 32 }}>
+                We build what tomorrow runs&nbsp;on.
               </h3>
-              <p className="text-black/55 leading-relaxed mt-4" style={{ fontSize: 11 }}>
-                Clean energy isn’t a product category for us — it’s infrastructure
-                that outlasts us. Built with engineering discipline, community
-                ownership, and a commitment to leaving every place better than we
-                found it.
+              <p className="text-white/55 leading-relaxed mt-4" style={{ fontSize: 11 }}>
+                Clean energy isn’t a product category for us — it’s
+                infrastructure that outlasts us. Built with engineering
+                discipline, community ownership, and a commitment to leaving
+                every place better than we found it.
               </p>
-              <div className="mt-auto pt-5 border-t border-black/10">
-                <p className="text-black" style={{ fontSize: 10.5 }}>
-                  <span className="font-bold">@aetherrenova</span>
-                  <span className="text-black/50">&nbsp;&nbsp;·&nbsp;&nbsp;aetherrenova.com</span>
+              <div className="mt-auto">
+                <p className="text-aether-accent/90 font-medium tracking-wide mb-3" style={{ fontSize: 9.5 }}>
+                  #AetherRenova&nbsp;&nbsp;#CleanEnergy&nbsp;&nbsp;#Nepal&nbsp;&nbsp;#BuildingTomorrow
                 </p>
-                <p className="mt-2 font-medium" style={{ color: G, fontSize: 9.5 }}>
-                  #AetherRenova #CleanEnergy #Nepal #BuildingTomorrow
-                </p>
+                <Handle />
               </div>
             </div>
           </Card>
 
           {/* ── Post 4: the group ── */}
           <Card>
-            <div className="h-full px-6 py-7 flex flex-col">
+            <div className="h-full p-6 flex flex-col">
               <Brand />
-              <div className="mt-5">
-                <Eyebrow>The Group</Eyebrow>
-                <p className="text-black/45 mt-0.5" style={{ fontSize: 9.5 }}>Subsidiaries Overview</p>
-              </div>
-              <h3 className="font-display font-bold text-black leading-[1.02] mt-4" style={{ fontSize: 27 }}>
+              <div className="mt-5"><Eyebrow>The Group</Eyebrow></div>
+              <h3 className="font-display font-bold text-white leading-[1.02] mt-3" style={{ fontSize: 27 }}>
                 Four companies.<br />One mission.
               </h3>
               <div className="grid grid-cols-2 gap-2.5 mt-5">
-                {[
-                  { logo: '/logos/gridnepal.svg', tag: 'Hydro + Grid', name: 'Grid Nepal', sub: 'Hydropower' },
-                  { logo: '/logos/weststar.svg', tag: 'Hydropower', name: 'West Star', sub: 'Hydropower' },
-                  { logo: '/logos/terrasol.svg', tag: 'Solar', name: 'Terra Sol', sub: 'Energy' },
-                  { logo: '/logos/solaeris.svg', tag: 'Solar', name: 'Solaeris', sub: 'Energy' },
-                ].map((c) => (
-                  <div key={c.name} className="relative rounded-lg bg-white/70 ring-1 ring-black/5 p-2.5 pl-3 overflow-hidden">
-                    <span className="absolute left-0 top-2 bottom-2 w-[2.5px] rounded-full" style={{ background: G }} />
-                    <div className="h-7 flex items-center justify-center mb-1.5">
-                      <img src={c.logo} alt={c.name} className="max-h-6 max-w-full object-contain" style={{ filter: 'brightness(0)' }} draggable="false" />
+                {COMPANIES.map((c) => (
+                  <div key={c.name} className="rounded-xl bg-white/[0.04] ring-1 ring-white/10 p-3 flex flex-col">
+                    <div className="h-8 flex items-center justify-center mb-2">
+                      <img src={c.logo} alt={c.name} className="max-h-7 max-w-[80%] object-contain" draggable="false" />
                     </div>
-                    <p className="uppercase tracking-wider font-semibold" style={{ color: G, fontSize: 6.5 }}>{c.tag}</p>
-                    <p className="font-display font-bold text-black leading-tight" style={{ fontSize: 13 }}>{c.name}</p>
-                    <p className="text-black/45" style={{ fontSize: 8 }}>{c.sub}</p>
+                    <p className="text-aether-accent uppercase tracking-wider font-semibold" style={{ fontSize: 6.5 }}>{c.tag}</p>
+                    <p className="font-display font-bold text-white leading-tight" style={{ fontSize: 13 }}>{c.name}</p>
+                    <p className="text-white/40" style={{ fontSize: 8 }}>{c.sub}</p>
                   </div>
                 ))}
               </div>
-              <p className="text-black/45 leading-relaxed mt-auto pt-4" style={{ fontSize: 8.5 }}>
-                Each subsidiary operates independently — under unified standards,
-                shared values, and one long-term vision.
-              </p>
+              <div className="mt-auto pt-4"><Handle /></div>
             </div>
           </Card>
         </div>
