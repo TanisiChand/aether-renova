@@ -13,6 +13,21 @@ const A = '#0af2ad'
 const VB_W = 1700
 const VB_H = 560
 
+// build a realistic solar-cell grid inside a tilted panel (4 corners)
+const lerp = (p, q, t) => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t]
+function panelLines(TL, TR, BR, BL, cols, rows) {
+  const out = []
+  for (let i = 1; i < cols; i++) {
+    const t = i / cols
+    out.push([lerp(TL, TR, t), lerp(BL, BR, t)])
+  }
+  for (let j = 1; j < rows; j++) {
+    const t = j / rows
+    out.push([lerp(TL, BL, t), lerp(TR, BR, t)])
+  }
+  return out
+}
+
 const SPOTS = [
   {
     id: 'hydro',
@@ -96,6 +111,8 @@ export default function EnergyLandscape() {
         .ar-hook { transform-box: fill-box; animation: ar-hook 4.6s ease-in-out infinite; }
         @keyframes ar-twinkle { 0%,100% { opacity:.25 } 50% { opacity:.9 } }
         .ar-win { animation: ar-twinkle 3.4s ease-in-out infinite; }
+        @keyframes ar-fall { to { stroke-dashoffset:-44; } }
+        .ar-fall { stroke-dasharray:7 9; animation: ar-fall 1.1s linear infinite; }
         @keyframes ar-ping { 0% { transform:translate(-50%,-50%) scale(.5); opacity:.7 } 100% { transform:translate(-50%,-50%) scale(2.1); opacity:0 } }
 
         .ar-spot { position:absolute; transform:translate(-50%,-50%); }
@@ -163,36 +180,57 @@ export default function EnergyLandscape() {
               strokeWidth="1.5"
             />
 
-            {/* ============ HYDRO ============ */}
+            {/* ============ HYDRO (dam + spilling water) ============ */}
             <g style={elStyle('hydro')}>
-              <g stroke={A} strokeWidth="2.5" fill="url(#arSolid)" strokeLinejoin="round">
-                <path d="M70,440 L100,308 L300,308 L330,440 Z" />
-                <g stroke={A} strokeWidth="2" fill="none" opacity="0.7">
-                  <path d="M128,440 L136,326" /><path d="M166,440 L170,326" />
-                  <path d="M204,440 L204,326" /><path d="M242,440 L238,326" />
-                  <path d="M280,440 L272,326" />
-                </g>
-                <g fill="url(#arSolid)">
-                  <rect x="100" y="278" width="34" height="32" rx="3" />
-                  <ellipse cx="117" cy="278" rx="17" ry="7" />
-                  <rect x="266" y="278" width="34" height="32" rx="3" />
-                  <ellipse cx="283" cy="278" rx="17" ry="7" />
-                </g>
-                <rect x="334" y="404" width="56" height="36" fill="url(#arSolid)" />
+              {/* dam wall */}
+              <path d="M70,440 L100,308 L300,308 L330,440 Z" fill="url(#arSolid)" stroke={A} strokeWidth="2.5" strokeLinejoin="round" />
+              {/* reservoir water along the crest */}
+              <path d="M104,306 q 24,-6 48,0 t 48,0 t 48,0" stroke="rgba(10,242,173,0.6)" strokeWidth="2" fill="none" />
+              {/* central spillway sheet */}
+              <path d="M150,314 L250,314 L264,440 L136,440 Z" fill="rgba(10,242,173,0.10)" stroke="none" />
+              {/* gate piers */}
+              <path d="M150,314 L136,440 M250,314 L264,440 M200,314 L200,440" stroke={A} strokeWidth="2.4" fill="none" strokeLinecap="round" />
+              {/* flowing water (animated downward) */}
+              <g className="ar-fall" stroke="rgba(10,242,173,0.75)" strokeWidth="2" fill="none" strokeLinecap="round">
+                <path d="M162,316 L150,438" /><path d="M176,316 L168,438" />
+                <path d="M188,316 L186,438" /><path d="M213,316 L216,438" />
+                <path d="M226,316 L232,438" /><path d="M240,316 L250,438" />
               </g>
-              <path d="M70,446 Q 200,438 330,446" stroke="rgba(10,242,173,0.5)" strokeWidth="2" fill="none" />
+              {/* crest gates either side */}
+              <g stroke={A} strokeWidth="2" fill="none" opacity="0.7">
+                <path d="M118,440 L126,322" /><path d="M140,440 L146,322" />
+                <path d="M262,440 L256,322" /><path d="M284,440 L276,322" />
+              </g>
+              {/* intake towers */}
+              <g fill="url(#arSolid)" stroke={A} strokeWidth="2.5" strokeLinejoin="round">
+                <rect x="100" y="278" width="34" height="32" rx="3" />
+                <ellipse cx="117" cy="278" rx="17" ry="7" />
+                <rect x="266" y="278" width="34" height="32" rx="3" />
+                <ellipse cx="283" cy="278" rx="17" ry="7" />
+              </g>
+              {/* powerhouse */}
+              <rect x="334" y="406" width="54" height="34" fill="url(#arSolid)" stroke={A} strokeWidth="2.5" />
+              {/* downstream water */}
+              <g stroke="rgba(10,242,173,0.5)" strokeWidth="1.8" fill="none">
+                <path d="M70,448 q 26,7 52,0 t 52,0 t 52,0 t 52,0 t 52,0" />
+              </g>
             </g>
 
-            {/* ============ SOLAR ============ */}
+            {/* ============ SOLAR (panel array) ============ */}
             <g style={elStyle('solar')} strokeLinejoin="round">
-              <g fill="url(#arSolid)" stroke={A} strokeWidth="2.4">
-                <path d="M474,434 L610,394 L682,422 L546,466 Z" />
+              {/* panel face */}
+              <path d="M468,438 L612,392 L692,424 L548,474 Z" fill="url(#arSolid)" stroke={A} strokeWidth="2.4" />
+              {/* cell grid */}
+              <g stroke="rgba(10,242,173,0.55)" strokeWidth="1.3">
+                {panelLines([468, 438], [612, 392], [692, 424], [548, 474], 6, 3).map((l, i) => (
+                  <line key={i} x1={l[0][0]} y1={l[0][1]} x2={l[1][0]} y2={l[1][1]} />
+                ))}
               </g>
-              <g stroke="rgba(10,242,173,0.6)" strokeWidth="1.4" fill="none">
-                <path d="M520,421 L592,447" /><path d="M566,408 L638,434" />
-                <path d="M512,411 L644,452" /><path d="M540,452 L672,410" />
+              {/* support frame + legs */}
+              <g stroke={A} strokeWidth="2.5" strokeLinecap="round" fill="none">
+                <path d="M528,456 L520,486 M620,426 L628,470 M580,440 L580,478" />
+                <path d="M508,486 L548,486 M610,470 L646,470" />
               </g>
-              <path d="M528,450 L528,476 M614,424 L614,448" stroke={A} strokeWidth="2.5" />
             </g>
 
             {/* ============ CONSTRUCTION ============ */}
@@ -292,7 +330,9 @@ export default function EnergyLandscape() {
                   transitionDelay: `${0.4 + i * 0.12}s`,
                 }}
                 onMouseEnter={() => setActive(s.id)}
+                onMouseLeave={() => setActive(null)}
                 onFocus={() => setActive(s.id)}
+                onBlur={() => setActive(null)}
                 onClick={() => navigate(s.href)}
                 onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), navigate(s.href))}
                 role="link"
