@@ -13,7 +13,7 @@ export default function WhoAreWe() {
   return (
     <section
       id="about"
-      className="relative pt-20 md:pt-28 pb-0 bg-[#020203] font-sans z-10 overflow-hidden"
+      className="relative py-20 md:py-28 bg-[#020203] font-sans z-10 overflow-hidden"
     >
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(0,240,152,0.08)_0%,_transparent_55%)]" />
