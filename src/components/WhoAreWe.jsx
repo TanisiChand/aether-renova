@@ -21,44 +21,49 @@ export default function WhoAreWe() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* ── Who We Are — centered intro ── */}
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-6 flex items-center justify-center gap-4">
-            <span className="w-10 h-[1px] bg-aether-accent/60" />
-            Who We Are
-            <span className="w-10 h-[1px] bg-aether-accent/60" />
-          </p>
-          <h2 className="text-white text-4xl md:text-5xl font-medium tracking-tight mb-6">
-            Aether Renova Holdings
-          </h2>
-          <p className="text-aether-muted text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-            A Nepali clean energy group developing hydropower and solar
-            infrastructure built to last. We treat knowledge as infrastructure
-            too — strengthening the sector through R&amp;D, internships, and our
-            Industry Talk program.
-          </p>
-          <p className="text-white/90 text-xl md:text-2xl italic font-light tracking-tight max-w-2xl mx-auto">
-            “We always leave the place a little bit better than we found it.”
-          </p>
-          <StatBand stats={stats} variant="bare" size="sm" className="mt-12 mb-10 max-w-3xl mx-auto" />
-          <Button href="/about" variant="primary">
-            Read Our Story
-          </Button>
+        {/* ── Editorial header: headline + numbers | story + CTA ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* left — headline + key numbers */}
+          <div className="lg:col-span-6">
+            <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-6 flex items-center gap-3">
+              <span className="w-10 h-[1px] bg-aether-accent" />
+              Who We Are
+            </p>
+            <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.05]">
+              Aether Renova
+              <span className="block text-aether-accent/90">Holdings</span>
+            </h2>
+            <StatBand stats={stats} variant="bare" size="sm" className="mt-10 lg:mt-12 -ml-3" />
+          </div>
+
+          {/* right — story + quote + CTA */}
+          <div className="lg:col-span-6 lg:pt-3">
+            <p className="text-aether-muted text-lg leading-relaxed">
+              A Nepali clean energy group developing hydropower and solar
+              infrastructure built to last. We treat knowledge as infrastructure
+              too — strengthening the sector through R&amp;D, internships, and
+              our Industry Talk program.
+            </p>
+            <p className="text-white/90 text-lg italic border-l-2 border-aether-accent pl-5 mt-7">
+              “We always leave the place a little bit better than we found it.”
+            </p>
+            <div className="mt-8">
+              <Button href="/about" variant="primary">
+                Read Our Story
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* The Full Value Chain — full-bleed centerpiece of this section
-          (desktop/tablet only) */}
-      <div className="hidden md:block relative z-10 mt-20 lg:mt-28">
+      {/* ── The Full Value Chain — full-bleed finale (desktop/tablet only) ── */}
+      <div className="hidden md:block relative z-10 mt-16 lg:mt-24">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <p className="text-white text-xl md:text-2xl font-medium tracking-tight leading-snug">
-            One platform, end&#8209;to&#8209;end.
+          <p className="text-aether-muted text-base md:text-lg">
+            One integrated platform — generation, construction, and transmission,
+            under one roof.
           </p>
-          <p className="text-aether-muted text-base md:text-lg mt-3">
-            From the river and the sun, to the civil works that build it, to the
-            lines that carry it.
-          </p>
-          <p className="text-aether-accent text-xs font-semibold uppercase tracking-[0.2em] mt-5 inline-flex items-center gap-2">
+          <p className="text-aether-accent text-xs font-semibold uppercase tracking-[0.2em] mt-4 inline-flex items-center gap-2">
             Hover any point to explore
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </p>
