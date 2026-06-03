@@ -1,5 +1,6 @@
 import Button from './Button'
 import StatBand from './StatBand'
+import EnergyLandscape from './EnergyLandscape'
 
 const stats = [
   { value: 500, suffix: ' MW', label: 'Hydropower & solar target' },
@@ -87,6 +88,11 @@ export default function WhoAreWe() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* The Full Value Chain — part of Who We Are (desktop/tablet only) */}
+        <div className="hidden md:block">
+          <EnergyLandscape />
         </div>
       </div>
     </section>

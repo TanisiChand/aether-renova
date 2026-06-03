@@ -85,9 +85,9 @@ export default function EnergyLandscape() {
   })
 
   return (
-    <section
+    <div
       ref={ref}
-      className="relative bg-[#020203] overflow-hidden border-t border-aether-border/40 font-sans"
+      className="relative overflow-hidden font-sans"
     >
       <style>{`
         @keyframes ar-hook { 0%,100% { transform: translateY(0); } 50% { transform: translateY(11px); } }
@@ -332,6 +332,6 @@ export default function EnergyLandscape() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

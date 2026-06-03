@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import SynergyBackground from '../components/SynergyBackground'
 import Button from '../components/Button'
 import StatBand from '../components/StatBand'
-import EnergyLandscape from '../components/EnergyLandscape'
 
 /* ---- count-up helpers (shared pattern) ---- */
 function useInView(threshold = 0.4) {
@@ -340,11 +339,6 @@ export default function About() {
           <StatBand stats={stats} />
         </div>
       </section>
-
-      {/* ── The Full Value Chain (desktop/tablet only) ─ */}
-      <div className="hidden md:block">
-        <EnergyLandscape />
-      </div>
 
       {/* ── Our Purpose (Mission & Vision) ─────── */}
       <section className="relative py-20 md:py-28">
