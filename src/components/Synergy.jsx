@@ -55,7 +55,7 @@ export default function Synergy() {
           (transparent) neighbouring sections above & below, fading softly at
           its edges. Section sits at z-0 so it stays BEHIND neighbouring
           content/buttons. */}
-      <SynergyBackground bleed={340} fade />
+      <SynergyBackground bleed={0} fade />
 
       {/* Branded radial glows */}
       <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
