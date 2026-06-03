@@ -114,25 +114,10 @@ export default function EnergyLandscape() {
         .ar-card .l { display:inline-flex; align-items:center; gap:5px; margin-top:10px; color:${A}; font-size:12px; font-weight:600; letter-spacing:.02em; }
       `}</style>
 
-      <div className="max-w-7xl mx-auto px-6 pt-16 md:pt-20 text-center relative z-10">
-        <p className="text-aether-accent uppercase tracking-[0.25em] text-sm font-semibold mb-5 flex items-center justify-center gap-4">
-          <span className="w-12 h-[1px] bg-aether-accent/60" />
-          The Full Value Chain
-          <span className="w-12 h-[1px] bg-aether-accent/60" />
-        </p>
-        <h2 className="text-white text-3xl md:text-5xl font-medium tracking-tight">
-          One Integrated Energy Ecosystem
-        </h2>
-        <p className="text-aether-muted text-base md:text-lg mt-4 max-w-2xl mx-auto">
-          From the river and the sun, to the civil works that build it, to the
-          lines that carry it — hover any point to explore.
-        </p>
-      </div>
-
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] bg-[radial-gradient(60%_120%_at_50%_120%,rgba(10,242,173,0.10),transparent_70%)]" />
 
       <div
-        className={`relative mt-6 transition-all duration-[1100ms] ease-out ${
+        className={`relative transition-all duration-[1100ms] ease-out ${
           show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >

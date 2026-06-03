@@ -89,11 +89,25 @@ export default function WhoAreWe() {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* The Full Value Chain — part of Who We Are (desktop/tablet only) */}
-        <div className="hidden md:block">
-          <EnergyLandscape />
+      {/* The Full Value Chain — full-bleed centerpiece of this section
+          (desktop/tablet only) */}
+      <div className="hidden md:block relative z-10 mt-20 lg:mt-28">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <p className="text-white text-xl md:text-2xl font-medium tracking-tight leading-snug">
+            One platform, end&#8209;to&#8209;end.
+          </p>
+          <p className="text-aether-muted text-base md:text-lg mt-3">
+            From the river and the sun, to the civil works that build it, to the
+            lines that carry it.
+          </p>
+          <p className="text-aether-accent text-xs font-semibold uppercase tracking-[0.2em] mt-5 inline-flex items-center gap-2">
+            Hover any point to explore
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </p>
         </div>
+        <EnergyLandscape />
       </div>
     </section>
   )
