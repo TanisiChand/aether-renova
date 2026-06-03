@@ -87,7 +87,7 @@ export default function EnergyLandscape() {
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden font-sans"
+      className="relative font-sans"
     >
       <style>{`
         @keyframes ar-hook { 0%,100% { transform: translateY(0); } 50% { transform: translateY(11px); } }
