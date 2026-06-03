@@ -13,7 +13,7 @@ export default function WhoAreWe() {
   return (
     <section
       id="about"
-      className="relative py-20 md:py-28 bg-transparent font-sans z-10 overflow-hidden"
+      className="relative py-20 md:py-28 bg-[#020203] font-sans z-10 overflow-hidden"
     >
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(0,240,152,0.08)_0%,_transparent_55%)]" />
@@ -59,11 +59,7 @@ export default function WhoAreWe() {
       {/* ── The Full Value Chain — full-bleed finale (desktop/tablet only) ── */}
       <div className="hidden md:block relative z-10 mt-16 lg:mt-24">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <p className="text-aether-muted text-base md:text-lg">
-            One integrated platform — generation, construction, and transmission,
-            under one roof.
-          </p>
-          <p className="text-aether-accent text-xs font-semibold uppercase tracking-[0.2em] mt-4 inline-flex items-center gap-2">
+          <p className="text-aether-accent text-xs font-semibold uppercase tracking-[0.2em] inline-flex items-center gap-2">
             Hover any point to explore
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </p>
