@@ -11,8 +11,14 @@ import SynergyBackground from './SynergyBackground'
 --------------------------------------------------------------------------- */
 
 const A = '#0af2ad'
+// viewBox is cropped at the top (VB_Y) to trim empty sky; elements + markers are
+// scaled by SCALE around (850, 440) while the land/ground stays full width.
+const VB_X = 0
+const VB_Y = 100
 const VB_W = 1700
-const VB_H = 560
+const VB_H = 460
+const SCALE = 0.88
+const ORIGIN_Y = (((440 - VB_Y) / VB_H) * 100).toFixed(3) // % for the overlay transform
 
 // build a realistic solar-cell grid inside a tilted panel (4 corners)
 const lerp = (p, q, t) => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t]
@@ -123,12 +129,12 @@ export default function EnergyLandscape() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] bg-[radial-gradient(60%_120%_at_50%_120%,rgba(10,242,173,0.10),transparent_70%)]" />
 
       <div
-        className={`relative z-10 origin-bottom scale-[0.88] transition-all duration-[1100ms] ease-out ${
+        className={`relative z-10 transition-all duration-[1100ms] ease-out ${
           show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
         <div className="relative">
-          <svg viewBox="0 0 1700 560" className="w-full h-auto block" role="img" aria-label="Aether Renova energy value chain">
+          <svg viewBox={`${VB_X} ${VB_Y} ${VB_W} ${VB_H}`} className="w-full h-auto block" role="img" aria-label="Aether Renova energy value chain">
             <defs>
               <linearGradient id="arGround" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="rgba(10,242,173,0.10)" />
@@ -144,13 +150,17 @@ export default function EnergyLandscape() {
               </radialGradient>
             </defs>
 
-            {/* ground */}
+            {/* ground — full width, unscaled */}
             <path
               d="M0,420 C 250,400 380,440 560,430 C 760,420 840,452 1040,442 C 1260,430 1360,456 1560,444 C 1640,440 1680,448 1700,444 L1700,560 L0,560 Z"
               fill="url(#arGround)"
               stroke="rgba(10,242,173,0.18)"
               strokeWidth="1.5"
             />
+
+            {/* everything except the ground is scaled a touch (around the ground
+                line) so the land itself stays full width */}
+            <g transform={`translate(850 440) scale(${SCALE}) translate(-850 -440)`}>
 
             {/* ============ HYDRO (dam + spilling water) ============ */}
             <g style={elStyle('hydro')}>
@@ -279,17 +289,22 @@ export default function EnergyLandscape() {
                 style={{ transition: 'stroke-opacity .3s ease, stroke-width .3s ease' }}
               />
             ))}
+            </g>
           </svg>
 
-          {/* interactive hotspot overlay (HTML — crisp + hoverable) */}
-          <div className="absolute inset-0 pointer-events-none">
+          {/* interactive hotspot overlay (HTML — crisp + hoverable).
+              Scaled to match the SVG element group so markers stay aligned. */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ transform: `scale(${SCALE})`, transformOrigin: `50% ${ORIGIN_Y}%` }}
+          >
             {SPOTS.map((s, i) => (
               <div
                 key={s.id}
                 className={`ar-spot pointer-events-auto cursor-pointer ${active === s.id ? 'on' : ''}`}
                 style={{
-                  left: `${(s.mx / VB_W) * 100}%`,
-                  top: `${(s.my / VB_H) * 100}%`,
+                  left: `${((s.mx - VB_X) / VB_W) * 100}%`,
+                  top: `${((s.my - VB_Y) / VB_H) * 100}%`,
                   opacity: show ? 1 : 0,
                   transitionProperty: 'opacity',
                   transitionDuration: '.6s',

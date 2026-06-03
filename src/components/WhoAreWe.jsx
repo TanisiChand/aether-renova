@@ -57,7 +57,7 @@ export default function WhoAreWe() {
       </div>
 
       {/* ── The Full Value Chain — full-bleed finale (desktop/tablet only) ── */}
-      <div className="hidden md:block relative z-10 mt-6 lg:mt-8">
+      <div className="hidden md:block relative z-10 mt-2 lg:-mt-4">
         <EnergyLandscape />
       </div>
     </section>
