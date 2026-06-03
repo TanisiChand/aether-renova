@@ -5,6 +5,7 @@ import WhoAreWe from '../components/WhoAreWe'
 import CommunityImpact from '../components/CommunityImpact'
 import InvestCTA from '../components/InvestCTA'
 import FromTheGrid from '../components/FromTheGrid'
+import SocialPosts from '../components/SocialPosts'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <div className="hidden md:block">
         <FromTheGrid />
       </div>
+      <SocialPosts />
     </>
   )
 }
