@@ -97,7 +97,7 @@ export default function SocialPosts() {
               <Brand />
               <div className="mt-auto">
                 <Eyebrow>Clean Energy · Nepal</Eyebrow>
-                <h3 className="font-display font-semibold text-white leading-[1.08] mt-3" style={{ fontSize: 27 }}>
+                <h3 className="font-montserrat font-semibold text-white leading-[1.08] mt-3" style={{ fontSize: 27 }}>
                   We build what tomorrow runs&nbsp;on.
                 </h3>
                 <p className="text-aether-accent text-[10.5px] tracking-wide mt-2.5">
@@ -121,7 +121,7 @@ export default function SocialPosts() {
             </div>
             <div className="h-[54%] p-6 flex flex-col">
               <Eyebrow>Engineering &amp; Collaboration</Eyebrow>
-              <h3 className="font-display font-semibold text-white leading-[1.05] mt-3" style={{ fontSize: 28 }}>
+              <h3 className="font-montserrat font-semibold text-white leading-[1.05] mt-3" style={{ fontSize: 28 }}>
                 Built together.<br />Built to last.
               </h3>
               <p className="text-white/55 leading-relaxed mt-3" style={{ fontSize: 10.5 }}>
@@ -138,7 +138,7 @@ export default function SocialPosts() {
             <div className="relative h-full p-7 flex flex-col">
               <Brand />
               <div className="mt-7"><Eyebrow>Our Promise</Eyebrow></div>
-              <h3 className="font-display font-bold text-white leading-[1.05] mt-6" style={{ fontSize: 32 }}>
+              <h3 className="font-montserrat font-bold text-white leading-[1.05] mt-6" style={{ fontSize: 32 }}>
                 We build what tomorrow runs&nbsp;on.
               </h3>
               <p className="text-white/55 leading-relaxed mt-4" style={{ fontSize: 11 }}>
@@ -161,7 +161,7 @@ export default function SocialPosts() {
             <div className="h-full p-6 flex flex-col">
               <Brand />
               <div className="mt-5"><Eyebrow>The Group</Eyebrow></div>
-              <h3 className="font-display font-bold text-white leading-[1.02] mt-3" style={{ fontSize: 27 }}>
+              <h3 className="font-montserrat font-bold text-white leading-[1.02] mt-3" style={{ fontSize: 27 }}>
                 Four companies.<br />One mission.
               </h3>
               <div className="grid grid-cols-2 gap-2.5 mt-5">
@@ -171,7 +171,7 @@ export default function SocialPosts() {
                       <img src={c.logo} alt={c.name} className="max-h-7 max-w-[80%] object-contain" draggable="false" />
                     </div>
                     <p className="text-aether-accent uppercase tracking-wider font-semibold" style={{ fontSize: 6.5 }}>{c.tag}</p>
-                    <p className="font-display font-bold text-white leading-tight" style={{ fontSize: 13 }}>{c.name}</p>
+                    <p className="font-montserrat font-bold text-white leading-tight" style={{ fontSize: 13 }}>{c.name}</p>
                     <p className="text-white/40" style={{ fontSize: 8 }}>{c.sub}</p>
                   </div>
                 ))}

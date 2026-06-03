@@ -9,7 +9,6 @@ export default {
         mono: ['Inter', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         // Display serif — used only for the social-post graphics.
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       colors: {
         aether: {
