@@ -61,7 +61,6 @@ const SPOTS = [
 
 export default function EnergyLandscape() {
   const ref = useRef(null)
-  const sceneRef = useRef(null)
   const [show, setShow] = useState(false)
   const [active, setActive] = useState(null)
   const navigate = useNavigate()
@@ -79,20 +78,6 @@ export default function EnergyLandscape() {
     return () => obs.disconnect()
   }, [])
 
-  // subtle cursor-drift parallax (whole scene moves together so markers stay aligned)
-  const onMove = (e) => {
-    const el = ref.current
-    if (!el || !sceneRef.current) return
-    const r = el.getBoundingClientRect()
-    const dx = ((e.clientX - r.left) / r.width - 0.5) * 16
-    const dy = ((e.clientY - r.top) / r.height - 0.5) * 10
-    sceneRef.current.style.transform = `translate(${dx}px, ${dy}px)`
-  }
-  const onLeave = () => {
-    if (sceneRef.current) sceneRef.current.style.transform = 'translate(0,0)'
-    setActive(null)
-  }
-
   const elStyle = (id) => ({
     opacity: active && active !== id ? 0.16 : 1,
     filter: active === id ? 'drop-shadow(0 0 16px rgba(10,242,173,0.5))' : 'none',
@@ -102,8 +87,6 @@ export default function EnergyLandscape() {
   return (
     <section
       ref={ref}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
       className="relative bg-[#020203] overflow-hidden border-t border-aether-border/40 font-sans"
     >
       <style>{`
@@ -111,8 +94,6 @@ export default function EnergyLandscape() {
         .ar-hook { transform-box: fill-box; animation: ar-hook 4.6s ease-in-out infinite; }
         @keyframes ar-twinkle { 0%,100% { opacity:.25 } 50% { opacity:.9 } }
         .ar-win { animation: ar-twinkle 3.4s ease-in-out infinite; }
-        @keyframes ar-fall { to { stroke-dashoffset:-44; } }
-        .ar-fall { stroke-dasharray:7 9; animation: ar-fall 1.1s linear infinite; }
         @keyframes ar-ping { 0% { transform:translate(-50%,-50%) scale(.5); opacity:.7 } 100% { transform:translate(-50%,-50%) scale(2.1); opacity:0 } }
 
         .ar-spot { position:absolute; transform:translate(-50%,-50%); }
@@ -155,7 +136,7 @@ export default function EnergyLandscape() {
           show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        <div ref={sceneRef} className="relative transition-transform duration-300 ease-out will-change-transform">
+        <div className="relative">
           <svg viewBox="0 0 1700 560" className="w-full h-auto block" role="img" aria-label="Aether Renova energy value chain">
             <defs>
               <linearGradient id="arGround" x1="0" y1="0" x2="0" y2="1">
@@ -189,13 +170,7 @@ export default function EnergyLandscape() {
               {/* central spillway sheet */}
               <path d="M150,314 L250,314 L264,440 L136,440 Z" fill="rgba(10,242,173,0.10)" stroke="none" />
               {/* gate piers */}
-              <path d="M150,314 L136,440 M250,314 L264,440 M200,314 L200,440" stroke={A} strokeWidth="2.4" fill="none" strokeLinecap="round" />
-              {/* flowing water (animated downward) */}
-              <g className="ar-fall" stroke="rgba(10,242,173,0.75)" strokeWidth="2" fill="none" strokeLinecap="round">
-                <path d="M162,316 L150,438" /><path d="M176,316 L168,438" />
-                <path d="M188,316 L186,438" /><path d="M213,316 L216,438" />
-                <path d="M226,316 L232,438" /><path d="M240,316 L250,438" />
-              </g>
+              <path d="M150,314 L136,440 M250,314 L264,440 M175,314 L168,440 M200,314 L200,440 M225,314 L232,440" stroke={A} strokeWidth="2.2" fill="none" strokeLinecap="round" opacity="0.8" />
               {/* crest gates either side */}
               <g stroke={A} strokeWidth="2" fill="none" opacity="0.7">
                 <path d="M118,440 L126,322" /><path d="M140,440 L146,322" />
