@@ -56,8 +56,8 @@ export default function WhoAreWe() {
         </div>
       </div>
 
-      {/* ── The Full Value Chain — full-bleed, fits the screen on all sizes ── */}
-      <div className="relative z-10 mt-8 lg:mt-10">
+      {/* ── The Full Value Chain — full-bleed (desktop/tablet only; too small on phones) ── */}
+      <div className="hidden md:block relative z-10 mt-8 lg:mt-10">
         <EnergyLandscape />
       </div>
     </section>
