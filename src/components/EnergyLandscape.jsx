@@ -100,6 +100,10 @@ export default function EnergyLandscape() {
         .ar-hook { transform-box: fill-box; animation: ar-hook 4.6s ease-in-out infinite; }
         @keyframes ar-twinkle { 0%,100% { opacity:.25 } 50% { opacity:.9 } }
         .ar-win { animation: ar-twinkle 3.4s ease-in-out infinite; }
+        @keyframes ar-rise { 0%,100% { transform: translateY(2.5px); } 50% { transform: translateY(-2.5px); } }
+        .ar-sun { transform-box: fill-box; animation: ar-rise 4.5s ease-in-out infinite; }
+        @keyframes ar-sunglow { 0%,100% { opacity:.5 } 50% { opacity:1 } }
+        .ar-sunray { animation: ar-sunglow 4.5s ease-in-out infinite; }
         @keyframes ar-ping { 0% { transform:translate(-50%,-50%) scale(.5); opacity:.7 } 100% { transform:translate(-50%,-50%) scale(2.1); opacity:0 } }
 
         .ar-spot { position:absolute; transform:translate(-50%,-50%); }
@@ -200,6 +204,20 @@ export default function EnergyLandscape() {
               <g stroke={A} strokeWidth="2.5" strokeLinecap="round" fill="none">
                 <path d="M528,456 L520,486 M620,426 L628,470 M580,440 L580,478" />
                 <path d="M508,486 L548,486 M610,470 L646,470" />
+              </g>
+              {/* tiny rising sun above the array */}
+              <g transform="translate(582 372)">
+                <g className="ar-sun">
+                  <g className="ar-sunray" stroke={A} strokeWidth="1.8" strokeLinecap="round">
+                    <path d="M0,-12 L0,-18" />
+                    <path d="M-8,-9 L-12,-14" />
+                    <path d="M8,-9 L12,-14" />
+                    <path d="M-13,-3 L-19,-5" />
+                    <path d="M13,-3 L19,-5" />
+                  </g>
+                  <path d="M-9,0 A9,9 0 0 0 9,0 Z" fill={A} />
+                  <path d="M-15,0 L15,0" stroke={A} strokeWidth="1.6" strokeLinecap="round" opacity="0.55" />
+                </g>
               </g>
             </g>
 
