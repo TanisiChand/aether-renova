@@ -844,6 +844,11 @@ nav.site-nav.scrolled {
     grid-row: span 1;
     height: 180px;
   }
+
+  /* clean 2x2 — Chulini sits beside Chameliya at equal size */
+  .project-card:nth-child(4) {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 480px) {
@@ -851,8 +856,24 @@ nav.site-nav.scrolled {
     font-size: 38px;
   }
 
+  /* keep the 2x2 on phones (smaller cards) so the pairs stay on one row */
   .hero-visual {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .project-card {
+    height: 156px;
+    padding: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .project-card span {
+    font-size: 10px;
   }
 
   .project-card:nth-child(4) {
