@@ -867,6 +867,11 @@ nav.site-nav.scrolled {
     padding: 16px;
   }
 
+  /* keep the first card the same height as the rest (no longer taller) */
+  .project-card:nth-child(1) {
+    height: 156px;
+  }
+
   .project-card h3 {
     font-size: 14px;
     margin-bottom: 6px;

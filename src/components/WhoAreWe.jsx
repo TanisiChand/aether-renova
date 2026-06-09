@@ -56,12 +56,9 @@ export default function WhoAreWe() {
         </div>
       </div>
 
-      {/* ── The Full Value Chain — full-bleed on desktop; on mobile it becomes
-          a swipeable strip so the scene stays legible at a real size. ── */}
-      <div className="relative z-10 mt-8 lg:mt-10 overflow-x-auto md:overflow-x-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-        <div className="min-w-[680px] md:min-w-0">
-          <EnergyLandscape />
-        </div>
+      {/* ── The Full Value Chain — full-bleed, fits the screen on all sizes ── */}
+      <div className="relative z-10 mt-8 lg:mt-10">
+        <EnergyLandscape />
       </div>
     </section>
   )
