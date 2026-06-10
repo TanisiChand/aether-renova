@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { articles } from '../data/articles'
 import Button from '../components/Button'
+import PSHSimulator from '../components/PSHSimulator'
 
 const ArrowLeftIcon = () => (
   <svg
@@ -30,11 +31,52 @@ const ArrowIcon = () => (
   </svg>
 )
 
-function Block({ block }) {
+function Block({ block, prev }) {
   switch (block.type) {
+    case 'kicker':
+      return (
+        <p className="flex items-center gap-3 text-aether-accent uppercase tracking-[0.2em] text-xs font-semibold mt-14 mb-1">
+          <span className="w-8 h-[1px] bg-aether-accent" />
+          {block.text}
+        </p>
+      )
+    case 'stats':
+      return (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 my-10 not-prose">
+          {block.items.map((s) => (
+            <div
+              key={s.label}
+              className="group rounded-2xl border border-aether-border bg-aether-card/40 p-5 transition-all duration-300 hover:border-aether-accent/40 hover:-translate-y-1 hover:bg-aether-accent/5"
+            >
+              <div className="text-aether-accent text-2xl md:text-3xl font-semibold tracking-tight leading-none">
+                {s.value}
+              </div>
+              <div className="text-aether-muted text-xs leading-snug mt-2">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    case 'simulator':
+      return (
+        <div className="my-12 lg:-mx-16">
+          <PSHSimulator />
+        </div>
+      )
+    case 'caption':
+      return (
+        <p className="text-aether-muted/80 text-sm italic text-center my-6">
+          {block.text}
+        </p>
+      )
     case 'h2':
       return (
-        <h2 className="text-white text-2xl md:text-3xl font-medium tracking-tight mt-12 mb-4">
+        <h2
+          className={`text-white text-2xl md:text-3xl font-medium tracking-tight mb-4 ${
+            prev === 'kicker' ? 'mt-2' : 'mt-12'
+          }`}
+        >
           {block.text}
         </h2>
       )
@@ -150,7 +192,7 @@ export default function BlogPost() {
         {/* body */}
         <div className="max-w-3xl mx-auto px-6 mt-12">
           {(article.body || []).map((block, i) => (
-            <Block key={i} block={block} />
+            <Block key={i} block={block} prev={article.body[i - 1]?.type} />
           ))}
 
           {/* share / footer */}
