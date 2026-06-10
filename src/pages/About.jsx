@@ -183,9 +183,9 @@ const Eyebrow = ({ children, center }) => (
 )
 
 const stats = [
-  { value: 300, suffix: ' MW', label: 'Peaking RoR' },
+  { value: 153, suffix: ' MW', label: 'Hydropower' },
   { value: 300, suffix: ' MW', label: 'Pump Storage' },
-  { value: 500, suffix: ' MW', label: 'Solar' },
+  { value: 70, suffix: ' MW', label: 'Solar' },
 ]
 
 /* ---- CSR / community pillars ---- */
