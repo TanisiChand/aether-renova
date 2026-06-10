@@ -33,7 +33,7 @@ const columns = [
       { label: 'Companies', to: '/companies' },
       { label: 'Who Are We', to: '/about' },
       { label: 'Our Team', to: '/team' },
-      { label: 'Watts Up Aether', to: '/blog' },
+      { label: 'Blog', to: '/blog' },
       { label: 'Careers', to: '/careers' },
     ],
   },
