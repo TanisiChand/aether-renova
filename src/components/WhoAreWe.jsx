@@ -6,7 +6,6 @@ const stats = [
   { value: 300, suffix: ' MW', label: 'Peaking RoR' },
   { value: 300, suffix: ' MW', label: 'Pump Storage' },
   { value: 500, suffix: ' MW', label: 'Solar' },
-  { value: 50, suffix: ' MW', label: 'Clean-Power Data Centre' },
 ]
 
 export default function WhoAreWe() {

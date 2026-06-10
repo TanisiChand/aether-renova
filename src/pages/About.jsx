@@ -186,7 +186,6 @@ const stats = [
   { value: 300, suffix: ' MW', label: 'Peaking RoR' },
   { value: 300, suffix: ' MW', label: 'Pump Storage' },
   { value: 500, suffix: ' MW', label: 'Solar' },
-  { value: 50, suffix: ' MW', label: 'Clean-Power Data Centre' },
 ]
 
 /* ---- CSR / community pillars ---- */
@@ -291,9 +290,8 @@ export default function About() {
               </p>
               <p>
                 Looking ahead, we’re building toward 500&nbsp;MW of clean
-                generation, a 50&nbsp;MW clean-powered data centre, and an
-                agriculture and fisheries platform owned in the majority by
-                local communities.
+                generation and an agriculture and fisheries platform owned in
+                the majority by local communities.
               </p>
             </div>
             <p className="text-white/90 text-lg italic border-l-2 border-aether-accent pl-5 mt-8">
