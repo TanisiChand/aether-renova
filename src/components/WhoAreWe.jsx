@@ -3,9 +3,9 @@ import StatBand from './StatBand'
 import EnergyLandscape from './EnergyLandscape'
 
 const stats = [
-  { value: 500, suffix: ' MW', label: 'Hydropower & solar target' },
-  { value: 50, suffix: ' MW', label: 'Clean-powered data centre' },
-  { value: 100, suffix: '%', label: 'Community-majority platform' },
+  { value: 153, suffix: ' MW', label: 'Hydropower' },
+  { value: 300, suffix: ' MW', label: 'Pump Storage' },
+  { value: 70, suffix: ' MW', label: 'Solar' },
 ]
 
 export default function WhoAreWe() {
@@ -38,14 +38,24 @@ export default function WhoAreWe() {
 
           {/* right — story + quote + CTA */}
           <div className="lg:col-span-6 lg:pt-3">
-            <p className="text-aether-muted text-lg leading-relaxed">
-              A Nepali clean energy group developing hydropower and solar
-              infrastructure built to last. We treat knowledge as infrastructure
-              too — strengthening the sector through R&amp;D, internships, and
-              our Industry Talk program.
+            <p className="text-aether-muted text-base leading-relaxed">
+              Aether Renova is a Nepal-based clean-energy developer group with a
+              diverse portfolio spanning hydro, solar, and transmission
+              infrastructure — engineered for long-term technical resilience and
+              financial performance across generations. We operate through
+              specialised subsidiaries with uncompromising construction
+              standards.
+            </p>
+            <p className="text-aether-muted text-base leading-relaxed mt-5">
+              Beyond infrastructure, we invest in creating spaces for the open
+              exchange of ideas, lessons, and emerging practices through our talk
+              program “WhatsUp Aether”, our internship, and our R&amp;D programs.
+              We also work closely with local stakeholders to brighten their
+              lives through carefully curated livelihood ventures like fishery
+              and vegetable farming.
             </p>
             <p className="text-white/90 text-lg italic border-l-2 border-aether-accent pl-5 mt-7">
-              “We always leave the place a little bit better than we found it.”
+              “We believe in growing as an industry, in an ecosystem.”
             </p>
             <div className="mt-8">
               <Button href="/about" variant="primary">

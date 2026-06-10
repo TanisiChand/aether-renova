@@ -6,6 +6,18 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "29brews",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4321", "--directory", "/Users/tanisi/Desktop/29brews-redesign"],
+      "port": 4321
+    },
+    {
+      "name": "juni",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/tanisi/Desktop/juni-website", "run", "dev", "--", "--port", "5180"],
+      "port": 5180
     }
   ]
 }

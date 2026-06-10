@@ -59,39 +59,57 @@ function useCountUp(target, run, duration = 1500) {
 const fmt = (n) => Math.round(n).toLocaleString()
 
 const impact = [
-  { value: 40000, suffix: '+', label: 'Homes powered with clean energy' },
-  { value: 1200, suffix: '+', label: 'Local jobs & livelihoods supported' },
-  { value: 12, label: 'Communities partnered with' },
-  { value: 35000, suffix: ' t/yr', label: 'CO₂ emissions avoided' },
+  { value: 940000, label: 'Homes powered by clean energy' },
+  { value: 1200, label: 'Jobs & livelihoods created' },
+  { value: 14, label: 'Communities partnered with' },
+  { value: 375000, suffix: ' t/yr', label: 'CO₂ emissions replaced' },
 ]
 
 const activities = [
   {
-    title: 'Kusaha Community Solar Fund',
-    location: 'Sunsari District',
-    tag: 'Energy Access',
+    title: 'Terai Land Restoration & Fishery Project',
+    location: 'Mahottari District',
+    tag: 'Livelihood',
     blurb:
-      'A share of revenue from Kusaha Solar funds local schools, clinics, and clean-water access for surrounding villages.',
-    image:
-      'https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&h=650&fit=crop',
-  },
-  {
-    title: 'Highland Skills Academy',
-    location: 'Karnali Province',
-    tag: 'Education',
-    blurb:
-      'On-site training turning residents near our microgrid sites into certified solar technicians and grid operators.',
-    image:
-      'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&h=650&fit=crop',
-  },
-  {
-    title: 'Terai Watershed Initiative',
-    location: 'Eastern Nepal',
-    tag: 'Environment',
-    blurb:
-      'Reforestation and watershed restoration around our hydro corridors, co-managed with local cooperatives.',
+      'Restoring degraded Terai land and seeding community fish ponds that create steady incomes for local families.',
     image:
       'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&h=650&fit=crop',
+  },
+  {
+    title: 'Greenhouse Agriculture Project',
+    location: 'Mahottari District',
+    tag: 'Agriculture',
+    blurb:
+      'Year-round greenhouse vegetable farming that lifts yields, nutrition, and household earnings near our sites.',
+    image:
+      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=900&h=650&fit=crop',
+  },
+  {
+    title: 'Koshi Community-led Agriculture Project',
+    location: 'Koshi Province',
+    tag: 'Agriculture',
+    blurb:
+      'Farmer-owned cooperatives growing high-value crops with shared tools, training, and reliable market access.',
+    image:
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=900&h=650&fit=crop',
+  },
+  {
+    title: 'Koshi Fishery Project',
+    location: 'Koshi Province',
+    tag: 'Livelihood',
+    blurb:
+      'Sustainable inland fisheries turning local waters into dependable food and income for riverside communities.',
+    image:
+      'https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?q=80&w=900&h=650&fit=crop',
+  },
+  {
+    title: 'Aether Scholarship Program',
+    location: 'Nationwide',
+    tag: 'Education',
+    blurb:
+      'Scholarships opening doors in engineering and the trades for the next generation of Nepali talent.',
+    image:
+      'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&h=650&fit=crop',
   },
 ]
 
@@ -132,13 +150,12 @@ export default function CommunityImpact() {
             <span className="w-12 h-[1px] bg-aether-accent/60" />
           </p>
           <h2 className="text-white text-4xl md:text-5xl font-medium tracking-tight leading-tight">
-            Good For Nepal,
-            <span className="block text-aether-accent">Owned By Nepalis</span>
+            Making smiles
+            <span className="block text-aether-accent">brighter</span>
           </h2>
           <p className="text-aether-muted text-lg leading-relaxed mt-5">
             We measure success not just in megawatts, but in the communities,
-            careers, and ecosystems that grow alongside our projects — keeping
-            value where the work happens.
+            careers, and ecosystems that grow alongside our projects.
           </p>
         </div>
 

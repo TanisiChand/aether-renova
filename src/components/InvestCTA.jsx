@@ -8,8 +8,8 @@ const DECK_MAILTO = `mailto:${IR_EMAIL}?subject=${encodeURIComponent(
 
 const highlights = [
   { value: 500, suffix: ' MW', label: 'Generation pipeline' },
-  { value: 5, label: 'Operating companies' },
-  { value: 100, suffix: '%', label: 'Community-majority' },
+  { value: 5, label: 'Companies' },
+  { value: 4, label: 'Active projects' },
 ]
 
 export default function InvestCTA() {
@@ -33,10 +33,15 @@ export default function InvestCTA() {
                 Invest in Nepal’s
                 <span className="block text-aether-accent">Energy Future</span>
               </h2>
-              <p className="text-aether-muted text-lg leading-relaxed mb-8 max-w-lg">
-                A vertically-integrated clean-energy platform with a 500&nbsp;MW
-                pipeline, an operating solar asset, and a community-anchored
-                model built for durable, responsible returns.
+              <p className="text-aether-muted text-base leading-relaxed mb-8 max-w-lg">
+                Mindful of a changing climate and a planet worth protecting, we
+                are building a renewable-energy company with a balanced portfolio
+                of hydropower, solar, and pumped-storage projects. This
+                diversified approach spreads risk and maximises returns. Our team
+                is dedicated to bringing investors the most credible green-energy
+                ventures — where your capital and your conscience both flourish.
+                With us, you are investing in clean energy and in a better
+                future. Invest in your happiness. Invest with us.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -44,7 +49,7 @@ export default function InvestCTA() {
                   to="/investors"
                   className="group inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold tracking-wide transition-all duration-300 px-8 py-4 text-sm bg-aether-accent text-black hover:shadow-[0_0_30px_rgba(0,240,152,0.4)] hover:-translate-y-0.5"
                 >
-                  Why Invest in Us
+                  Why With Us
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
                 <a

@@ -87,9 +87,9 @@ export default function Synergy() {
 
           <div className="flex justify-center mt-12">
             <p className="text-aether-muted text-sm tracking-wide max-w-2xl text-center">
-              From civil construction to smart microgrids — our subsidiaries
-              form an integrated ecosystem delivering end-to-end energy
-              infrastructure across Nepal.
+              From development to construction, from solar to hydro, our
+              subsidiaries form an integrated ecosystem delivering end-to-end
+              energy infrastructure across Nepal.
             </p>
           </div>
         </div>

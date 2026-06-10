@@ -100,10 +100,11 @@ export default function Footer() {
                 Aether Renova
               </span>
             </Link>
-            <p className="text-aether-muted text-sm leading-relaxed mb-6 max-w-sm">
-              Building what tomorrow runs on. Developing next-generation
-              infrastructure for a sustainable, resilient, and electrified
-              Nepal.
+            <p className="text-aether-muted text-sm leading-relaxed mb-2 max-w-sm">
+              Building what tomorrow runs on.
+            </p>
+            <p className="text-aether-accent text-sm font-semibold tracking-wide mb-6">
+              Integrity First. Clean Energy Always.
             </p>
             <div className="flex gap-4">
               {socials.map((social) => (

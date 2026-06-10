@@ -196,7 +196,7 @@ export default function ProjectStatus() {
             The Portfolio, <span className="text-aether-accent">Live</span>
           </h2>
           <p className="text-aether-muted text-lg leading-relaxed mt-5">
-            From permitting to full operation — track every Aether Renova project
+            From permitting to full operation, track every Aether Renova project
             as it moves through its lifecycle.
           </p>
         </div>
@@ -205,10 +205,10 @@ export default function ProjectStatus() {
         <StatBand
           className="mb-8"
           stats={[
-            { value: portfolio.totalMW, suffix: ' MW', label: 'Total Capacity' },
-            { value: portfolio.count, label: 'Active Projects' },
-            { value: portfolio.operational, label: 'Operational' },
-            { value: portfolio.inDevelopment, label: 'In Development' },
+            { value: 523, suffix: ' MW', label: 'Total Capacity' },
+            { value: 3, label: 'Active' },
+            { value: 1, label: 'Licensing' },
+            { value: 1, label: 'Inception' },
           ]}
         />
 
