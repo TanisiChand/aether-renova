@@ -183,10 +183,10 @@ const Eyebrow = ({ children, center }) => (
 )
 
 const stats = [
-  { value: 500, suffix: ' MW', label: 'Hydropower & solar target' },
-  { value: 50, suffix: ' MW', label: 'Clean-powered data centre' },
-  { value: 5, suffix: '', label: 'Specialized companies' },
-  { value: 100, suffix: '%', label: 'Community-majority platform' },
+  { value: 300, suffix: ' MW', label: 'Peaking RoR' },
+  { value: 300, suffix: ' MW', label: 'Pump Storage' },
+  { value: 500, suffix: ' MW', label: 'Solar' },
+  { value: 50, suffix: ' MW', label: 'Clean-Power Data Centre' },
 ]
 
 /* ---- CSR / community pillars ---- */
@@ -232,7 +232,7 @@ const communityProjects = [
     title: 'Highland Skills Academy',
     location: 'Karnali Province',
     blurb:
-      'On-site training turning residents near our microgrid sites into certified solar technicians and grid operators.',
+      'On-site training turning residents near our project sites into certified solar technicians and grid operators.',
     image:
       'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&h=650&fit=crop',
     tag: 'Education',
@@ -286,8 +286,8 @@ export default function About() {
               <p>
                 We develop hydropower and solar infrastructure engineered for
                 enduring quality. Through five specialized companies, we deliver
-                everything from civil construction to smart microgrids — one
-                integrated ecosystem across Nepal.
+                everything from civil construction to the grid — one integrated
+                ecosystem across Nepal.
               </p>
               <p>
                 Looking ahead, we’re building toward 500&nbsp;MW of clean
@@ -355,7 +355,7 @@ export default function About() {
               icon={<MissionIcon />}
               title="Mission"
               quote='"To harness clean energy through holistic engineering — generating jobs, empowering people, and spreading ideas that raise the standard of what infrastructure can achieve."'
-              np="“उत्कृष्ट इन्जिनियरिङमार्फत नवीकरणीय ऊर्जाको विकास गर्दै रोजगारी सिर्जना, मानव सशक्तिकरण, तथा पूर्वाधार निर्माणको गुणस्तर उकास्ने विचार र अभ्यासको प्रवर्द्धन गर्नु।”"
+              np="“उत्कृष्ट इन्जिनियरिङमार्फत नवीकरणीय ऊर्जाको विकास गर्दै रोजगारी सिर्जना, मानव सशक्तिकरण, तथा पूर्वाधार निर्माणको गुणस्तर तथा विचार उकास्नु।”"
             />
             <PurposeCard
               icon={<VisionIcon />}

@@ -88,9 +88,7 @@ function Counter({ value, decimals = 0, prefix = '', suffix = '', active }) {
 
 /* ───────────────── data (from the pitch deck) ───────────────── */
 const highlights = [
-  { value: 47, suffix: '%', label: 'Equity IRR (incl. dividend)' },
-  { value: 19, suffix: '%', label: 'IRR (EBITDA)' },
-  { value: 1325, prefix: 'NPR ', suffix: ' Cr', label: 'Total Project Cost' },
+  { value: 16.69, decimals: 2, suffix: '%', label: 'Project IRR' },
   { value: 1400, prefix: 'NPR ', suffix: ' Cr', label: 'NPV @ 15%' },
   { value: 566, suffix: ' GWh', label: 'Annual Energy' },
   { value: 2.5, decimals: 1, suffix: '×', label: 'Avg DSCR' },
@@ -110,23 +108,23 @@ const specs = [
 const status = [
   { n: 1, title: 'Licensing', detail: 'All necessary clearances obtained', state: 'Done' },
   { n: 2, title: 'Access Road', detail: 'Under construction — only 1 km remaining to headworks', state: 'Ongoing' },
-  { n: 3, title: 'Power Purchase Agreement (PPA)', detail: 'In progress with NEA', state: 'Ongoing' },
-  { n: 4, title: 'Land Acquisition', detail: 'In progress', state: 'Ongoing' },
-  { n: 5, title: 'Detailed Project Report (DPR)', detail: 'In progress', state: 'Ongoing' },
+  { n: 3, title: 'Camp Construction', detail: 'In progress', state: 'Ongoing' },
+  { n: 4, title: 'Power Purchase Agreement (PPA)', detail: 'In progress with NEA', state: 'Ongoing' },
+  { n: 5, title: 'Land Acquisition', detail: 'In progress', state: 'Ongoing' },
+  { n: 6, title: 'Detailed Project Report (DPR)', detail: 'In progress', state: 'Ongoing' },
 ]
 
 const timeline = [
-  { date: 'Preliminary', title: '15% Deployed', detail: 'Equity NPR 555M — preliminary works', icon: 'flag' },
-  { date: 'Sep 2025 – Mar 2026', title: '20% Deployed', detail: 'Equity NPR 740M', icon: 'cash' },
-  { date: 'Apr – Dec 2026', title: '20% Deployed', detail: 'Equity NPR 740M', icon: 'build' },
-  { date: 'Jan – Dec 2027', title: '15% + First Debt', detail: 'Equity NPR 555M · Loan NPR 4,474M', icon: 'bolt' },
-  { date: 'Jan – Dec 2028', title: '30% — Final Drawdown', detail: 'Equity NPR 1,110M · Loan NPR 5,468M', icon: 'check', highlight: true },
+  { date: 'Preliminary', title: 'Preliminary Works', detail: 'Access road and headworks mobilisation', icon: 'flag' },
+  { date: 'Sep 2025 – Mar 2026', title: 'Camp & Site Establishment', detail: 'Camp construction in progress', icon: 'build' },
+  { date: 'Apr – Dec 2026', title: 'Civil Works Ramp-Up', detail: 'Tunnel, headworks, and civil structures', icon: 'build' },
+  { date: 'Jan – Dec 2027', title: 'Electromechanical Phase', detail: 'Penstock, powerhouse, and equipment installation', icon: 'bolt' },
+  { date: 'Jan – Dec 2028', title: 'Commissioning', detail: 'Testing and grid connection', icon: 'check', highlight: true },
 ]
 
 const returns = [
   ['NPR 350–400 Cr', 'Annual Revenue'],
-  ['47%', 'Equity IRR'],
-  ['19%', 'IRR (EBITDA)'],
+  ['16.69%', 'Project IRR'],
   ['NPR 1,400 Cr', 'NPV @ 15%'],
   ['NPR 17.1 Cr', 'Cost per MW (incl. IDC)'],
   ['NPR 29 Cr', 'Annual O&M & Royalty'],
@@ -227,9 +225,9 @@ export default function ChameliyaHydropower() {
             85 MW Hydroelectricity Project
           </p>
           <p className="text-aether-muted text-lg max-w-2xl mx-auto mb-3">
-            A run-of-river scheme on the Chameliya &amp; Chumchum Gad rivers in the
-            Mahakali Basin — developed by Grid Nepal Company, an Aether Renova
-            Holdings group company.
+            A run-of-river scheme on the Chameliya River in the Mahakali Basin —
+            developed by Grid Nepal Company, an Aether Renova Holdings group
+            company.
           </p>
           <p className="text-aether-muted/70 text-sm flex items-center justify-center gap-2">
             <svg className="w-4 h-4 text-aether-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
@@ -342,13 +340,13 @@ export default function ChameliyaHydropower() {
         <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-t from-[#020203] to-transparent pointer-events-none z-[1]" />
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <Eyebrow center>Funding Plan</Eyebrow>
+            <Eyebrow center>Project Timeline</Eyebrow>
             <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
-              Equity-First Drawdown
+              The Build, Year by Year
             </h2>
             <p className="text-aether-muted text-base mt-4 max-w-2xl mx-auto">
-              ~4-year build. 70% of equity is deployed before any debt is drawn,
-              minimizing interest during construction.
+              A roughly four-year build — from preliminary works and camp
+              construction through civil, electromechanical, and commissioning.
             </p>
           </div>
 

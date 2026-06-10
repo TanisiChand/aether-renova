@@ -600,7 +600,7 @@ export default function DhalkebarSolar() {
               a strong reputation in Nepal’s hydropower sector — currently leading
               headworks and the peaking facility for the 73 MW Middle Mewa
               Hydropower Project, while executing major civil works for the 10 MW
-              Sewa Khola and 85 MW Chamelia–Chettigad projects.
+              Sewa Khola and 85 MW Chameliya–Chettigad projects.
             </p>
             <div className="border-t border-aether-border/50 pt-6">
               <p className="text-aether-accent text-sm font-semibold uppercase tracking-wider mb-2">

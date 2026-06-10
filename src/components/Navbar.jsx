@@ -35,7 +35,7 @@ const mobileGroups = [
   { label: 'Companies', to: '/companies', items: companyItems },
   { label: 'Who Are We', to: '/about', items: aboutItems },
   { label: 'Investors', to: '/investors' },
-  { label: 'Blog', to: '/blog' },
+  { label: 'Watts Up Aether', to: '/blog' },
   { label: 'Careers', to: '/careers' },
   { label: 'Contact Us', to: '/contact' },
 ]
@@ -81,7 +81,7 @@ export default function Navbar() {
           <NavDropdown label="Companies" to="/companies" items={companyItems} />
           <NavDropdown label="Who Are We" to="/about" items={aboutItems} />
           <Link to="/investors">Investors</Link>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">Watts Up Aether</Link>
           <Link to="/careers">Careers</Link>
         </div>
 

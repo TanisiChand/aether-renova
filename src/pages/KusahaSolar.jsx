@@ -139,17 +139,6 @@ const status = [
   { n: 7, title: 'OEM Selection & Negotiation', detail: 'Modules, inverters, transformers locked in with deferred-payment', state: 'Done' },
 ]
 
-const costBreakdown = [
-  { label: 'Equipment (modules, MMS, inverters, transformers, BoS)', value: 235.8 },
-  { label: 'Land, Civil, Fencing, Installation, ESG, Debugging', value: 38.0 },
-  { label: 'Transportation (170 containers)', value: 12.0 },
-  { label: 'LC charges, Bank Processing, IDC', value: 8.2 },
-  { label: 'Pre-development & Land Acquisition', value: 8.0 },
-  { label: '132 kV Transmission Line', value: 7.0 },
-  { label: 'Customs', value: 2.0 },
-]
-const costTotal = 297
-
 const capTable = [
   { name: 'Aether Renova Holdings', pct: 50, amount: 'NPR 37.54 Cr' },
   { name: 'Himalayan Everest Ins.', pct: 10, amount: 'NPR 7.13 Cr' },
@@ -162,12 +151,11 @@ const capTable = [
 ]
 
 const timeline = [
-  { date: 'Mar 2026', title: 'Mobilisation', detail: 'Camp & fencing · NPR 6.60 Cr equity', icon: 'flag' },
-  { date: 'Jul 2026', title: 'Foundations', detail: 'Pile foundations & structures · NPR 5.50 Cr', icon: 'build' },
-  { date: 'Aug 2026', title: 'Modules & Inverters', detail: 'Equipment LC payments · NPR 4.40 Cr', icon: 'panel' },
-  { date: 'Jan 2027', title: 'Pre-COD Settlements', detail: 'Final settlements · NPR 5.50 Cr', icon: 'check' },
+  { date: 'Mar 2026', title: 'Mobilisation', detail: 'Camp & fencing', icon: 'flag' },
+  { date: 'Jul 2026', title: 'Foundations', detail: 'Pile foundations & structures', icon: 'build' },
+  { date: 'Aug 2026', title: 'Modules & Inverters', detail: 'Equipment delivery & installation', icon: 'panel' },
+  { date: 'Jan 2027', title: 'Pre-COD Works', detail: 'Testing & final settlements', icon: 'check' },
   { date: 'Feb 2027', title: 'Commercial Operation', detail: 'COD — grid energization', icon: 'bolt', highlight: true },
-  { date: 'Aug 2027', title: 'Phase 2 Payment', detail: 'OEM final payment · NPR 53.06 Cr', icon: 'cash' },
 ]
 
 const equipment = {
@@ -458,71 +446,35 @@ export default function KusahaSolar() {
         </div>
       </section>
 
-      {/* ── Financials: interactive cost breakdown ── */}
+      {/* ── Financials: returns & coverage ── */}
       <section id="financials" className="relative py-20 md:py-28 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <Eyebrow>Financials</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-2">
-              Project Cost Breakdown
-            </h2>
-            <p className="text-aether-muted text-sm mb-8">
-              Total project cost{' '}
-              <span className="text-aether-accent font-bold">NPR {costTotal} Cr</span>{' '}
-              · NPR 5.94 Cr per MW.
-            </p>
-            <div className="space-y-4">
-              {costBreakdown.map((c) => {
-                const pct = (c.value / costTotal) * 100
-                return (
-                  <div key={c.label} className="group">
-                    <div className="flex justify-between items-baseline mb-1.5 gap-4">
-                      <span className="text-white/80 text-sm">{c.label}</span>
-                      <span className="text-aether-accent text-sm font-bold whitespace-nowrap">
-                        NPR {c.value} Cr
-                      </span>
-                    </div>
-                    <div className="h-2 rounded-full bg-aether-border overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-aether-accent/70 to-aether-accent transition-all duration-700"
-                        style={{ width: `${pct}%` }}
-                      />
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-
-          {/* key parameters */}
-          <div>
-            <Eyebrow>Key Parameters</Eyebrow>
-            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-8">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <Eyebrow center>Financials</Eyebrow>
+            <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
               Returns &amp; Coverage
             </h2>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                ['NPR 54.37 Cr', 'Annual Revenue (Yr 1)'],
-                ['15.58%', 'IRR (EBITDA)'],
-                ['3.98 NPR', 'LCOE per kWh'],
-                ['7.90×', 'Avg ISCR'],
-                ['NPR 54.41', 'EPS Year 1'],
-                ['10 yrs', 'Loan Payback'],
-                ['NPR 222 Cr', 'Loan (Nabil, 7%, 13 yr)'],
-                ['NPR 75 Cr', 'Equity (phased)'],
-              ].map(([v, l]) => (
-                <div key={l} className="rounded-2xl border border-aether-border bg-aether-card/40 p-5">
-                  <div className="text-aether-accent text-xl font-bold mb-1">{v}</div>
-                  <div className="text-aether-muted text-xs leading-snug">{l}</div>
-                </div>
-              ))}
-            </div>
-            <p className="text-aether-muted text-xs mt-6 leading-relaxed">
-              DSCR stays above 1.86× in Year 13 even before sensitivity; holds
-              1.58× under −15% revenue stress. Grounded in conservative
-              Rajbiraj Airport irradiation data and 25-year financial modelling.
-            </p>
           </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              ['NPR 54.37 Cr', 'Annual Revenue (Yr 1)'],
+              ['3.98 NPR', 'LCOE per kWh'],
+              ['7.90×', 'Avg ISCR'],
+              ['NPR 54.41', 'EPS Year 1'],
+              ['10 yrs', 'Loan Payback'],
+              ['NPR 75 Cr', 'Equity (phased)'],
+            ].map(([v, l]) => (
+              <div key={l} className="rounded-2xl border border-aether-border bg-aether-card/40 p-5">
+                <div className="text-aether-accent text-xl font-bold mb-1">{v}</div>
+                <div className="text-aether-muted text-xs leading-snug">{l}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-aether-muted text-xs mt-6 leading-relaxed text-center">
+            DSCR stays above 1.86× in Year 13 even before sensitivity; holds
+            1.58× under −15% revenue stress. Grounded in conservative Rajbiraj
+            Airport irradiation data and 25-year financial modelling.
+          </p>
         </div>
       </section>
 

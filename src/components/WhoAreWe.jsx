@@ -3,9 +3,10 @@ import StatBand from './StatBand'
 import EnergyLandscape from './EnergyLandscape'
 
 const stats = [
-  { value: 153, suffix: ' MW', label: 'Hydropower' },
+  { value: 300, suffix: ' MW', label: 'Peaking RoR' },
   { value: 300, suffix: ' MW', label: 'Pump Storage' },
-  { value: 70, suffix: ' MW', label: 'Solar' },
+  { value: 500, suffix: ' MW', label: 'Solar' },
+  { value: 50, suffix: ' MW', label: 'Clean-Power Data Centre' },
 ]
 
 export default function WhoAreWe() {

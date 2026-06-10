@@ -29,7 +29,7 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const categories = ['All', 'Innovation', 'Community', 'Engineering', 'Grid']
+const categories = ['All', 'Analysis', 'Innovation', 'Community', 'Engineering', 'Grid']
 
 function Meta({ article, className = '' }) {
   return (
@@ -152,12 +152,12 @@ export default function Blog() {
         <div className="absolute left-0 right-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[#020203] pointer-events-none z-[1]" />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <Eyebrow center>From The Grid</Eyebrow>
+          <Eyebrow center>Watts Up Aether</Eyebrow>
           <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
-            Blog &amp; Insights
+            Watts Up Aether
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed">
-            Stories, updates, and perspectives from Nepal’s energy
+            Stories, analysis, and perspectives from Nepal’s energy
             transformation.
           </p>
         </div>

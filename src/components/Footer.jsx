@@ -33,7 +33,7 @@ const columns = [
       { label: 'Companies', to: '/companies' },
       { label: 'Who Are We', to: '/about' },
       { label: 'Our Team', to: '/team' },
-      { label: 'Blog', to: '/blog' },
+      { label: 'Watts Up Aether', to: '/blog' },
       { label: 'Careers', to: '/careers' },
     ],
   },
@@ -53,7 +53,7 @@ const columns = [
       { label: 'Kusaha Solar', to: '/projects/kusaha-solar' },
       { label: 'Dhalkebar Solar', to: '/projects' },
       { label: 'Chameliya–Chettigad', to: '/projects' },
-      { label: 'Chulini Hydropower', to: '/projects' },
+      { label: 'Chaulani Hydropower', to: '/projects' },
     ],
   },
 ]

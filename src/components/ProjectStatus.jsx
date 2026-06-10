@@ -205,10 +205,10 @@ export default function ProjectStatus() {
         <StatBand
           className="mb-8"
           stats={[
-            { value: 523, suffix: ' MW', label: 'Total Capacity' },
-            { value: 3, label: 'Active' },
-            { value: 1, label: 'Licensing' },
-            { value: 1, label: 'Inception' },
+            { value: portfolio.totalMW, suffix: ' MW', label: 'Total Capacity' },
+            { value: portfolio.underConstruction, label: 'Under Construction' },
+            { value: portfolio.permitting, label: 'Permitting' },
+            { value: portfolio.count, label: 'Active Projects' },
           ]}
         />
 

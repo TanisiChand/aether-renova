@@ -30,18 +30,17 @@ export default function InvestCTA() {
                 Investor Relations
               </p>
               <h2 className="text-white text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-5">
-                Invest in Nepal’s
-                <span className="block text-aether-accent">Energy Future</span>
+                Partner with us
+                <span className="block text-aether-accent">as we build</span>
               </h2>
               <p className="text-aether-muted text-base leading-relaxed mb-8 max-w-lg">
                 Mindful of a changing climate and a planet worth protecting, we
                 are building a renewable-energy company with a balanced portfolio
                 of hydropower, solar, and pumped-storage projects. This
-                diversified approach spreads risk and maximises returns. Our team
-                is dedicated to bringing investors the most credible green-energy
-                ventures — where your capital and your conscience both flourish.
-                With us, you are investing in clean energy and in a better
-                future. Invest in your happiness. Invest with us.
+                diversification spreads risk and strengthens long-term returns,
+                while giving partners access to credible, well-structured
+                green-energy ventures in one of the region’s most promising
+                markets.
               </p>
 
               <div className="flex flex-wrap gap-4">

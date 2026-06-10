@@ -84,13 +84,13 @@ const thesis = [
   },
   {
     title: 'A diversified, all-weather portfolio',
-    stat: 'Hydro + solar balance',
-    body: 'Hydropower and solar are seasonally complementary — hydro peaks through the monsoon, solar through the dry season. The blend smooths generation profiles and de-risks revenue across the year.',
+    stat: 'Hydro, solar & storage',
+    body: 'Hydropower, solar, and pumped storage are seasonally complementary — hydro peaks through the monsoon, solar through the dry season, and pumped storage shifts surplus power to when the grid needs it most. The blend smooths generation profiles and de-risks revenue across the year.',
   },
   {
     title: 'A fully integrated value chain',
     stat: '5 companies, one platform',
-    body: 'Five specialized subsidiaries span development, civil/EPC, transmission, and microgrids. We capture margin and control quality end-to-end instead of outsourcing the value — and the risk.',
+    body: 'Five specialized subsidiaries span power generation, civil/EPC, and transmission. We capture margin and control quality end-to-end instead of outsourcing the value — and the risk.',
   },
   {
     title: 'Community-anchored & ESG-ready',
@@ -99,8 +99,8 @@ const thesis = [
   },
   {
     title: 'Proven, in-country execution',
-    stat: '500 MW pipeline behind us',
-    body: 'We carry projects from permitting through commissioning with an experienced engineering team. Kusaha Solar is already operational and exporting — with a 500 MW pipeline lined up behind it.',
+    stat: '2,000 MW of hydro experience',
+    body: 'Our team carries combined experience across more than 2,000 MW of hydropower projects, taking schemes from permitting through commissioning — the depth of in-country delivery a 500 MW pipeline demands.',
   },
 ]
 
@@ -414,13 +414,13 @@ export default function Investors() {
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Eyebrow center>Investor Relations</Eyebrow>
           <h1 className="text-white text-5xl md:text-7xl font-medium tracking-tight mb-6">
-            Invest in Nepal’s
-            <span className="block text-aether-accent">Energy Future</span>
+            Partner with us
+            <span className="block text-aether-accent">as we build</span>
           </h1>
           <p className="text-aether-muted text-lg md:text-xl leading-relaxed mb-9 max-w-2xl mx-auto">
             A vertically-integrated clean-energy platform with a 500&nbsp;MW
-            pipeline, an operating solar asset, and a community-anchored model
-            built for durable, responsible returns.
+            pipeline across hydropower, solar, and pumped storage, built for
+            durable, responsible returns.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href={DECK_MAILTO} variant="primary">
@@ -463,10 +463,10 @@ export default function Investors() {
           <div className="mb-12 max-w-2xl">
             <Eyebrow>Growth Trajectory</Eyebrow>
             <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight">
-              A Pipeline Built to Scale
+              This Is What We’re Building Toward
             </h2>
             <p className="text-aether-muted text-base mt-4">
-              From a single operating asset today to a 500&nbsp;MW
+              From today’s projects under construction to a 500&nbsp;MW
               diversified portfolio — track the trajectory, toggle the metric,
               hover any year.
             </p>

@@ -59,10 +59,10 @@ function useCountUp(target, run, duration = 1500) {
 const fmt = (n) => Math.round(n).toLocaleString()
 
 const impact = [
-  { value: 940000, label: 'Homes powered by clean energy' },
+  { value: 400000, label: 'Homes powered by clean energy' },
   { value: 1200, label: 'Jobs & livelihoods created' },
   { value: 14, label: 'Communities partnered with' },
-  { value: 375000, suffix: ' t/yr', label: 'CO₂ emissions replaced' },
+  { value: 350000, suffix: ' t/yr', label: 'CO₂ emissions replaced' },
 ]
 
 const activities = [
@@ -155,7 +155,8 @@ export default function CommunityImpact() {
           </h2>
           <p className="text-aether-muted text-lg leading-relaxed mt-5">
             We measure success not just in megawatts, but in the communities,
-            careers, and ecosystems that grow alongside our projects.
+            careers, and ecosystems that grow alongside every project. What we
+            build here stays here.
           </p>
         </div>
 
@@ -179,6 +180,9 @@ export default function CommunityImpact() {
                 <div className="absolute inset-0 bg-gradient-to-t from-aether-card to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 bg-aether-accent/20 backdrop-blur-sm border border-aether-accent/30 rounded-full text-aether-accent text-xs font-semibold uppercase tracking-wider">
                   {a.tag}
+                </span>
+                <span className="absolute top-4 right-4 px-3 py-1 bg-black/50 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-xs font-semibold uppercase tracking-wider">
+                  Coming Soon
                 </span>
               </div>
               <div className="p-6">

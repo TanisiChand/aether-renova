@@ -18,8 +18,8 @@ export const projects = [
     location: 'Sunsari District, Nepal',
     status: 'In Development',
     phase: 'Construction',
-    progress: 100,
-    target: 'Online since 2023',
+    progress: 60,
+    target: 'Target COD · Feb 2027',
     output: '82 GWh / yr',
     households: '40,000+',
     co2: '35,000 t / yr',
@@ -71,7 +71,7 @@ export const projects = [
     capacityMW: 85,
     location: 'Darchula District, Nepal',
     status: 'In Development',
-    phase: 'Mobilization',
+    phase: 'Construction',
     progress: 28,
     target: 'Target COD · 2029',
     output: '566 GWh / yr',
@@ -80,13 +80,13 @@ export const projects = [
     builder: 'Aether Construction',
     image: '/projects/chameliya-chettigad.jpg',
     blurb:
-      'A combined run-of-river hydropower scheme harnessing the Chameliya and Chettigad river systems.',
+      'A run-of-river hydropower scheme on the Chameliya River in the Mahakali basin.',
   },
   {
     id: 'chulini-hydropower',
     mapX: 484,
     mapY: 300,
-    name: 'Chulini Hydropower',
+    name: 'Chaulani Hydropower',
     type: 'Hydropower',
     generation: 'Hydro',
     companyId: 'west-star',
@@ -94,7 +94,7 @@ export const projects = [
     companyLogo: '/logos/weststar.svg',
     capacity: '35 MW',
     capacityMW: 35,
-    location: 'Gandaki Province, Nepal',
+    location: 'Darchula District, Nepal',
     status: 'In Development',
     phase: 'Permitting',
     progress: 18,
@@ -119,9 +119,8 @@ export const getProject = (id) => projects.find((p) => p.id === id)
 
 // Lifecycle stages, in order, used by the homepage Project Status tracker.
 export const PROJECT_STAGES = [
-  'Inception',
+  'Planning',
   'Permitting',
-  'Mobilization',
   'Construction',
   'Commissioning',
   'Operational',
@@ -133,4 +132,6 @@ export const portfolio = {
   count: projects.length,
   operational: projects.filter((p) => p.status === 'Operational').length,
   inDevelopment: projects.filter((p) => p.status !== 'Operational').length,
+  underConstruction: projects.filter((p) => p.phase === 'Construction').length,
+  permitting: projects.filter((p) => p.phase === 'Permitting').length,
 }
