@@ -50,7 +50,7 @@ export default function WhoAreWe() {
             <p className="text-aether-muted text-base leading-relaxed mt-5">
               Beyond infrastructure, we invest in creating spaces for the open
               exchange of ideas, lessons, and emerging practices through our talk
-              program “WhatsUp Aether”, our internship, and our R&amp;D programs.
+              program “Watts Up Friday”, our internship, and our R&amp;D programs.
               We also work closely with local stakeholders to brighten their
               lives through carefully curated livelihood ventures like fishery
               and vegetable farming.

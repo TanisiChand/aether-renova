@@ -196,8 +196,7 @@ export default function ProjectStatus() {
             The Portfolio, <span className="text-aether-accent">Live</span>
           </h2>
           <p className="text-aether-muted text-lg leading-relaxed mt-5">
-            From permitting to full operation, track every Aether Renova project
-            as it moves through its lifecycle.
+            Track every Aether Renova project as it moves through its lifecycle.
           </p>
         </div>
 
